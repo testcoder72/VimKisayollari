@@ -2,7 +2,7 @@
 Vim shortcuts in Turkish language.
 
 Eklenecekler: 
-Vim kültürü mizahı, vim golf, sık kullanılan kısa yollar, uzantı ekleme mini tutorial
+Vim kültürü mizahı, vim golf, sık kullanılan kısa yollar, vimgrep, uzantı ekleme mini tutorial
 
 
 
@@ -19,6 +19,12 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 
 ```
 ESC :q!
+```
+
+# Dosya oluşturma #
+```
+> vim dosyaAdı
+> vim dizin/dosyaAdı 
 ```
 
 # Genel #
@@ -108,6 +114,9 @@ C-b      Bir tam ekran yukari git (page up)
 C-f      Bir tam ekran asagi git  (page down)
 C-d      Bir yarim ekran asagi git
 C-u      Bir yarim ekran yukari git
+z-enter	 İmlecin altındaki yeri ekranın başına getir
+z.       İmlecin altındaki yeri ekranın ortasına getir
+z-		 İmlecin altındaki yeri ekranın altına getir
 ```
 
 ```
@@ -119,6 +128,8 @@ b        kelimenin başına zıpla
 $        satir sonu
 G        Dosyanin en alti
 gg       Dosyanin en ustu
++ 		 sonraki satır başına
+- 		 önceki satır başına
 ```
 
 
@@ -131,6 +142,14 @@ B        Geriye dogru kelimenin basina zipla (isaretleme yok)
 #gg      #G ile aynı
 ```
 
+__operatör[sayı]hareket__
+```
+cw       kelimeyi değiştir (change word)
+c3w 	 3 kelime değiştir (cw cw cw)
+4j       jjjj 
+c$       imlecin altından kelime sonuna kadar değiştir
+2dd 	 2 satırı sil
+```
 # 		 #'yi ara, #'ya zipla  #
 
 ```
@@ -143,34 +162,6 @@ f<c>     Mevcut imlec pozisyonundan <c> karakterini bul
 '.       Son duzenlenen satira zipla
 g;       Son duzenlenen pozisyona geri zipla 
 ```
-
-### vimgrep ve quickfix listesi ###
-built-in grep, vimgrep uses vim's quickfix list. see vimcasts#44 for introduction: http://vimcasts.org/episodes/search-multiple-files-with-vimgrep/
-```
-:vimgrep /<regex>/g %        Search for <regex> with multiple occasions per line (g) 
-                             in current file (%)
-:vimgrep /<C-r>// %          On the command line, <C-r>/ (that is: CTRL-R followed by /) 
-                             will insert the last search pattern.  
-:vimgrep /<a>/g <filelist>   Search in the given files (<filelist>) 
-:vimgrep /<a>/g *.cc         Search in all *.cc files current directory
-:vimgrep /<a>/g **/*.cc      Search in all *.cc files in every sub-directory (recursively) 
-:vimgrep /<a>/g `find . -type f`     
-                             Search in all files that are returns by the backtick command.
-
-:vim     short for :vimgrep
-
-:cnext   Jump to next record/match in quickfix list
-:cprev   Jump to previous record/match in quickfix list
-```
-Unimpaired plugin (https://github.com/tpope/vim-unimpaired) provides the following mappings:
-```
-[q       see :cprev
-]q       see :cnext
-[Q       see :cfirst
-]Q       see :clast
-```
-Ayrica bkz: http://usevim.com/2012/08/24/vim101-quickfix/ ve http://vimdoc.sourceforge.net/htmldoc/quickfix.html
-
 
 
 # Düzenleme #
