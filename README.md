@@ -27,6 +27,15 @@ ESC :q!
 > vim dizin/dosyaAdı 
 ```
 
+# Vim modları #
+```
+Vim'de 4 mod bulunur.
+
+Normal mod: Vim normal olarak bu modda başlar. ESC ile bu moda geçilir.
+Insert mod: Editöre text bu modla eklenir. İnsert komutlarının biri bu moda geçilir.
+Görsel mod: Text üzerinde belli alanları seçmek için kullanılır. v ile geçilir.
+Komut modu: Normal moda geçtikten sonra : ile geçilir. Komut girilmesini sağlar. Ör. :h CTRL-R
+```
 # Genel #
 
 ```
