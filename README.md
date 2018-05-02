@@ -2,9 +2,6 @@
 
 Vim shortcuts in Turkish language.
 
-Eklenecekler: 
-Vim kültürü mizahı, vim golf, sık kullanılan kısa yollar, vimgrep, konfigrasyon
-
 
 # Vim nedir? #
 
@@ -17,15 +14,15 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 # Vim'den Çıkış #
 
 ```
-ESC :q!
+ESC :q! (Enter)
 ```
 
 # Dosya oluşturma #
 
 ```
-> vim dosyaAdı
-> vim dizin/dosyaAdı 
-> vim (Enter)     dosyadan çıkarken :w dosyadı ile önce kaydet ve sonra :q ile çık.
+$ vim dosyaAdı
+$ vim dizin/dosyaAdı 
+$ vim (Enter)     dosyadan çıkarken :w dosyadı ile önce kaydet ve sonra :q ile çık.
 ```
 
 # Vim modları #
@@ -40,8 +37,8 @@ Komut modu: Normal moda geçtikten sonra : ile geçilir. Komut girilmesini sağl
 # Genel #
 
 ```
-> vimtutor          vim resmi öğretici metni
-:h konu             belirtilen konu hakkında detaylı yardım dosyasını aç
+$ vimtutor          vim resmi öğretici metni
+:h konu             belirtilen konu hakkında detaylı yardım dosyasını aç, yardım dosyası içindeki hyperlinke tıklamak için imlec linkin altıdayken C-], geri C-[
 
 
 :q                  kapat
@@ -120,7 +117,7 @@ k        imlec yukari
 ```
 
 ```
-H        Ekranin basina zıpla (High)
+H        Ekranin başına zıpla (High)
 M        Ekranin ortasina zıpla (Middle)
 L        Ekranin altina zıpla (Low)
 C-b      Bir tam ekran yukari git (page up)
@@ -173,8 +170,8 @@ B        Geriye dogru kelimenin basina zipla (isaretleme yok)
 %        Eslenen paranteze zipla
 [{       Mevcut kod blogunun basina zipla 
 ]}       Mevcut kod blogunun sonuna zipla 
-gd       Degisken deklerasyonuna zipla
-f<c>     Mevcut imlec pozisyonundan <c> karakterini bul
+gd       Degisken deklerasyonuna zipla 
+f<c>     Mevcut imlec pozisyonundan <c> karakterini bul Ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
 '.       Son duzenlenen satira zipla
 g;       Son duzenlenen pozisyona geri zipla 
 ```
@@ -220,15 +217,15 @@ U        Secimi buyuk harfe cevir (visual mode)
 ## Birden fazla dosya ile çalışma ##
 
 ```
-> vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (horizontally split)
-> vim -O3 f1.txt f2.txt f3.txt      Dosyaları alt üst aynı pencerede aç (vertically split)
+$ vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (horizontally split)
+$ vim -O3 f1.txt f2.txt f3.txt      Dosyaları alt üst aynı pencerede aç (vertically split)
 
-> vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaAdı ile yeni dosya ekle
+$ vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaAdı ile yeni dosya ekle
 ```
 ### Tabları kullanma ###
 
 ```
-> vim -p f1.txt f2.txt f3.txt
+$ vim -p f1.txt f2.txt f3.txt
 
 :tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-PgDn
 :tabp               önceki tab, normal modda gT, insert modda C-PgUp
@@ -250,10 +247,87 @@ yyp     Alt satıra kopyala
 yyP     Üst satıra kopyala
 ```
 
+# Yapılandırma
+
+## .vimrc dosyası
+
+.vimrc dosyası Vim'in çalışma anında ayarlarını tanımlar. Sistemin kullandığı bir .vimrc ve herbir kullanıcının
+HOME dizininde birer .vimrc vardır. HOME dizinindeki .vimrc sistem .vimrc'yi override eder. 
+Eğer .vimrc HOME dizininde yoksa, vim .vimrc ile oluşturabilirsiniz. Bkz: [Default .vimrc içeriği] (https://gist.github.com/anonymous/c966c0757f62b451bffa)
+
+## Vundle ile uzantı ekleme
+
+Vundle (Vim bundle) Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
+
+### Kurulum
+
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+```
+ve .vimrc dosyasının başına şunları ekleyin :
+
+```vims
+set nocompatible          
+filetype off             
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+" ----> Uzantılar Buraya <-----
+
+
+call vundle#end()        
+filetype plugin indent on  
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+```
+
+### Uzantıyı ekleme
+
+Vundle ile uzantı eklemek içim .vimrc dosyasındaki:
+```
+call vundle#begin()
+```
+ve 
+```
+call vundle#end() 
+```
+satırları arasına (yukarıda  ----> Uzantılar Buraya <----- şekinde göstermeye çalıştım) aşağıda belirtilen şekillerden biriyle eklememiz gerekiyor
+
+Vundle github ile çok iyi çalışır. github'taki bir uzantıyı eklemeniz için:
+```Plugin 'GithubKullanıcıAdı/RepoAdı'``` Ör: ```Plugin 'tpope/vim-fugitive'```
+    
+http://vim-scripts.org/vim/scripts.html adresindeki Vim uzantıları için
+```Plugin 'uzantıAdı' ```		Ör: ```Plugin 'L9'```
+
+Github'ta tutulmayan git repoları için  Ör: ```Plugin 'git://git.wincent.com/command-t.git'```
+
+Bilgisayardaki bir git reposu için (mesela kendi uzantını geliştiriyorsundur) Ör: ```Plugin 'file:///home/adem/path/to/plugin'```
+
+
+### Uzantıyı yükleme
+```
+Vim'de
+:PluginInstall
+
+shell'de
+$vim +PluginInstall +qall
+```
+
+### Uzantılar hakkında bilgi
+```
+:PluginList				uzantıyıları listele
+:PluginInstall			uzantıları yükle
+:PluginInstall! 		uzantıları güncelle
+:PluginSearch <abc>		<abc> uzantısını ara
+:PluginClean 			kullanılmayan uzantıları kaldır
+```
 
 # Linkler #
 
-## Kopya kagitlari ##
+## Kopya kağıtları11 ##
 
 * http://www.worldtimzone.com/res/vi.html
 * http://www.fprintf.net/vimCheatSheet.html
@@ -291,3 +365,6 @@ yyP     Üst satıra kopyala
 * supertab
 * tagbar
 * omnicomplete (C++)
+
+
+
