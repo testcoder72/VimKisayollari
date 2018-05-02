@@ -14,7 +14,7 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 # Vim'den Çıkış #
 
 ```
-ESC :q! (Enter)
+ESC :q! <enter>
 ```
 
 # Dosya oluşturma #
@@ -22,7 +22,7 @@ ESC :q! (Enter)
 ```
 $ vim dosyaAdı
 $ vim dizin/dosyaAdı 
-$ vim (Enter)     dosyadan çıkarken :w dosyadı ile önce kaydet ve sonra :q ile çık.
+$ vim <enter>     dosyadan çıkarken :w dosyadı ile önce kaydet ve sonra :q ile çık.
 ```
 
 # Vim modları #
@@ -32,7 +32,7 @@ Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 Normal mod: Vim normal olarak bu modda başlar. ESC ile bu moda geçilir.
 Insert mod: Editöre text bu modla eklenir. İnsert komutlarının biriyle bu moda geçilir.
 Görsel mod: Text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, V ile satır bazında, C-V ile block bazında görsel moda geçilir.
-Komut modu: Normal moda geçtikten sonra : ile geçilir. Komut girilmesini sağlar. Ör. :h CTRL-R
+Komut modu: Normal moda geçtikten sonra : ile geçilir. Komut girilmesini sağlar. Her bir komuttan sonra <enter> basılmalıdır. Ör. :h CTRL-R <enter>
 ```
 # Genel #
 
@@ -46,24 +46,30 @@ $ vimtutor          vim resmi öğretici metni
 :saveas dosyaadı    farklı kaydet
 :wa[!]              yaz/kaydet butun pencereler [zorla]
 :wq                 kaydet ve çık
+:wqa				bütün tabları kaydet ve çık (write, quit all) bkz: [Tabları Kullanma](#Tabları-kullanma)
 :x                  yaz ve çık, wq ile aynı
 :q!                 dosya degismişse ve degişiklik kaydedilmeyecekse kapatmaya zorla
+
 ```
 
 ```
 u        Geri al
 C-r      İleri al
 U        Satirdaki tum degisikligi geri al
+
+
 ```
 
 ```
-y        Secili bolgeyi kopyala (yank)
-yy       Butun satiri kopyala
-p        Yapistir, satırın altına (paste)
-"<reg>y  Seçili bolgeyi registera koplaya (a-z den register) 
-c        Seçili bolgeyi kes
-"<reg>p  Registera yapistir (a-z den register) 
-P        Yapıştır, satırın üstüne
+y        	Secili bolgeyi kopyala (yank)
+yy       	Butun satiri kopyala
+p        	Yapistir, satırın altına (paste)
+"<reg>y  	Seçili bolgeyi registera koplaya (a-z den register) 
+c        	Seçili bolgeyi kes
+"<reg>p  	Registera yapistir (a-z den register) 
+P        	Yapıştır, satırın üstüne
+
+
 ```
 
 ```
@@ -74,12 +80,13 @@ C-z      Vim'i arka plana gonder (fg tekrar geri getirir)
 ### Windows ###
 
 ```
-C-ws     Mevcut pencereyi yatay olaral bol (alternatif :split)
-C-wv     Mevcut pencereyi dikey olarak bol (alternatif :vsplit)
-C-ww     Sonraki pencereye zipla 
-C-wARROW Mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zipla
-C-w#<    Mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
-C-w#>    Mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
+C-ws     	Mevcut pencereyi yatay olaral bol (alternatif :split)
+C-wv     	Mevcut pencereyi dikey olarak bol (alternatif :vsplit)
+C-ww     	Sonraki pencereye zipla 
+C-wARROW 	Mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zipla
+C-w#<    	Mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
+C-w#>    	Mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
+
 ```
 
 ### Insert moda geçme ###
@@ -96,6 +103,7 @@ S        Tum satiri sil
 cc       Mevcut satiri sil
 cw       Kelimeyi sil
 Shift-r  Kelimeyi olduğu yerde değiştir. (Windows'taki insert)
+
 ```
 
 ### Kaydetme ###
@@ -114,6 +122,7 @@ h        imlec sola
 j        imlec alta
 l        imlec saga
 k        imlec yukari
+
 ```
 
 ```
@@ -127,6 +136,7 @@ C-u      Bir yarim ekran yukari git
 z-enter	 İmlecin altındaki yeri ekranın başına getir
 z.       İmlecin altındaki yeri ekranın ortasına getir
 z-		 İmlecin altındaki yeri ekranın altına getir
+
 ```
 
 ```
@@ -141,6 +151,7 @@ gg       Dosyanin en ustu
 + 		 sonraki satır başına
 - 		 önceki satır başına
 . 		 Son komutu tekrarla
+
 ```
 
 ## __operatör [sayı] hareket veya [sayı] operator hareket__ ##
@@ -151,6 +162,7 @@ c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
 2w       w w,  iki sonraki kelimenin başına git
 c$       imlecin altından kelime sonuna kadar değiştir
 2dd 	 2 satırı sil
+
 ```
 
 ## _bilinmesi faydali_ ##
@@ -160,6 +172,7 @@ W        Kelimenin basina zipla
 B        Geriye dogru kelimenin basina zipla (isaretleme yok)
 #G       # numaralı satıra git Ör: 38G
 #gg      #G ile aynı
+
 ```
 
 
@@ -174,6 +187,7 @@ gd       Degisken deklerasyonuna zipla
 f<c>     Mevcut imlec pozisyonundan <c> karakterini bul Ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
 '.       Son duzenlenen satira zipla
 g;       Son duzenlenen pozisyona geri zipla 
+
 ```
 
 
@@ -189,12 +203,14 @@ d$       Satir sonuna kadar sil
 D        Satir sonuna kadar sil d$ ile ayni 
 dd       Tum satiri sil
 dib      Parantez blogundaki icerigi sil (Ör: fonksiyon argumanlari)
+
 ```
 
 ```
 C-n      Anahtar kelime tamamlama
 Tab      Anahtar kelime tamamlama (SuperTab uzantisi)
 r<c>     <c> karakterini degistir
+
 ```
 
 ```
@@ -202,11 +218,13 @@ r<c>     <c> karakterini degistir
 :s/xxx/yyy/g   xxx'i yyy'nin goruldugu yerde degistir, tumcede (global)
 :s/xxx/yyy/gc  xxx'i yyy'nin goruldugu yerde degistir ama onay iste, tumcede
 :%s/xxx/yyy/g  xxx'i yyy'nin goruldugu yerde degistir, tum dosyada
+
 ```
 
 ```
 u        Secimi kucuk harfe cevir (visual mode)
 U        Secimi buyuk harfe cevir (visual mode)
+
 ```
 
 ```
@@ -221,6 +239,7 @@ $ vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (hor
 $ vim -O3 f1.txt f2.txt f3.txt      Dosyaları alt üst aynı pencerede aç (vertically split)
 
 $ vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaAdı ile yeni dosya ekle
+
 ```
 ### Tabları kullanma ###
 
@@ -253,7 +272,7 @@ yyP     Üst satıra kopyala
 
 .vimrc dosyası Vim'in çalışma anında ayarlarını tanımlar. Sistemin kullandığı bir .vimrc ve herbir kullanıcının
 HOME dizininde birer .vimrc vardır. HOME dizinindeki .vimrc sistem .vimrc'yi override eder. 
-Eğer .vimrc HOME dizininde yoksa, vim .vimrc ile oluşturabilirsiniz. Bkz: [Default .vimrc içeriği] (https://gist.github.com/anonymous/c966c0757f62b451bffa)
+Eğer .vimrc HOME dizininde yoksa, vim .vimrc ile oluşturabilirsiniz. Bkz: [Default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 
 ## Vundle ile uzantı ekleme
 
@@ -327,7 +346,7 @@ $vim +PluginInstall +qall
 
 # Linkler #
 
-## Kopya kağıtları11 ##
+## Kopya kağıtları ##
 
 * http://www.worldtimzone.com/res/vi.html
 * http://www.fprintf.net/vimCheatSheet.html
@@ -365,6 +384,3 @@ $vim +PluginInstall +qall
 * supertab
 * tagbar
 * omnicomplete (C++)
-
-
-
