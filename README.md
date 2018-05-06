@@ -88,6 +88,32 @@ C-w#<    	Mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1)
 C-w#>    	Mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
 
 ```
+## Birden fazla dosya ile çalışma ##
+
+```
+$ vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (horizontally split)
+$ vim -O3 f1.txt f2.txt f3.txt      Dosyaları alt üst aynı pencerede aç (vertically split)
+
+$ vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaAdı ile yeni dosya ekle
+
+```
+### Tabları kullanma ###
+
+```
+$ vim -p f1.txt f2.txt f3.txt
+
+:tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-PgDn
+:tabp               önceki tab, normal modda gT, insert modda C-PgUp
+:tabedit dosyaadı   belirtilen dosyayı yeni bir tabda düzenle
+:tabfind dosyaAdı   dosyayı yeni bir tabda aç ve düzenle
+:tabfirst           ilk taba git
+:tablast            son taba git
+:tabm {i}           mevcut tabı i+1 inci taba taşı. Ör: :tabm 0 mevcut tabı ilk tab yap, :tabm  mevcut tabı son tab yap
+:tabclose i         i numaralı tabı kapat
+:tabclose           mevcut tabı kapat
+:tabonly            diğer tüm tabları kapat
+:tabs               tabları listele
+```
 
 ### Insert moda geçme ###
 
@@ -142,6 +168,7 @@ z-		 İmlecin altındaki yeri ekranın altına getir
 ```
 w        sonraki kelimenin başına zıpla (işaretlemelerin ayrı bir kelime olduğu varsayılır)
 e        sonraki kelimenin sonuna zıpla
+ge 	 önceki kelimenin sonuna zıpla
 b        kelimenin başına zıpla
 0        satir basi
 ^        ilk bos olmayan karakter
@@ -232,33 +259,6 @@ U        Secimi buyuk harfe cevir (visual mode)
 :g/^$/d  Tum bos satirlari sil
 ```
 
-## Birden fazla dosya ile çalışma ##
-
-```
-$ vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (horizontally split)
-$ vim -O3 f1.txt f2.txt f3.txt      Dosyaları alt üst aynı pencerede aç (vertically split)
-
-$ vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaAdı ile yeni dosya ekle
-
-```
-### Tabları kullanma ###
-
-```
-$ vim -p f1.txt f2.txt f3.txt
-
-:tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-PgDn
-:tabp               önceki tab, normal modda gT, insert modda C-PgUp
-:tabedit dosyaadı   belirtilen dosyayı yeni bir tabda düzenle
-:tabfind dosyaAdı   dosyayı yeni bir tabda aç ve düzenle
-:tabfirst           ilk taba git
-:tablast            son taba git
-:tabm {i}           mevcut tabı i+1 inci taba taşı. Ör: :tabm 0 mevcut tabı ilk tab yap, :tabm  mevcut tabı son tab yap
-:tabclose i         i numaralı tabı kapat
-:tabclose           mevcut tabı kapat
-:tabonly            diğer tüm tabları kapat
-:tabs               tabları listele
-```
-
 # Sık kullanılanlar #
 
 ```
@@ -286,7 +286,7 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ve .vimrc dosyasının başına şunları ekleyin :
 
 ```vims
-set nocompatible          
+set nocompatible         
 filetype off             
 
 set rtp+=~/.vim/bundle/Vundle.vim
