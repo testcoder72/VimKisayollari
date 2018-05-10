@@ -53,10 +53,13 @@ $ vimtutor          vim resmi öğretici metni
 ```
 
 ```
-u        Geri al
-C-r      İleri al
-U        Satirdaki tum degisikligi geri al
+u        	Geri al
+C-r      	İleri al
+U        	Satirdaki tum degisikligi geri al
 
+s=seconds, m=minute, h=hour, d=day
+:earlier #m     Dosyayı # dakika önceki haline döndür Ör: :earlier 2m  veya :ea 3d
+:later #m 	Dosyayı # dakika sonraki haline döndür Ör: :later 7s  veya  :lat 9h
 
 ```
 
@@ -264,6 +267,8 @@ U        Secimi buyuk harfe cevir (visual mode)
 ```
 yyp     Alt satıra kopyala
 yyP     Üst satıra kopyala
+ddp 	Alt satırla üst satırı yer değiştir
+
 ```
 
 # Yapılandırma
