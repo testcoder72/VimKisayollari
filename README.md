@@ -46,14 +46,14 @@ $ vimtutor          vim resmi öğretici metni
 :saveas dosyaadı    farklı kaydet
 :wa[!]              yaz/kaydet butun pencereler [zorla]
 :wq                 kaydet ve çık
-:wqa				bütün tabları kaydet ve çık (write, quit all) bkz: [Tabları Kullanma](#Tabları-kullanma)
+:wqa		    bütün tabları kaydet ve çık (write, quit all) bkz: [Tabları kullanma](#tabları-kullanma)
 :x                  yaz ve çık, wq ile aynı
 :q!                 dosya degismişse ve degişiklik kaydedilmeyecekse kapatmaya zorla
 
 ```
 
 ```
-u        	Geri al
+u        	Geri al, Ör: 4u
 C-r      	İleri al
 U        	Satirdaki tum degisikligi geri al
 
@@ -72,15 +72,16 @@ c        	Seçili bolgeyi kes
 "<reg>p  	Registera yapistir (a-z den register) 
 P        	Yapıştır, satırın üstüne
 
-
 ```
 
 ```
 :!<cmd>  Vim'den ayrılmadan shell'den <cmd> komutunu calistir Ör: !g++ -Wall -std=c++14 main.cpp
+:sh      Shell'e git, exit ile tekrar Vim'e dön
 C-z      Vim'i arka plana gonder (fg tekrar geri getirir)
+
 ```
 
-### Windows ###
+## Windows ##
 
 ```
 C-ws     	Mevcut pencereyi yatay olaral bol (alternatif :split)
@@ -91,7 +92,7 @@ C-w#<    	Mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1)
 C-w#>    	Mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
 
 ```
-## Birden fazla dosya ile çalışma ##
+### Birden fazla dosya ile çalışma ###
 
 ```
 $ vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (horizontally split)
@@ -244,16 +245,16 @@ r<c>     <c> karakterini degistir
 ```
 
 ```
-:s/xxx/yyy/    xxx'i yyy'nin ilk goruldugu yerde degistir 
-:s/xxx/yyy/g   xxx'i yyy'nin goruldugu yerde degistir, tumcede (global)
-:s/xxx/yyy/gc  xxx'i yyy'nin goruldugu yerde degistir ama onay iste, tumcede
-:%s/xxx/yyy/g  xxx'i yyy'nin goruldugu yerde degistir, tum dosyada
+:s/xxx/yyy/    xxx'i yyy'nin ilk görüldüğü yerde değiştir
+:s/xxx/yyy/g   xxx'i yyy'nin goruldugu yerde değiştir, tumcede (global)
+:s/xxx/yyy/gc  xxx'i yyy'nin goruldugu yerde değiştir ama onay iste, tumcede
+:%s/xxx/yyy/g  xxx'i yyy'nin goruldugu yerde değiştir, tum dosyada
 
 ```
 
 ```
-u        Secimi kucuk harfe cevir (visual mode)
-U        Secimi buyuk harfe cevir (visual mode)
+u        Seçimi küçük harfe çevir (visual mod)
+U        Seçimi büyük harfe çevir (visual mod)
 
 ```
 
