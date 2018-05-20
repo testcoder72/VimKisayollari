@@ -1,4 +1,4 @@
-# Vim Kısayolları
+#omnicomplete Vim Kısayolları
 
 Vim shortcuts in Turkish language.
 
@@ -304,35 +304,39 @@ call vundle#begin()
 
 call vundle#end()        
 filetype plugin indent on  
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 ```
 
-### Uzantıyı ekleme
-
 Vundle ile uzantı eklemek içim .vimrc dosyasındaki:
+
 ```
 call vundle#begin()
 ```
 ve 
+
 ```
 call vundle#end() 
 ```
-satırları arasına (yukarıda  ----> Uzantılar Buraya <----- şekinde göstermeye çalıştım) aşağıda belirtilen şekillerden biriyle eklememiz gerekiyor
 
-Vundle github ile çok iyi çalışır. github'taki bir uzantıyı eklemeniz için:
-```Plugin 'GithubKullanıcıAdı/RepoAdı'``` Ör: ```Plugin 'tpope/vim-fugitive'```
+atırları arasına, uzatıya göre;
+
+- github'taki bir uzantıyı eklemeniz için:
+```Plugin 'GithubKullanıcıAdı/RepoAdı' ``` Ör: ```Plugin 'tpope/vim-fugitive'```
     
-http://vim-scripts.org/vim/scripts.html adresindeki Vim uzantıları için
+- [vimscipt](http://vim-scripts.org/vim/scripts.html) şeklindeki Vim uzantılarını eklemek için:
 ```Plugin 'uzantıAdı' ```		Ör: ```Plugin 'L9'```
 
-Github'ta tutulmayan git repoları için  Ör: ```Plugin 'git://git.wincent.com/command-t.git'```
+- Github'ta tutulmayan git repoları için:
+  Ör: ```Plugin 'git://git.wincent.com/command-t.git'```
 
-Bilgisayardaki bir git reposu için (mesela kendi uzantını geliştiriyorsundur) Ör: ```Plugin 'file:///home/adem/path/to/plugin'```
+- Bilgisayardaki bir git reposu için (mesela kendi uzantını geliştiriyorsundur):
+  Ör: ```Plugin 'file:///home/adem/path/to/plugin'```
 
+şekillerinde eklememiz gerekiyor.
 
 ### Uzantıyı yükleme
+
+Son adımda uzatıyı yüklemek için:
 ```
 Vim'de
 :PluginInstall
@@ -342,12 +346,14 @@ $vim +PluginInstall +qall
 ```
 
 ### Uzantılar hakkında bilgi
+
 ```
-:PluginList				uzantıyıları listele
+:PluginList			uzantıyıları listele
 :PluginInstall			uzantıları yükle
 :PluginInstall! 		uzantıları güncelle
 :PluginSearch <abc>		<abc> uzantısını ara
 :PluginClean 			kullanılmayan uzantıları kaldır
+
 ```
 
 # Linkler #
