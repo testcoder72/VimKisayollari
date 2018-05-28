@@ -1,61 +1,82 @@
-#omnicomplete Vim Kısayolları
+# Vim Kısayolları
 
 Vim shortcuts in Turkish language.
 
-
-# Vim nedir? #
+## Vim nedir? 
 
 Vim etkili biçimde metin düzenlemek için çok iyi yapılandırılabilir bir metin editorüdür.
 
-# Vim ne değildir? #
+##  Vim ne değildir? 
 
 Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildir. Bir araçtır, kullanılması öğrenilmelidir. Vim kelime işlemci değildir.
 
-# Vim'den Çıkış #
+## [Vim'den Çıkış](https://stackoverflow.blog/wp-content/uploads/2017/05/country_stuck_vim-1-2-1024x1024.png)
 
 ```
-ESC :q! <enter>
-```
-
-# Dosya oluşturma #
+<esc> :q! <enter> 
 
 ```
+* [Dosya oluşturma](#dosya-oluşturma)
+* [Vim modları](#vim-modlari)
+* [Genel](#genel)
+* [Hareketler](#hareketler)
+* [Insert moda geçme](#insert-moda-geçme)
+* [Windows](#windows)
+	* [Tabları kullanma](#tablari-kullanma)
+* [Kaydetme](#kaydetme)
+* [Komutlari tekrar etme](#komutlari-tekrar-etme)
+* [Düzenleme](#düzenleme)
+* [Sık kullanılanlar](#sik-kullanilanlar)
+* [Yapılandırma](#yapilandirma)
+	* [vimrc dosyası](#vimrc-dosyasi)
+	* [Mapping](#mapping)
+* [Vundle ile uzantı ekleme](#vundle-ile-uzanti-ekleme)
+	1. [Kurulum](#kurulum)
+	2. [Uzantıyı yükleme](#uzantiyi-yükleme)
+	3. [Uzantılar hakkında bilgi](#uzantilar-hakkinda-bilgi)
+* [Linkler](#linkler)
+
+## Dosya oluşturma
+
+```
+$ vim <enter>
 $ vim dosyaAdı
 $ vim dizin/dosyaAdı 
-$ vim <enter>     dosyadan çıkarken :w dosyadı ile önce kaydet ve sonra :q ile çık.
+
 ```
 
-# Vim modları #
+## Vim modları
+
 ```
 Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 
 Normal mod: Vim normal olarak bu modda başlar. ESC ile bu moda geçilir.
-Insert mod: Editöre text bu modla eklenir. İnsert komutlarının biriyle bu moda geçilir.
+Insert mod: Editöre text bu modla eklenir. [İnsert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.
 Görsel mod: Text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, V ile satır bazında, C-V ile block bazında görsel moda geçilir.
 Komut modu: Normal moda geçtikten sonra : ile geçilir. Komut girilmesini sağlar. Her bir komuttan sonra <enter> basılmalıdır. Ör. :h CTRL-R <enter>
+
 ```
-# Genel #
+## Genel
 
 ```
 $ vimtutor          vim resmi öğretici metni
 :h konu             belirtilen konu hakkında detaylı yardım dosyasını aç, yardım dosyası içindeki hyperlinke tıklamak için imlec linkin altıdayken C-], geri C-[
 
-
 :q                  kapat
 :w                  kaydet/write
-:saveas dosyaadı    farklı kaydet
+:saveas dosyaAdı    farklı kaydet
 :wa[!]              yaz/kaydet butun pencereler [zorla]
 :wq                 kaydet ve çık
-:wqa		    bütün tabları kaydet ve çık (write, quit all) bkz: [Tabları kullanma](#tabları-kullanma)
+:wqa		    bütün tabları kaydet ve çık (write, quit all) bkz: [Tabları kullanma](#tablari-kullanma)
 :x                  yaz ve çık, wq ile aynı
-:q!                 dosya degismişse ve degişiklik kaydedilmeyecekse kapatmaya zorla
+:q!                 dosya değismişse ve değişiklik kaydedilmeyecekse kapatmaya zorla
 
 ```
 
 ```
 u        	Geri al, Ör: 4u
 C-r      	İleri al
-U        	Satirdaki tum degisikligi geri al
+U        	Satırdaki tüm değisikliği geri al
 
 s=seconds, m=minute, h=hour, d=day
 :earlier #m     Dosyayı # dakika önceki haline döndür Ör: :earlier 2m  veya :ea 3d
@@ -64,13 +85,14 @@ s=seconds, m=minute, h=hour, d=day
 ```
 
 ```
-y        	Secili bolgeyi kopyala (yank)
-yy       	Butun satiri kopyala
-p        	Yapistir, satırın altına (paste)
+y        	Seçili bölgeyi kopyala (yank)
+yy       	Bütün satırı kopyala
+p        	Yapıstır, satırın altına (paste)
 "<reg>y  	Seçili bolgeyi registera koplaya (a-z den register) 
 c        	Seçili bolgeyi kes
 "<reg>p  	Registera yapistir (a-z den register) 
 P        	Yapıştır, satırın üstüne
+. 		Son komutu tekrarla
 
 ```
 
@@ -81,18 +103,120 @@ C-z      Vim'i arka plana gonder (fg tekrar geri getirir)
 
 ```
 
+## Hareketler
+
+```
+
+			        k
+h        imlec sola             ^
+j        imlec alta        h <     > l
+l        imlec saga             v
+k        imlec yukarı           j
+
+```
+
+```
+0        satır başına
+$ 	 satır sonu
+<Home>   satır başı
+<End>	 satır sonu 
+```
+
+```
+w        sonraki kelimenin başına zıpla (işaretlemelerin ayrı bir kelime olduğu varsayılır)
+e        sonraki kelimenin sonuna zıpla
+b        kelimenin başına zıpla
+```
+
+```
+H        Ekranin başına zıpla (High)
+M        Ekranin ortasina zıpla (Middle)
+L        Ekranin altina zıpla (Low)
+```
+
+```
+C-b      Bir tam ekran yukari git (page up)
+C-f      Bir tam ekran asagi git  (page down)
+C-d      Bir yarim ekran asagi git
+C-u      Bir yarim ekran yukari git
+```
+
+```
+zt       İmlecin bulunduğu yeri ekranın üstüne getir
+z<enter> zt ile aynı
+zb 	 İmlecin bulunduğu yeri ekranın altına getir
+z-	 zb ile aynı
+z.       İmlecin bulunduğu yeri ekranın ortasına getir
+zz 	 z. ile aynı
+```
+```
+%        eslenen paranteze zipla
+( 	 önceki cümle
+) 	 sonraki cümle
+{ 	 önceki paragraf
+}        sonraki paragraf
+[{       mevcut kod blogunun basina zipla 
+]}       mevcut kod blogunun sonuna zipla 
+gd       degisken deklerasyonuna zipla 
+
+```
+
+```
+w        sonraki kelimenin başına zıpla (işaretlemelerin ayrı bir kelime olduğu varsayılır)
+e        sonraki kelimenin sonuna zıpla
+ge 	 önceki kelimenin sonuna zıpla
+b        kelimenin başına zıpla
+^        ilk bos olmayan karakter
+gg       dosyanin en ustu
+G        dosyanin en alti
++ 	 sonraki satır başına
+- 	 önceki satır başına
+. 	 son komutu tekrarla
+
+```
+ 
+```
+E        Kelimenin sonuna zipla (isaretlemelerin kelime olduğu varsayılmaz)
+W        Kelimenin basina zipla 
+B        Geriye dogru kelimenin basina zipla (isaretleme yok)
+#G       # numaralı satıra git Ör: 38G
+#gg      #G ile aynı
+
+```
+
+## Insert moda geçme ##
+
+```
+i        İmlecten öncesine text ekle
+I        Satırın başına ekle
+a        İmlecten sonra textin sonuna ekle
+A        Satirin sonuna ekle 
+o        İmlecin altina yeni bir satir yap ve text ekle 
+O        İmlecin ustune yeni bir satir yap ve text ekle
+s        İmlecin altindaki harfi sil 
+S        Tum satiri sil
+cc       Mevcut satiri sil
+cw       Kelimeyi sil
+Shift-r  Kelimeyi olduğu yerde değiştir. (Windows'taki insert)
+
+```
+
 ## Windows ##
 
 ```
 C-ws     	Mevcut pencereyi yatay olaral bol (alternatif :split)
 C-wv     	Mevcut pencereyi dikey olarak bol (alternatif :vsplit)
 C-ww     	Sonraki pencereye zipla 
+C-wq		Mevcut pencereyi kapat
 C-wARROW 	Mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zipla
 C-w#<    	Mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
 C-w#>    	Mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
-
+:res #		Yatay bölünmüş pencereyi # kadar yeniden boyutlandır
+C-wH		Mevcut pencereyi en sola taşı 
+C-wJ		Mevcut pencereyi en alta taşı 	
+C-wK		Mevcut pencereyi en üste taşı 	
+C-wL 		Mevcut pencereyi en sağa taşı
 ```
-### Birden fazla dosya ile çalışma ###
 
 ```
 $ vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (horizontally split)
@@ -104,7 +228,7 @@ $ vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sa
 ### Tabları kullanma ###
 
 ```
-$ vim -p f1.txt f2.txt f3.txt
+$ vim -p f1.txt f2.txt 		f1.txt ve f2.txt dosyalarını tab şeklinde aç
 
 :tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-PgDn
 :tabp               önceki tab, normal modda gT, insert modda C-PgUp
@@ -119,24 +243,8 @@ $ vim -p f1.txt f2.txt f3.txt
 :tabs               tabları listele
 ```
 
-### Insert moda geçme ###
+## Kaydetme
 
-```
-a        İmlecten sonra textin sonuna ekle
-A        Satirin sonuna ekle 
-i        İmlecten oncesine text ekle
-I        Satırın başına ekle
-o        İmlecin altina yeni bir satir yap ve text ekle 
-O        İmlecin ustune yeni bir satir yap ve text ekle
-s        İmlecin altindaki harfi sil 
-S        Tum satiri sil
-cc       Mevcut satiri sil
-cw       Kelimeyi sil
-Shift-r  Kelimeyi olduğu yerde değiştir. (Windows'taki insert)
-
-```
-
-### Kaydetme ###
 Vim 26 registara sahip (a-z), kaydetmek istedigin bir tanesini sec. Kaydetme modundan ESC ile cik
 ```
 q[a-z]   Kaydetmeye basla, Hareketler dahil hersey kaydedilecek
@@ -144,85 +252,21 @@ q[a-z]   Kaydetmeye basla, Hareketler dahil hersey kaydedilecek
 ```
 
 
-# Hareketler #
+## Komutları tekrar etme
 
-_temel_
-```
-h        imlec sola
-j        imlec alta
-l        imlec saga
-k        imlec yukari
+**operatör [sayı] hareket** veya **[sayı] operator hareket**
 
 ```
-
-```
-H        Ekranin başına zıpla (High)
-M        Ekranin ortasina zıpla (Middle)
-L        Ekranin altina zıpla (Low)
-C-b      Bir tam ekran yukari git (page up)
-C-f      Bir tam ekran asagi git  (page down)
-C-d      Bir yarim ekran asagi git
-C-u      Bir yarim ekran yukari git
-z-enter	 İmlecin altındaki yeri ekranın başına getir
-z.       İmlecin altındaki yeri ekranın ortasına getir
-z-		 İmlecin altındaki yeri ekranın altına getir
-
-```
-
-```
-w        sonraki kelimenin başına zıpla (işaretlemelerin ayrı bir kelime olduğu varsayılır)
-e        sonraki kelimenin sonuna zıpla
-ge 	 önceki kelimenin sonuna zıpla
-b        kelimenin başına zıpla
-0        satir basi
-^        ilk bos olmayan karakter
-$        satir sonu
-G        Dosyanin en alti
-gg       Dosyanin en ustu
-+ 		 sonraki satır başına
-- 		 önceki satır başına
-. 		 Son komutu tekrarla
-
-```
-
-## __operatör [sayı] hareket veya [sayı] operator hareket__ ##
-```
-cw       kelimeyi değiştir (change word)
 c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
 4j       jjjj 
-2w       w w,  iki sonraki kelimenin başına git
-c$       imlecin altından kelime sonuna kadar değiştir
+2W       W W,  iki sonraki kelimenin başına git
 2dd 	 2 satırı sil
 
 ```
 
-## _bilinmesi faydali_ ##
-```
-E        Kelimenin sonuna zipla (isaretlemelerin kelime olduğu varsayılmaz)
-W        Kelimenin basina zipla 
-B        Geriye dogru kelimenin basina zipla (isaretleme yok)
-#G       # numaralı satıra git Ör: 38G
-#gg      #G ile aynı
 
-```
+## Düzenleme 
 
-
-## #'yi ara, #'ya zipla  ##
-
-```
-*        imlecin altindaki kelimeden sonraki kelimeleri ara
-%        Eslenen paranteze zipla
-[{       Mevcut kod blogunun basina zipla 
-]}       Mevcut kod blogunun sonuna zipla 
-gd       Degisken deklerasyonuna zipla 
-f<c>     Mevcut imlec pozisyonundan <c> karakterini bul Ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
-'.       Son duzenlenen satira zipla
-g;       Son duzenlenen pozisyona geri zipla 
-
-```
-
-
-# Düzenleme #
 ```
 x        Imlecin altindaki karakteri sil
 X        Imlecten onceki karakteri sil 
@@ -245,10 +289,23 @@ r<c>     <c> karakterini degistir
 ```
 
 ```
+*        imlecin altindaki kelimeden sonraki kelimeleri ara
+f<c>     mevcut imlec pozisyonundan <c> karakterini bul Ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
+'.       son duzenlenen satira zipla
+g;       son duzenlenen pozisyona geri zipla 
+
+```
+
+```
 :s/xxx/yyy/    xxx'i yyy'nin ilk görüldüğü yerde değiştir
 :s/xxx/yyy/g   xxx'i yyy'nin goruldugu yerde değiştir, tumcede (global)
 :s/xxx/yyy/gc  xxx'i yyy'nin goruldugu yerde değiştir ama onay iste, tumcede
 :%s/xxx/yyy/g  xxx'i yyy'nin goruldugu yerde değiştir, tum dosyada
+
+```
+
+```
+:ab slm selam	 insert modda 'slm'<space> yazıldığında 'selam' ile değiştir.
 
 ```
 
@@ -263,22 +320,48 @@ U        Seçimi büyük harfe çevir (visual mod)
 :g/^$/d  Tum bos satirlari sil
 ```
 
-# Sık kullanılanlar #
+## Sık kullanılanlar 
 
 ```
 yyp     Alt satıra kopyala
 yyP     Üst satıra kopyala
 ddp 	Alt satırla üst satırı yer değiştir
-
+ea      Kelimenin sonuna ekle
+xp 	Yanyana iki harfi yerdeğiştir	 Ör: Microsotf ->  Microsoft 
+dgg     İmleçin bulunduğu yerden dosyanın başına kadar sil
 ```
 
-# Yapılandırma
+## Yapılandırma
 
-## .vimrc dosyası
+### .vimrc dosyası
 
 .vimrc dosyası Vim'in çalışma anında ayarlarını tanımlar. Sistemin kullandığı bir .vimrc ve herbir kullanıcının
 HOME dizininde birer .vimrc vardır. HOME dizinindeki .vimrc sistem .vimrc'yi override eder. 
-Eğer .vimrc HOME dizininde yoksa, vim .vimrc ile oluşturabilirsiniz. Bkz: [Default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
+Eğer .vimrc HOME dizininde yoksa, `vim .vimrc` ile oluşturabilirsiniz. Bkz: [Default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
+
+### Mapping 
+
+mapping ile klavye kısayolu atayabilir, Vim'in default davranışlarını değiştirebilirsin.
+
+```
+:map Y y$
+```
+Yukarıdaki komut Y komutunun davranışını override eder. Y önceden bütün satırı kopyalarken, yy ile aynı, 
+şimdi imlecin bulunduğu yerden satır sonuna kadarki kısmı kopyalar.
+
+```
+:imap jj <Esc>
+```
+Bu komut insert moddayken jj'ye bastığımızda, <Esc> basılmış olarak algılar ve normal moda geçerir.
+
+```
+:map		normal,görsel ve komut modundaki mapping'leri listele
+:map! 		insert ve komut modundaki mapping'leri listele
+
+:nmap 		normal mod mapping'lerini listele
+:vmap	 	görsel mod mapping'lerini listele	
+:imap		insert mod mapping'lerini listele
+```
 
 ## Vundle ile uzantı ekleme
 
@@ -318,7 +401,7 @@ ve
 call vundle#end() 
 ```
 
-atırları arasına, uzatıya göre;
+satırları arasına, uzantıya göre;
 
 - github'taki bir uzantıyı eklemeniz için:
 ```Plugin 'GithubKullanıcıAdı/RepoAdı' ``` Ör: ```Plugin 'tpope/vim-fugitive'```
@@ -336,7 +419,7 @@ atırları arasına, uzatıya göre;
 
 ### Uzantıyı yükleme
 
-Son adımda uzatıyı yüklemek için:
+Son adımda uzantıyı yüklemek için:
 ```
 Vim'de
 :PluginInstall
@@ -356,37 +439,38 @@ $vim +PluginInstall +qall
 
 ```
 
-# Linkler #
+## Linkler 
 
-## Kopya kağıtları ##
+### Kopya kağıtları
 
 * http://www.worldtimzone.com/res/vi.html
 * http://www.fprintf.net/vimCheatSheet.html
 * https://wiki.archlinux.org/index.php/Vim
 * http://www.fprintf.net/vimCheatSheet.html
+* https://devhints.io/vimscript
 
-## Makaleler ##
+### Makaleler 
 
 * Vim notları: https://www.emrah.com/notlar/vim_notlari.txt
 * Etkili 7 metin düzenleme alışkanlığı: http://www.moolenaar.net/habits.html
 * 11 yıl sonra Vim: http://statico.github.com/vim.html
 * Vim'e, eve dönüş: http://stevelosh.com/blog/2010/09/coming-home-to-vim 
 
-## Tavsiye ve Teknikler ##
+### Tavsiye ve Teknikler 
 
 * [vimcasts.org](http://vimcasts.org/) Video-casts on vim
 * [usevim.com](http://usevim.com/) Eklenti tanitimlari ve tavsiyeler
 * [vimregex.com](http://vimregex.com/) Vim'in regex motoru hakkinda bilgiler 
-* http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim Kullanışlı vim kisayollari 
+* [Stackoverflow](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim) Kullanışlı vim kisayollari 
 * Practical Vim - Edit Text at the Speed of Though - Kitap
 
-## Siteler ##
+### Siteler 
 
 * Vim - heryerde bulunan editor: https://www.vim.org/
 * Vim uzantıları: https://vimawesome.com/
 * Belirtilen alıştırmaları en kısa vim komutu kullanarak tamamlama https://vimgolf.com/
 
-## Uzantilar ##
+### Uzantılar
 
 * NERDTree
 * NERDCommenter
