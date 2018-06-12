@@ -1,6 +1,8 @@
 # Vim Kısayolları
 
-Vim shortcuts in Turkish language.
+> Vim shortcuts in Turkish language.
+
+<img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
 
 ## Vim nedir? 
 
@@ -97,9 +99,9 @@ P        	Yapıştır, satırın üstüne
 ```
 
 ```
-:!<cmd>  Vim'den ayrılmadan shell'den <cmd> komutunu calistir Ör: !g++ -Wall -std=c++14 main.cpp
+:!<cmd>  Vim'den ayrılmadan shell'den <cmd> komutunu calistir Ör: `!g++ -Wall -std=c++14 main.cpp`, `!ruby%`
 :sh      Shell'e git, exit ile tekrar Vim'e dön
-C-z      Vim'i arka plana gonder (fg tekrar geri getirir)
+C-z      Vim'i arka plana gonder (fg geri getirir)
 
 ```
 
@@ -201,17 +203,23 @@ Shift-r  Kelimeyi olduğu yerde değiştir. (Windows'taki insert)
 
 ```
 
-## Windows ##
+## Birden Fazla Dosyayla Çalışma 
 
 ```
 C-ws     	Mevcut pencereyi yatay olaral bol (alternatif :split)
 C-wv     	Mevcut pencereyi dikey olarak bol (alternatif :vsplit)
 C-ww     	Sonraki pencereye zipla 
-C-wq		Mevcut pencereyi kapat
+```
+```
 C-wARROW 	Mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zipla
+C-wq		Mevcut pencereyi kapat
+```
+```
 C-w#<    	Mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
 C-w#>    	Mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
 :res #		Yatay bölünmüş pencereyi # kadar yeniden boyutlandır
+```
+```
 C-wH		Mevcut pencereyi en sola taşı 
 C-wJ		Mevcut pencereyi en alta taşı 	
 C-wK		Mevcut pencereyi en üste taşı 	
@@ -219,8 +227,8 @@ C-wL 		Mevcut pencereyi en sağa taşı
 ```
 
 ```
-$ vim -o3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç (horizontally split)
-$ vim -O3 f1.txt f2.txt f3.txt      Dosyaları alt üst aynı pencerede aç (vertically split)
+$ vim -o3 f1.txt f2.txt f3.txt      Dosyaları alt üst aynı pencerede aç (horizontally split)
+$ vim -O3 f1.txt f2.txt f3.txt      Dosyaları yan yana aynı pencerede aç(vertically split)
 
 $ vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaAdı ile yeni dosya ekle
 
@@ -230,16 +238,28 @@ $ vim f1.txt f2.txt f3.txt          Dosyaların her birini aç ama aynı anda sa
 ```
 $ vim -p f1.txt f2.txt 		f1.txt ve f2.txt dosyalarını tab şeklinde aç
 
-:tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-PgDn
-:tabp               önceki tab, normal modda gT, insert modda C-PgUp
 :tabedit dosyaadı   belirtilen dosyayı yeni bir tabda düzenle
 :tabfind dosyaAdı   dosyayı yeni bir tabda aç ve düzenle
+
+```
+```
+:tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-PgDn
+:tabp               önceki tab, normal modda gT, insert modda C-PgUp
 :tabfirst           ilk taba git
 :tablast            son taba git
+
+```
+```
 :tabm {i}           mevcut tabı i+1 inci taba taşı. Ör: :tabm 0 mevcut tabı ilk tab yap, :tabm  mevcut tabı son tab yap
+
+```
+```
 :tabclose i         i numaralı tabı kapat
 :tabclose           mevcut tabı kapat
 :tabonly            diğer tüm tabları kapat
+
+```
+```
 :tabs               tabları listele
 ```
 
@@ -270,7 +290,7 @@ c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
 ```
 x        Imlecin altindaki karakteri sil
 X        Imlecten onceki karakteri sil 
-#x       Imlecin altindaki karakterden itibaren # tane karakter sil
+`#x       Imlecin altindaki karakterden itibaren # tane karakter sil`
 dw       Sonraki kelimeyi sil 
 dW       Sonraki kelimeye kadar sil 
 d^       Satir basina kadar sil
@@ -282,7 +302,9 @@ dib      Parantez blogundaki icerigi sil (Ör: fonksiyon argumanlari)
 ```
 
 ```
-C-n      Anahtar kelime tamamlama
+C-n      Metinde daha önce geçmiş kelimeyi tamamla
+C-p      Metinde daha önce geçmiş kelimeyi tamamla
+ 
 Tab      Anahtar kelime tamamlama (SuperTab uzantisi)
 r<c>     <c> karakterini degistir
 
@@ -462,6 +484,7 @@ $vim +PluginInstall +qall
 * [usevim.com](http://usevim.com/) Eklenti tanitimlari ve tavsiyeler
 * [vimregex.com](http://vimregex.com/) Vim'in regex motoru hakkinda bilgiler 
 * [Stackoverflow](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim) Kullanışlı vim kisayollari 
+* [r/vim](https://www.reddit.com/r/vim/)
 * Practical Vim - Edit Text at the Speed of Though - Kitap
 
 ### Siteler 
@@ -480,3 +503,9 @@ $vim +PluginInstall +qall
 * supertab
 * tagbar
 * omnicomplete (C++)
+
+### Licence
+
+ <a href="http://www.wtfpl.net/"><img
+       src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png"
+       width="80" height="15" alt="WTFPL" /></a>
