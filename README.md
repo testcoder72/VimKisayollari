@@ -265,7 +265,11 @@ $ vim -p f1.txt f2.txt 		f1.txt ve f2.txt dosyalarını tab şeklinde aç
 
 ## Kaydetme
 
-Vim 26 registara sahip (a-z), kaydetmek istedigin bir tanesini sec. Kaydetme modundan ESC ile cik
+Birden fazla hareketi kaydetmek için oldukça kullanışlı. Vim 26 registara sahip (a-z),
+1. q ile kaydetmeyi başlat ve kaydetmek istedigin bir register seç. Örnek: qa
+2. kaydetme modundan ESC ile cik.
+3. kaydedilen değişikliği @<reg> şeklinde uygula. Örnek: @a<enter>
+	
 ```
 q[a-z]   Kaydetmeye basla, Hareketler dahil hersey kaydedilecek
 @[a-z]   Kaydedilen hareketleri baslat
