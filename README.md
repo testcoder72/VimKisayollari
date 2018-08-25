@@ -294,7 +294,7 @@ c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
 ```
 x        Imlecin altindaki karakteri sil
 X        Imlecten onceki karakteri sil 
-`#x       Imlecin altindaki karakterden itibaren # tane karakter sil`
+&#35;x       Imlecin altindaki karakterden itibaren # tane karakter sil
 dw       Sonraki kelimeyi sil 
 dW       Sonraki kelimeye kadar sil 
 d^       Satir basina kadar sil
@@ -321,15 +321,6 @@ f<c>     mevcut imlec pozisyonundan <c> karakterini bul Ör: 3f<c> satırda <c> 
 g;       son duzenlenen pozisyona geri zipla 
 
 ```
-
-```
-:s/xxx/yyy/    xxx'i yyy'nin ilk görüldüğü yerde değiştir
-:s/xxx/yyy/g   xxx'i yyy'nin goruldugu yerde değiştir, tumcede (global)
-:s/xxx/yyy/gc  xxx'i yyy'nin goruldugu yerde değiştir ama onay iste, tumcede
-:%s/xxx/yyy/g  xxx'i yyy'nin goruldugu yerde değiştir, tum dosyada
-
-```
-
 ```
 :ab slm selam	 insert modda 'slm'<space> yazıldığında 'selam' ile değiştir.
 
@@ -344,6 +335,19 @@ U        Seçimi büyük harfe çevir (visual mod)
 ```
 :g/^#/d  # ile baslayan tum satirlari sil
 :g/^$/d  Tum bos satirlari sil
+```
+
+### Bul ve Değiştir
+
+```
+:s/eski/yeni      Mevcut satırda ilk 'eski'nin görüldüğü yeri 'yeni' ile değiştir
+:s/eski/yeni/g    Mevcut satırdaki tüm 'eski'leri 'yeni' ile değiştir
+:s/eski/yeni/gc   Mevcut satırdaki tüm 'eski'leri 'yeni' ile değiştir ama öncesinde onay iste
+
+:#,#s/old/new/g   # ve # satırları (dahil) arasındaki 'eski'leri 'yeni' ile değiştir
+:%s/eski/yeni/g   Mevcut dosyadaki tüm 'eski'leri 'yeni' ile değiştir
+:%s/eski/yeni/gc  Mevcut dosyadaki tüm 'eski'leri 'yeni' ile değiştir ama öncesinde onay iste
+
 ```
 
 ## Sık kullanılanlar 
