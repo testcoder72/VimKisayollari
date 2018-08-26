@@ -189,6 +189,12 @@ B        Geriye dogru kelimenin basina zipla (isaretleme yok)
 ## Insert moda geçme ##
 
 ```
+/~~~~~~~~~~\<---Esc-----/~~~~~~~~~~\
+|Normal Mod|            |Insert mod|
+\~~~~~~~~~~/--aAiIoO--->\~~~~~~~~~~/
+```
+
+```
 i        İmlecten öncesine text ekle
 I        Satırın başına ekle
 a        İmlecten sonra textin sonuna ekle
