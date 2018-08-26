@@ -23,11 +23,12 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 * [Genel](#genel)
 * [Hareketler](#hareketler)
 * [Insert moda geçme](#insert-moda-geçme)
-* [Windows](#windows)
+* [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalişma)
 	* [Tabları kullanma](#tablari-kullanma)
 * [Kaydetme](#kaydetme)
 * [Komutlari tekrar etme](#komutlari-tekrar-etme)
 * [Düzenleme](#düzenleme)
+	* [Bul ve Değiştir](#bul-ve-değiştir)
 * [Sık kullanılanlar](#sik-kullanilanlar)
 * [Yapılandırma](#yapilandirma)
 	* [vimrc dosyası](#vimrc-dosyasi)
@@ -300,7 +301,6 @@ c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
 ```
 x        Imlecin altindaki karakteri sil
 X        Imlecten onceki karakteri sil 
-&#35;x       Imlecin altindaki karakterden itibaren # tane karakter sil
 dw       Sonraki kelimeyi sil 
 dW       Sonraki kelimeye kadar sil 
 d^       Satir basina kadar sil
@@ -507,16 +507,14 @@ $vim +PluginInstall +qall
 * Vim uzantıları: https://vimawesome.com/
 * Belirtilen alıştırmaları en kısa vim komutu kullanarak tamamlama https://vimgolf.com/
 
-### Uzantılar
+### Bazı Uzantılar
 
 * NERDTree
 * NERDCommenter
 * Ctrl-P
 * easytags
 * unimpard
-* supertab
-* tagbar
-* omnicomplete (C++)
+* YouCompleteMe
 
 ### Licence
 
