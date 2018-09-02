@@ -433,7 +433,7 @@ autocmd filetype cpp nnoremap <f5> :w <bar> !clear && clang++-6.0
 	\ -std=c++1z -o2 %  && ./a.out <CR>
 ```
  
-yukarıdaki örnekte f5 sağındaki tüm komutları çalıştırır. 
+yukarıdaki örnekte f5 sağındaki tüm komutları çalıştırır, ve yalnızca `.cpp` uzantılı dosyalar için çalışacaktır.
 
 sırasıyla:
 
@@ -441,12 +441,11 @@ sırasıyla:
 2. :w ile dosyayı kaydeder
 3. `<bar>` diğer komutları bağlamada kullanılır
 4. !clear bir bash komutu olan _clear_ çalıştırılır
-5. komutun uzunluğu arttığından bir alt satırdan devam etmek için alttaki satırın başına '"\' ekledik
+5. komut uzun olduğundan, bir alt satırdan devam etmek için alttaki satırın başına `\` ekledik
 6. clang flagleriyle derlemeyi çalıştırıp `<CR>` yani enter tuşuna basmış olduk
 
 #### leader değişkeni
 _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
-
 
 ```
 let mapleader = "-"
@@ -483,13 +482,10 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-
 " ----> Uzantılar Buraya <-----
-
 
 call vundle#end()        
 filetype plugin indent on  
-
 ```
 
 Vundle ile uzantı eklemek içim .vimrc dosyasındaki:
