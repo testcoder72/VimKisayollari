@@ -385,9 +385,9 @@ eklememiz gerekir.
 
  üç temel mod için 3 temel mapping çeşidi vardır. 
 
-normal modda çalışabilicek nmap
-insert modda çalışabilicek imap
-visual modda çalışabilecek vmap
+- normal modda çalışabilicek **nmap**
+- insert modda çalışabilicek **imap**
+- visual modda çalışabilecek **vmap**
 
 genel formül: 
 > map kısayol uzunKomutlar
@@ -409,9 +409,9 @@ nmap o 4o
 ```
 mapleri no-recursive  için de komutun başına *nore* getirilir.
 
-normal mod için nnoremap
-insert mod için inoremap
-visual mod için vnoremap
+- normal mod için **nnoremap**
+- insert mod için **inoremap**
+- visual mod için **vnoremap**
 
 bu komut beklediğimiz gibi çalışır, normal moddayken _o_'ya bastığımızda 4 satır alta inip insert 
 moda geçer.
