@@ -430,19 +430,19 @@ autocmd filetype cpp nnoremap <f5> :w <bar> !clear && clang++-6.0
 	\ -wold-style-cast
 	\ -woverloaded-virtual 
 	\ -wconversion 
-	\ -std=c++1z -o2 %  && ./a.out <cr>
+	\ -std=c++1z -o2 %  && ./a.out <CR>
 ```
  
 yukarıdaki örnekte f5 sağındaki tüm komutları çalıştırır. 
 
 sırasıyla:
 
-autocmd komutu filetype event'ini çağırır ve dosya tipi cpp ise map çalıştırılabilir
-:w ile dosyayı kaydeder
-<bar> diğer komutları bağlamada kullanılır
-!clear bir bash komutu olan _clear_ çalıştırılır
-komutun uzunluğu arttığından bir alt satırdan devam etmek için alttaki satırın başına '\' ekledik
-clang flagleriyle derlemeyi çalıştırıp <cr> yani enter tuşuna basmış olduk
+1. autocmd komutu filetype event'ini çağırır ve dosya tipi cpp ise map çalıştırılabilir
+2. :w ile dosyayı kaydeder
+3.  <bar> diğer komutları bağlamada kullanılır
+4. !clear bir bash komutu olan _clear_ çalıştırılır
+5. komutun uzunluğu arttığından bir alt satırdan devam etmek için alttaki satırın başına '\' ekledik
+6. clang flagleriyle derlemeyi çalıştırıp <cr> yani enter tuşuna basmış olduk
 
 #### leader değişkeni
 _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
