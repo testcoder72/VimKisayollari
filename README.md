@@ -439,10 +439,10 @@ sırasıyla:
 
 1. autocmd komutu filetype event'ini çağırır ve dosya tipi cpp ise map çalıştırılabilir
 2. :w ile dosyayı kaydeder
-3.  <bar> diğer komutları bağlamada kullanılır
+3. `<bar>` diğer komutları bağlamada kullanılır
 4. !clear bir bash komutu olan _clear_ çalıştırılır
 5. komutun uzunluğu arttığından bir alt satırdan devam etmek için alttaki satırın başına '\' ekledik
-6. clang flagleriyle derlemeyi çalıştırıp <cr> yani enter tuşuna basmış olduk
+6. clang flagleriyle derlemeyi çalıştırıp `<CR>` yani enter tuşuna basmış olduk
 
 #### leader değişkeni
 _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
