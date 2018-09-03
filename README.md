@@ -498,7 +498,6 @@ ve
 ```
 call vundle#end() 
 ```
-
 satırları arasına, uzantıya göre;
 
 - github'taki bir uzantıyı eklemeniz için:
@@ -534,7 +533,6 @@ $vim +PluginInstall +qall
 :PluginInstall! 		uzantıları güncelle
 :PluginSearch <abc>		<abc> uzantısını ara
 :PluginClean 			kullanılmayan uzantıları kaldır
-
 ```
 
 ## Linkler 
@@ -547,10 +545,16 @@ $vim +PluginInstall +qall
 * http://www.fprintf.net/vimCheatSheet.html
 * https://devhints.io/vimscript
 
+### Kitaplar
+* Practical Vim: Edit Text at the Speed of Though - Drew Neil
+* Modern Vim - Drew Neil
+* Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
+* The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
+
 ### Makaleler 
 
 * Vim notları: https://www.emrah.com/notlar/vim_notlari.txt
-* Etkili 7 metin düzenleme alışkanlığı: http://www.moolenaar.net/habits.html
+* 7 Etkili metin düzenleme alışkanlığı: http://www.moolenaar.net/habits.html
 * 11 yıl sonra Vim: http://statico.github.com/vim.html
 * Vim'e, eve dönüş: http://stevelosh.com/blog/2010/09/coming-home-to-vim 
 
@@ -560,14 +564,14 @@ $vim +PluginInstall +qall
 * [usevim.com](http://usevim.com/) Eklenti tanitimlari ve tavsiyeler
 * [vimregex.com](http://vimregex.com/) Vim'in regex motoru hakkinda bilgiler 
 * [Stackoverflow](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim) Kullanışlı vim kisayollari 
-* [r/vim](https://www.reddit.com/r/vim/)
-* Practical Vim - Edit Text at the Speed of Though - Kitap
+* [r/vim](https://www.reddit.com/r/vim/) Vim subreddit
+* [vimrcfu](https://vimrcfu.com/) *.vimrc* ve mapping tavsiyeleri
 
 ### Siteler 
 
-* Vim - heryerde bulunan editor: https://www.vim.org/
-* Vim uzantıları: https://vimawesome.com/
-* Belirtilen alıştırmaları en kısa vim komutu kullanarak tamamlama https://vimgolf.com/
+* [Vim.org](https://www.vim.org) Vim - heryerde bulunan editor
+* [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
+* [vimgolf.com](https://vimgolf.com) Vim alıştırmaları
 
 ### Bazı Uzantılar
 
