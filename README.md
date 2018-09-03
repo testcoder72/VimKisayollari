@@ -191,9 +191,9 @@ b        geriye dogru kelimenin basina zıpla (isaretleme yok)
 ## insert moda geçme ##
 
 ```
-/~~~~~~~~~~\<---esc-----/~~~~~~~~~~\
+/~~~~~~~~~~\<---Esc-----/~~~~~~~~~~\
 |normal mod|            |insert mod|
-\~~~~~~~~~~/--aaiioo--->\~~~~~~~~~~/
+\~~~~~~~~~~/--aAiIoO--->\~~~~~~~~~~/
 ```
 
 ```
@@ -392,14 +392,21 @@ eklememiz gerekir.
 genel formül: 
 > map kısayol uzunKomutlar
 
-aşağıda m tuşuna ctrl-d komutlarını (yarım sayfa alta) atamış olduk
-
 ```
-nmap m <C-d>  
+nmap m <C-d>	"m tuşuna ctrl-d komutlarını (yarım sayfa alta) atamış olduk
+imap jk <ESC>	"insert moddayken jk basıldığında ESC basılmış gibi, normal moda geç
 ```
-
+daha fazla özel karakter ismi için:
+```
+:h key-notation
+```
 ama bu komutlar daha önce maplenmiş diğer komutları çakışabileceğinden,
  mümkün mertebe komutları no-recursive yapmak iyi bir uygulamadır. 
+
+Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadığını öğrenmek için:
+```
+:verbose map kısayol 
+```
 
 aşağıda _o_ yani alt satıra in ve insert moda geç, komutunu 4 kere tekrarlayacığını umduğumuz bu komut
 sonsuz döngü neden olur. _o_ _4o_'yu, _4o_ diğer bir _4o_'yu çağırmaya çalışcaktır.
@@ -571,6 +578,7 @@ $vim +PluginInstall +qall
 
 * [Vim.org](https://www.vim.org) Vim - heryerde bulunan editor
 * [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
+* [vimdoc.sourceforge.net](http://vimdoc.sourceforge.net/htmldoc/vimfaq.html) Vim Sık Sorulan Sorular
 * [vimgolf.com](https://vimgolf.com) Vim alıştırmaları
 
 ### Bazı Uzantılar
