@@ -8,6 +8,28 @@
 
 Vim etkili biçimde metin düzenlemek için çok iyi yapılandırılabilir bir metin editorüdür.
 
+### Vim Tarihi <sup>1</sup>
+
+**ed** Unix'in orijinal text editörüydü. Video ekranların yaygın olmadığı bir zamanda yazılmıştı. Kaynak kod\
+genelde sarılmış bir kağıda yazdırır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlen\
+mesi için anabilgisayara gönderilir ve her bir komutun çıktısı yazdırılırdı. O günlerde terminal ile anabilgi\
+sayar arasındaki bağlantı yavaştı, hatta o kadar ki hızlı yazan biri ağı, işlenecebilecekten daha fazla komut\
+göndererek, doldurabilirdi. Bu bağlamda **ed**'in kısa komutlar sunması hayli önemliydi. Mesela *p* mevcut \
+satırı yazdırırken, *%p* tüm dosyayı yazdırır\.
+
+
+**ed** birkaç kuşak ilerlemeden geçti, mesela **em** ("editor for mortals", ölümlüler için editör), **en**, \
+ve sonunda **ex**. O zamana gelindiğinde video ekranlar daha yaygındı, **ex** terminal ekranını, dosyanın\
+ içeriğini gösteren etkileşimli pencerelere çeviren bir özellik ekledi. Şimdi yapılan değişikleri \
+gerçek-zamanlı olarak görmek olanaklıydı. Ekran-düzenleme modu **:visual** veya kısaca **:vi** komutu ile \
+aktif hale getiriliyordu.  **vi** ismi burdan geldi.\
+
+
+**Vim**, *vi improved* (vi geliştirildi)'nin kısaltmasıdır. Vim bundan çok daha fazlasıdır - ben düz vi kul-\
+lanmaya katlanamam! vi'de olmayan Vim özelliklerinin listesi için **vi-differences**'a bakınız. Vim'in geliş-\
+tirmeleri çok önemlidir ama atalarına hala çok şey borçludur. Vim'in atalarının tasarımına rehberlik eden \
+kısıtlar bize bugün hala değerli olan bir komut kümesi bıraktı.\
+
 ##  Vim ne değildir? 
 
 Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildir. Bir araçtır, kullanılması
@@ -80,7 +102,7 @@ $ vimtutor          vim resmi öğretici metni
 ```
 u        	geri al, ör: 4u
 c-r      	ileri al
-u        	satırdaki tüm değisikliği geri al
+U        	satırdaki tüm değisikliği geri al
 
 s=seconds, m=minute, h=hour, d=day
 :earlier #m     dosyayı # dakika önceki haline döndür ör: :earlier 2m  veya :ea 3d
@@ -589,6 +611,8 @@ $vim +PluginInstall +qall
 * easytags
 * unimpard
 * YouCompleteMe
+
+<sup>1</sup> *Practical Vim: Edit Text at the Speed of Though* kitabından
 
 ### Licence
 
