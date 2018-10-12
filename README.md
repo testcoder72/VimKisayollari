@@ -10,25 +10,25 @@ Vim etkili biçimde metin düzenlemek için çok iyi yapılandırılabilir bir m
 
 ### Vim Tarihi <sup>1</sup>
 
-**ed** Unix'in orijinal text editörüydü. Video ekranların yaygın olmadığı bir zamanda yazılmıştı. Kaynak kod\
-genelde sarılmış bir kağıda yazdırır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlen\
-mesi için anabilgisayara gönderilir ve her bir komutun çıktısı yazdırılırdı. O günlerde terminal ile anabilgi\
-sayar arasındaki bağlantı yavaştı, hatta o kadar ki hızlı yazan biri ağı, işlenecebilecekten daha fazla komut\
-göndererek, doldurabilirdi. Bu bağlamda **ed**'in kısa komutlar sunması hayli önemliydi. Mesela *p* mevcut \
+**ed** Unix'in orijinal text editörüydü. Video ekranların yaygın olmadığı bir zamanda yazılmıştı. Kaynak kod
+genelde sarılmış bir kağıda yazdırır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlen
+mesi için anabilgisayara gönderilir ve her bir komutun çıktısı yazdırılırdı. O günlerde terminal ile anabilgi
+sayar arasındaki bağlantı yavaştı, hatta o kadar ki hızlı yazan biri ağı, işlenecebilecekten daha fazla komut
+göndererek, doldurabilirdi. Bu bağlamda **ed**'in kısa komutlar sunması hayli önemliydi. Mesela *p* mevcut 
 satırı yazdırırken, *%p* tüm dosyayı yazdırır.
 
 
-**ed** birkaç kuşak ilerlemeden geçti, mesela **em** ("editor for mortals", ölümlüler için editör), **en**, \
-ve sonunda **ex**. O zamana gelindiğinde video ekranlar daha yaygındı, **ex** terminal ekranını, dosyanın\
- içeriğini gösteren etkileşimli pencerelere çeviren bir özellik ekledi. Şimdi yapılan değişikleri \
-gerçek-zamanlı olarak görmek olanaklıydı. Ekran-düzenleme modu **:visual** veya kısaca **:vi** komutu ile \
+**ed** birkaç kuşak ilerlemeden geçti, mesela **em** ("editor for mortals", ölümlüler için editör), **en**, 
+ve sonunda **ex**. O zamana gelindiğinde video ekranlar daha yaygındı, **ex** terminal ekranını, dosyanın
+ içeriğini gösteren etkileşimli pencerelere çeviren bir özellik ekledi. Şimdi yapılan değişikleri 
+gerçek-zamanlı olarak görmek olanaklıydı. Ekran-düzenleme modu **:visual** veya kısaca **:vi** komutu ile 
 aktif hale getiriliyordu.  **vi** ismi burdan geldi.
 
 
-**Vim**, *vi improved* (vi geliştirildi)'nin kısaltmasıdır. Vim bundan çok daha fazlasıdır - ben düz vi kul-\
-lanmaya katlanamam! vi'de olmayan Vim özelliklerinin listesi için **vi-differences**'a bakınız. Vim'in geliş-\
-tirmeleri çok önemlidir ama atalarına hala çok şey borçludur. Vim'in atalarının tasarımına rehberlik eden \
-kısıtlar bize bugün hala değerli olan bir komut kümesi bıraktı.
+**Vim**, *vi improved* (vi geliştirildi)'nin kısaltmasıdır. Vim bundan çok daha fazlasıdır - ben düz vi kul
+lanmaya katlanamam! vi'de olmayan Vim özelliklerinin listesi için **vi-differences**'a bakınız. Vim'in geliş
+tirmeleri çok önemlidir ama atalarına hala çok şey borçludur. Vim'in atalarının tasarımına rehberlik eden
+ kısıtlar bize bugün hala değerli olan bir komut kümesi bıraktı.
 
 ##  Vim ne değildir? 
 
@@ -74,19 +74,19 @@ $ vim dizin/dosyaAdı
 ## Vim modları
 
 ```
-vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
+Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 
 normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir.
 insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.
-görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, c-v ile block bazında görsel moda geçilir.
+görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.
 komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. her bir komuttan sonra <enter> basılmalıdır. ör. :h ctrl-r <enter>
 
 ```
-## genel
+## Genel
 
 ```
 $ vimtutor          vim resmi öğretici metni
-:h konu             belirtilen konu hakkında detaylı yardım dosyasını aç, yardım dosyası içindeki hyperlinke tıklamak için imlec linkin altıdayken c-], geri c-[
+:h konu             belirtilen konu hakkında detaylı yardım dosyasını aç, yardım dosyası içindeki hyperlinke tıklamak için imlec linkin altıdayken C-], geri C-[
 
 :q                  kapat
 :w                  kaydet/write
@@ -101,7 +101,7 @@ $ vimtutor          vim resmi öğretici metni
 
 ```
 u        	geri al, ör: 4u
-c-r      	ileri al
+C-r      	ileri al	(Ctrl'ye basılı tutarak r) 
 U        	satırdaki tüm değisikliği geri al
 
 s=seconds, m=minute, h=hour, d=day
@@ -124,12 +124,12 @@ p        	yapıştır, satırın üstüne
 
 ```
 :!<cmd>  vim'den ayrılmadan shell'den <cmd> komutunu calistir ör: `!g++ -wall -std=c++14 main.cpp`, `!ruby%`
-:sh      shell'e git, exit ile tekrar vim'e dön
-c-z      vim'i arka plana gonder (fg geri getirir)
+:sh      shell'e git, `exit` ile tekrar vim'e dön
+C-z      vim'i arka plana gonder (fg geri getirir)
 
 ```
 
-## hareketler
+## Hareketler
 
 ```
 
@@ -161,10 +161,10 @@ l        ekranin altina zıpla (low)
 ```
 
 ```
-c-b      tam ekran boyu kadar yukarı git (page up)
-c-f      tam ekran boyu kadar aşağı git  (page down)
-c-d      yarım ekran aşağı
-c-u      yarım ekran yukarı
+C-b      tam ekran boyu kadar yukarı git (page up)
+C-f      tam ekran boyu kadar aşağı git  (page down)
+C-d      yarım ekran aşağı
+C-u      yarım ekran yukarı
 ```
 
 ```
@@ -192,7 +192,7 @@ w        sonraki kelimenin başına zıpla (işaretlemelerin ayrı bir kelime ol
 e        sonraki kelimenin sonuna zıpla
 ge 	 önceki kelimenin sonuna zıpla
 b        kelimenin başına zıpla
-^        ilk boş olmayan karakter
+^        boşluk olmayan ilk karakter
 gg       dosyanin en ustu
 g        dosyanin en alti
 + 	 sonraki satır başına
@@ -201,16 +201,16 @@ g        dosyanin en alti
 
 ```
  
-```
-e        kelimenin sonuna zıpla (isaretlemelerin kelime olduğu varsayılmaz)
-w        kelimenin basina zıpla 
-b        geriye dogru kelimenin basina zıpla (isaretleme yok)
+```                                                                                            v           v
+E        kelimenin sonuna zıpla (isaretlemelerin ayrı bir kelime olduğu varsayılmaz) Ör: e (abcd)   E (abcd)
+W        kelimenin basina zıpla 
+B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 #g       # numaralı satıra git ör: 38g
 #gg      #g ile aynı
 
 ```
 
-## insert moda geçme ##
+## Insert moda geçme ##
 
 ```
 /~~~~~~~~~~\<---Esc-----/~~~~~~~~~~\
@@ -227,34 +227,34 @@ o        imlecin altina yeni bir satir yap ve text ekle
 o        imlecin ustune yeni bir satir yap ve text ekle
 s        imlecin altindaki harfi sil 
 s        tum satiri sil
-cc       mevcut satiri sil
-cw       kelimeyi sil
+cc       mevcut satiri sil ve insert moda geç
+cw       kelimeyi sil ve insert moda geç (change word)
 shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
 
 ```
 
-## birden fazla dosyayla çalışma 
+## Birden fazla dosyayla çalışma 
 
 ```
-c-ws     	mevcut pencereyi yatay olaral bol (alternatif :split)
+C-ws     	mevcut pencereyi yatay olaral bol (alternatif :split)
  
-c-wv     	mevcut pencereyi dikey olarak bol (alternatif :vsplit)
-c-ww     	sonraki pencereye zıpla 
+C-wv     	mevcut pencereyi dikey olarak bol (alternatif :vsplit)
+C-ww     	sonraki pencereye zıpla 
 ```
 ```
-c-warrow 	mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zıpla
-c-wq		mevcut pencereyi kapat
+C-warrow 	mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zıpla
+C-wq		mevcut pencereyi kapat
 ```
 ```
-c-w#<    	mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
-c-w#>    	mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
+C-w#<    	mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
+C-w#>    	mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
 :res #		yatay bölünmüş pencereyi # kadar yeniden boyutlandır
 ```
 ```
-c-wh		mevcut pencereyi en sola taşı 
-c-wj		mevcut pencereyi en alta taşı 	
-c-wk		mevcut pencereyi en üste taşı 	
-c-wl 		mevcut pencereyi en sağa taşı
+C-wh		mevcut pencereyi en sola taşı 
+C-wj		mevcut pencereyi en alta taşı 	
+C-wk		mevcut pencereyi en üste taşı 	
+C-wl 		mevcut pencereyi en sağa taşı
 ```
 
 ```
@@ -274,8 +274,8 @@ $ vim -p f1.txt f2.txt 		f1.txt ve f2.txt dosyalarını tab şeklinde aç
 
 ```
 ```
-:tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda c-pgdn
-:tabp               önceki tab, normal modda gt, insert modda c-pgup
+:tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-pgdn
+:tabp               önceki tab, normal modda gt, insert modda C-pgup
 :tabfirst           ilk taba git
 :tablast            son taba git
 
@@ -294,7 +294,7 @@ $ vim -p f1.txt f2.txt 		f1.txt ve f2.txt dosyalarını tab şeklinde aç
 :tabs               tabları listele
 ```
 
-## kaydetme
+## Kaydetme
 
 birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara sahip (a-z),
 1. q ile kaydetmeyi başlat ve kaydetmek istedigin bir register seç. örnek: qa
@@ -307,7 +307,7 @@ q[a-z]   kaydetmeye basla, hareketler dahil hersey kaydedilecek
 ```
 
 
-## komutları tekrar etme
+## Komutları tekrar etme
 
 **operatör [sayı] hareket** veya **[sayı] operator hareket**
 
@@ -320,24 +320,24 @@ c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
 ```
 
 
-## düzenleme 
+## Düzenleme 
 
 ```
 x        imlecin altindaki karakteri sil
-x        imlecten onceki karakteri sil 
+X        imlecten önceki karakteri sil 
 dw       sonraki kelimeyi sil 
-dw       sonraki kelimeye kadar sil 
+dW       sonraki kelimeye kadar sil 
 d^       satir basina kadar sil
 d$       satir sonuna kadar sil 
-d        satir sonuna kadar sil d$ ile ayni 
+D        satir sonuna kadar sil d$ ile ayni 
 dd       tum satiri sil
 dib      parantez blogundaki icerigi sil (ör: fonksiyon argumanlari)
 
 ```
 
 ```
-c-n      metinde daha önce geçmiş kelimeyi tamamla
-c-p      metinde daha önce geçmiş kelimeyi tamamla
+C-n      metinde daha önce geçmiş kelimeyi tamamla
+C-p      metinde daha önce geçmiş kelimeyi tamamla
  
 tab      anahtar kelime tamamlama (supertab uzantisi)
 r<c>     <c> karakterini degistir
@@ -380,7 +380,7 @@ u        seçimi büyük harfe çevir (visual mod)
 
 ```
 
-## bazı sık kullanılanlar 
+## Bazı sık kullanılanlar 
 
 ```
 yyp     alt satıra kopyala
@@ -391,7 +391,7 @@ xp 	yanyana iki harfi yerdeğiştir	 ör: microsotf ->  microsoft
 dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ```
 
-## yapılandırma
+## Yapılandırma
 
 ### .vimrc dosyası
 
@@ -497,7 +497,7 @@ bütün mapleri görmek için:
 
 Vundle (Vim bundle) Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
 
-### Kurulum
+### kurulum
 
 ```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
@@ -543,7 +543,7 @@ satırları arasına, uzantıya göre;
 
 şekillerinde eklememiz gerekiyor.
 
-### Uzantıyı yükleme
+### uzantıyı yükleme
 
 Son adımda uzantıyı yüklemek için:
 ```
@@ -554,7 +554,7 @@ shell'de
 $vim +PluginInstall +qall
 ```
 
-### Uzantılar hakkında bilgi
+### uzantılar hakkında bilgi
 
 ```
 :PluginList			uzantıyıları listele
@@ -566,7 +566,7 @@ $vim +PluginInstall +qall
 
 ## Linkler 
 
-### Kopya kağıtları
+### kopya kağıtları
 
 * http://www.worldtimzone.com/res/vi.html
 * http://www.fprintf.net/vimCheatSheet.html
@@ -574,20 +574,20 @@ $vim +PluginInstall +qall
 * http://www.fprintf.net/vimCheatSheet.html
 * https://devhints.io/vimscript
 
-### Kitaplar
+### kitaplar
 * Practical Vim: Edit Text at the Speed of Though - Drew Neil
 * Modern Vim - Drew Neil
 * Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
 * The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
 
-### Makaleler 
+### makaleler 
 
 * Vim notları: https://www.emrah.com/notlar/vim_notlari.txt
 * 7 Etkili metin düzenleme alışkanlığı: http://www.moolenaar.net/habits.html
 * 11 yıl sonra Vim: http://statico.github.com/vim.html
 * Vim'e, eve dönüş: http://stevelosh.com/blog/2010/09/coming-home-to-vim 
 
-### Tavsiye ve Teknikler 
+### tavsiye ve teknikler 
 
 * [vimcasts.org](http://vimcasts.org/) Video-casts on vim
 * [usevim.com](http://usevim.com/) Eklenti tanitimlari ve tavsiyeler
@@ -596,14 +596,14 @@ $vim +PluginInstall +qall
 * [r/vim](https://www.reddit.com/r/vim/) Vim subreddit
 * [vimrcfu](https://vimrcfu.com/) *.vimrc* ve mapping tavsiyeleri
 
-### Siteler 
+### siteler 
 
 * [Vim.org](https://www.vim.org) Vim - heryerde bulunan editor
 * [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
 * [vimdoc.sourceforge.net](http://vimdoc.sourceforge.net/htmldoc/vimfaq.html) Vim Sık Sorulan Sorular
 * [vimgolf.com](https://vimgolf.com) Vim alıştırmaları
 
-### Bazı Uzantılar
+### bazı Uzantılar
 
 * NERDTree
 * NERDCommenter
