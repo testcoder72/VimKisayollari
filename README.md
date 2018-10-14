@@ -11,9 +11,9 @@ Vim etkili biçimde metin düzenlemek için çok iyi yapılandırılabilir bir m
 ### Vim Tarihi <sup>1</sup>
 
 **ed** Unix'in orijinal text editörüydü. Video ekranların yaygın olmadığı bir zamanda yazılmıştı. Kaynak kod
-genelde sarılmış bir kağıda yazdırır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlen
-mesi için anabilgisayara gönderilir ve her bir komutun çıktısı yazdırılırdı. O günlerde terminal ile anabilgi
-sayar arasındaki bağlantı yavaştı, hatta o kadar ki hızlı yazan biri ağı, işlenecebilecekten daha fazla komut
+genelde sarılmış bir kağıda yazılır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlenmesi
+ için anabilgisayara gönderilir ve her bir komutun çıktısı yazdırılırdı. O günlerde terminal ile anabilgisayar
+ arasındaki bağlantı yavaştı, hatta o kadar ki hızlı yazan biri ağı, işlenecebilecekten daha fazla komut
 göndererek, doldurabilirdi. Bu bağlamda **ed**'in kısa komutlar sunması hayli önemliydi. Mesela *p* mevcut 
 satırı yazdırırken, *%p* tüm dosyayı yazdırır.
 
@@ -117,7 +117,7 @@ p        	yapıstır, satırın altına (paste)
 "<reg>y  	seçili bolgeyi registera koplaya (a-z den register) 
 c        	seçili bolgeyi kes
 "<reg>p  	registera yapistir (a-z den register) 
-p        	yapıştır, satırın üstüne
+P        	yapıştır, satırın üstüne
 . 		son komutu tekrarla
 
 ```
