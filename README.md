@@ -1,6 +1,6 @@
 # Vim Kısayolları
 
-> Vim shortcuts in Turkish language.
+> Vim shortcuts in Turkish.
 
 <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
 
@@ -25,9 +25,9 @@ gerçek-zamanlı olarak görmek olanaklıydı. Ekran-düzenleme modu **:visual**
 aktif hale getiriliyordu.  **vi** ismi burdan geldi.
 
 
-**Vim**, *vi improved* (vi geliştirildi)'nin kısaltmasıdır. Vim bundan çok daha fazlasıdır - ben düz vi kul
-lanmaya katlanamam! vi'de olmayan Vim özelliklerinin listesi için **vi-differences**'a bakınız. Vim'in geliş
-tirmeleri çok önemlidir ama atalarına hala çok şey borçludur. Vim'in atalarının tasarımına rehberlik eden
+**Vim**, *vi improved* (vi geliştirildi)'nin kısaltmasıdır. Vim bundan çok daha fazlasıdır -ben düz vi kullanmaya katlanamam!- 
+vi'de olmayan Vim özelliklerinin listesi için **vi-differences**'a bakınız. Vim'in geliştirmeleri
+ çok önemlidir ama atalarına hala çok şey borçludur. Vim'in atalarının tasarımına rehberlik eden
  kısıtlar bize bugün hala değerli olan bir komut kümesi bıraktı.
 
 ##  Vim ne değildir? 
@@ -39,27 +39,29 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 
 ```
 <esc> :q! <enter> 
-
 ```
+
 * [Dosya oluşturma](#dosya-oluşturma)
-* [Vim modları](#vim-modlari)
+* [Vim modları](#vim-modları)
 * [Genel](#genel)
 * [Hareketler](#hareketler)
 * [Insert moda geçme](#insert-moda-geçme)
-* [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalişma)
-	* [Tabları kullanma](#tablari-kullanma)
+* [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalışma)
+    * [Tabları kullanma](#tabları-kullanma)
 * [Kaydetme](#kaydetme)
-* [Komutlari tekrar etme](#komutlari-tekrar-etme)
+* [Komutlari tekrar etme](#komutları-tekrar-etme)
 * [Düzenleme](#düzenleme)
-	* [Bul ve Değiştir](#bul-ve-değiştir)
-* [Sık kullanılanlar](#sik-kullanilanlar)
-* [Yapılandırma](#yapilandirma)
-	* [vimrc dosyası](#vimrc-dosyasi)
-	* [Mapping](#mapping)
-* [Vundle ile uzantı ekleme](#vundle-ile-uzanti-ekleme)
-	1. [Kurulum](#kurulum)
-	2. [Uzantıyı yükleme](#uzantiyi-yükleme)
-	3. [Uzantılar hakkında bilgi](#uzantilar-hakkinda-bilgi)
+    * [Bul ve Değiştir](#bul-ve-değiştir)
+* [Sık kullanılanlar](#sık-kullanılanlar)
+* [Yapılandırma](#yapılandırma)
+    * [vimrc dosyası](#vimrc-dosyası)
+    * [Mapping](#mapping)
+* [Uzantı ekleme](#uzantı-ekleme) 
+    * [Vundle ile uzantı ekleme](#vundle-ile-uzantı-ekleme)
+    1. [Kurulum](#kurulum)
+    2. [Uzantıyı yükleme](#uzantıyı-yükleme)
+    3. [Uzantılar hakkında bilgi](#uzantılar-hakkında-bilgi)
+* [Bazı Uzantılar](#bazı-uzantılar)
 * [Linkler](#linkler)
 
 ## Dosya oluşturma
@@ -93,32 +95,32 @@ $ vimtutor          vim resmi öğretici metni
 :saveas dosyaadı    farklı kaydet
 :wa[!]              yaz/kaydet butun pencereler [zorla]
 :wq                 kaydet ve çık
-:wqa		    bütün tabları kaydet ve çık (write, quit all) bkz: [tabları kullanma](#tablari-kullanma)
+:wqa                bütün tabları kaydet ve çık (write, quit all) bkz: [tabları kullanma](#tablari-kullanma)
 :x                  yaz ve çık, wq ile aynı
 :q!                 dosya değismişse ve değişiklik kaydedilmeyecekse kapatmaya zorla
 
 ```
 
 ```
-u        	geri al, ör: 4u
-C-r      	ileri al	(Ctrl'ye basılı tutarak r) 
-U        	satırdaki tüm değisikliği geri al
+u                geri al, ör: 4u
+C-r              ileri al        (Ctrl'ye basılı tutarak r) 
+U                satırdaki tüm değisikliği geri al
 
 s=seconds, m=minute, h=hour, d=day
 :earlier #m     dosyayı # dakika önceki haline döndür ör: :earlier 2m  veya :ea 3d
-:later #m 	dosyayı # dakika sonraki haline döndür ör: :later 7s  veya  :lat 9h
+:later #m       dosyayı # dakika sonraki haline döndür ör: :later 7s  veya  :lat 9h
 
 ```
 
 ```
-y        	seçili bölgeyi kopyala (yank)
-yy       	bütün satırı kopyala
-p        	yapıstır, satırın altına (paste)
-"<reg>y  	seçili bolgeyi registera koplaya (a-z den register) 
-c        	seçili bolgeyi kes
-"<reg>p  	registera yapistir (a-z den register) 
-P        	yapıştır, satırın üstüne
-. 		son komutu tekrarla
+y                seçili bölgeyi kopyala (yank)
+yy               bütün satırı kopyala
+p                yapıstır, satırın altına (paste)
+"<reg>y          seçili bolgeyi registera koplaya (a-z den register) 
+c                seçili bolgeyi kes
+"<reg>p          registera yapistir (a-z den register) 
+P                yapıştır, satırın üstüne
+.                son komutu tekrarla
 
 ```
 
@@ -133,7 +135,7 @@ C-z      vim'i arka plana gonder (fg geri getirir)
 
 ```
 
-			        k
+                                k
 h        imlec sola             ^
 j        imlec alta        h <     > l
 l        imlec saga             v
@@ -143,9 +145,9 @@ k        imlec yukarı           j
 
 ```
 0        satır başına
-$ 	 satır sonu
+$        satır sonu
 <home>   satır başı
-<end>	 satır sonu 
+<end>    satır sonu 
 ```
 
 ```
@@ -157,7 +159,7 @@ b        kelimenin başına zıpla
 ```
 h        ekranin başına zıpla (high)
 m        ekranin ortasina zıpla (middle)
-l        ekranin altina zıpla (low)
+l        ekranin altına zıpla (low)
 ```
 
 ```
@@ -170,16 +172,16 @@ C-u      yarım ekran yukarı
 ```
 zt       imlecin bulunduğu yeri ekranın üstüne getir
 z<enter> zt ile aynı
-zb 	 imlecin bulunduğu yeri ekranın altına getir
-z-	 zb ile aynı
+zb       imlecin bulunduğu yeri ekranın altına getir
+z-       zb ile aynı
 z.       imlecin bulunduğu yeri ekranın ortasına getir
-zz 	 z. ile aynı
+zz       z. ile aynı
 ```
 ```
 %        eşleşen paranteze zıpla
-( 	 önceki cümle
-) 	 sonraki cümle
-{ 	 önceki paragraf
+(        önceki cümle
+)        sonraki cümle
+{        önceki paragraf
 }        sonraki paragraf
 [{       mevcut kod blogunun basina zıpla 
 ]}       mevcut kod blogunun sonuna zıpla 
@@ -190,14 +192,14 @@ gd       degisken deklerasyonuna zıpla
 ```
 w        sonraki kelimenin başına zıpla (işaretlemelerin ayrı bir kelime olduğu varsayılır)
 e        sonraki kelimenin sonuna zıpla
-ge 	 önceki kelimenin sonuna zıpla
+ge       önceki kelimenin sonuna zıpla
 b        kelimenin başına zıpla
 ^        boşluk olmayan ilk karakter
-gg       dosyanin en ustu
-g        dosyanin en alti
-+ 	 sonraki satır başına
-- 	 önceki satır başına
-. 	 son komutu tekrarla
+gg       dosyanin en üstü
+g        dosyanin en altı
++        sonraki satır başına
+-        önceki satır başına
+.        son komutu tekrarla
 
 ```
  
@@ -223,10 +225,10 @@ i        imlecten öncesine text ekle
 i        satırın başına ekle
 a        imlecten sonra textin sonuna ekle
 a        satirin sonuna ekle 
-o        imlecin altina yeni bir satir yap ve text ekle 
-o        imlecin ustune yeni bir satir yap ve text ekle
-s        imlecin altindaki harfi sil 
-s        tum satiri sil
+o        imlecin altına yeni bir satir yap ve text ekle 
+o        imlecin üstüne yeni bir satir yap ve text ekle
+s        imlecin altındaki harfi sil 
+s        tüm satiri sil
 cc       mevcut satiri sil ve insert moda geç
 cw       kelimeyi sil ve insert moda geç (change word)
 shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
@@ -236,25 +238,25 @@ shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
 ## Birden fazla dosyayla çalışma 
 
 ```
-C-ws     	mevcut pencereyi yatay olaral bol (alternatif :split)
+C-ws       mevcut pencereyi yatay olaral bol (alternatif :split)
  
-C-wv     	mevcut pencereyi dikey olarak bol (alternatif :vsplit)
-C-ww     	sonraki pencereye zıpla 
+C-wv       mevcut pencereyi dikey olarak bol (alternatif :vsplit)
+C-ww       sonraki pencereye zıpla 
 ```
 ```
-C-warrow 	mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zıpla
-C-wq		mevcut pencereyi kapat
+C-warrow   mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zıpla
+C-wq       mevcut pencereyi kapat
 ```
 ```
-C-w#<    	mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
-C-w#>    	mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
-:res #		yatay bölünmüş pencereyi # kadar yeniden boyutlandır
+C-w#<      mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
+C-w#>      mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
+:res #     yatay bölünmüş pencereyi # kadar yeniden boyutlandır
 ```
 ```
-C-wh		mevcut pencereyi en sola taşı 
-C-wj		mevcut pencereyi en alta taşı 	
-C-wk		mevcut pencereyi en üste taşı 	
-C-wl 		mevcut pencereyi en sağa taşı
+C-         mevcut pencereyi en sola taşı 
+C-wj       mevcut pencereyi en alta taşı         
+C-wk       mevcut pencereyi en üste taşı         
+C-wl       mevcut pencereyi en sağa taşı
 ```
 
 ```
@@ -267,17 +269,17 @@ $ vim f1.txt f2.txt f3.txt          dosyaların her birini aç ama aynı anda sa
 ### tabları kullanma ###
 
 ```
-$ vim -p f1.txt f2.txt 		f1.txt ve f2.txt dosyalarını tab şeklinde aç
+$ vim -p f1.txt f2.txt                 f1.txt ve f2.txt dosyalarını tab şeklinde aç
 
 :tabedit dosyaadı   belirtilen dosyayı yeni bir tabda düzenle
 :tabfind dosyaadı   dosyayı yeni bir tabda aç ve düzenle
 
 ```
 ```
-:tabn               sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-pgdn
-:tabp               önceki tab, normal modda gt, insert modda C-pgup
-:tabfirst           ilk taba git
-:tablast            son taba git
+:tabn       sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-pgdn
+:tabp       önceki tab, normal modda gt, insert modda C-pgup
+:tabfirst   ilk taba git
+:tablast    son taba git
 
 ```
 ```
@@ -285,9 +287,9 @@ $ vim -p f1.txt f2.txt 		f1.txt ve f2.txt dosyalarını tab şeklinde aç
 
 ```
 ```
-:tabclose i         i numaralı tabı kapat
-:tabclose           mevcut tabı kapat
-:tabonly            diğer tüm tabları kapat
+:tabclose i   i numaralı tabı kapat
+:tabclose     mevcut tabı kapat
+:tabonly      diğer tüm tabları kapat
 
 ```
 ```
@@ -300,7 +302,7 @@ birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara s
 1. q ile kaydetmeyi başlat ve kaydetmek istedigin bir register seç. örnek: qa
 2. kaydetme modundan esc ile cik.
 3. kaydedilen değişikliği @<reg> şeklinde uygula. örnek: @a<enter>
-	
+        
 ```
 q[a-z]   kaydetmeye basla, hareketler dahil hersey kaydedilecek
 @[a-z]   kaydedilen hareketleri baslat
@@ -312,10 +314,10 @@ q[a-z]   kaydetmeye basla, hareketler dahil hersey kaydedilecek
 **operatör [sayı] hareket** veya **[sayı] operator hareket**
 
 ```
-c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
+c3w      veya 3cw, 3 kelime değiştir (cw cw cw)
 4j       jjjj 
 2w       w w,  iki sonraki kelimenin başına git
-2dd 	 2 satırı sil
+2dd      2 satırı sil
 
 ```
 
@@ -323,14 +325,14 @@ c3w 	 veya 3cw, 3 kelime değiştir (cw cw cw)
 ## Düzenleme 
 
 ```
-x        imlecin altindaki karakteri sil
+x        imlecin altındaki karakteri sil
 X        imlecten önceki karakteri sil 
 dw       sonraki kelimeyi sil 
 dW       sonraki kelimeye kadar sil 
 d^       satir basina kadar sil
 d$       satir sonuna kadar sil 
 D        satir sonuna kadar sil d$ ile ayni 
-dd       tum satiri sil
+dd       tüm satiri sil
 dib      parantez blogundaki icerigi sil (ör: fonksiyon argumanlari)
 
 ```
@@ -345,26 +347,20 @@ r<c>     <c> karakterini degistir
 ```
 
 ```
-*        imlecin altindaki kelimeden sonraki kelimeleri ara
+*        imlecin altındaki kelimeden sonraki kelimeleri ara
 f<c>     mevcut imlec pozisyonundan <c> karakterini bul ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
 '.       son duzenlenen satira zıpla
 g;       son duzenlenen pozisyona geri zıpla 
 
 ```
 ```
-:ab slm selam	 insert modda 'slm'<space> yazıldığında 'selam' ile değiştir.
-
-```
-
-```
-u        seçimi küçük harfe çevir (visual mod)
-u        seçimi büyük harfe çevir (visual mod)
+:ab slm selam         insert modda 'slm'<space> yazıldığında 'selam' ile değiştir.
 
 ```
 
 ```
 :g/^#/d  # ile başlayan tüm satırları sil
-:g/^$/d  tum boş satirlari sil
+:g/^$/d  tüm boş satırları sil
 ```
 
 ### bul ve değiştir
@@ -385,9 +381,9 @@ u        seçimi büyük harfe çevir (visual mod)
 ```
 yyp     alt satıra kopyala
 yyp     üst satıra kopyala
-ddp 	alt satırla üst satırı yer değiştir
+ddp     alt satırla üst satırı yer değiştir
 ea      kelimenin sonuna ekle
-xp 	yanyana iki harfi yerdeğiştir	 ör: microsotf ->  microsoft 
+xp      yanyana iki harfi yerdeğiştir         ör: microsotf ->  microsoft 
 dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ```
 
@@ -396,7 +392,7 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ### .vimrc dosyası
 
 .vimrc dosyası vim'in çalışma anında ayarlarını tanımlar. sistemin kullandığı bir .vimrc ve herbir kullanıcının
-home dizininde birer .vimrc vardır. home dizinindeki .vimrc sistem .vimrc'yi override eder. 
+home dizininde birer .vimrc vardır. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
 eğer .vimrc home dizininde yoksa, `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 
 ### mapping 
@@ -405,7 +401,7 @@ mapping ile uzun komutları kısa komutlara dönüştürebiliriz.
 mapleri kalıcı olarak kullanamk için .vimrc dosyasına
 eklememiz gerekir.
 
- üç temel mod için 3 temel mapping çeşidi vardır. 
+ üç temel mod için 3 temel mapping çeşidi vardır;
 
 - normal modda çalışabilicek **nmap**
 - insert modda çalışabilicek **imap**
@@ -415,8 +411,8 @@ genel formül:
 > map kısayol uzunKomutlar
 
 ```
-nmap m <C-d>	"m tuşuna ctrl-d komutlarını (yarım sayfa alta) atamış olduk
-imap jk <ESC>	"insert moddayken jk basıldığında ESC basılmış gibi, normal moda geç
+nmap m <C-d>        "normal moddayken, m tuşuna ctrl-d komutlarını (yarım sayfa alta) atamış olduk
+imap jk <ESC>       "insert moddayken, jk basıldığında ESC basılmış gibi, normal moda geç
 ```
 daha fazla özel karakter ismi için:
 ```
@@ -431,7 +427,7 @@ Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadı�
 ```
 
 aşağıda _o_ yani alt satıra in ve insert moda geç, komutunu 4 kere tekrarlayacığını umduğumuz bu komut
-sonsuz döngü neden olur. _o_ _4o_'yu, _4o_ diğer bir _4o_'yu çağırmaya çalışcaktır.
+sonsuz döngü neden olur. _o_ _4o_'yu, _4o_ diğer bir _4o_'yu çağırmaya çalışacaktır.
 
 ```
 nmap o 4o 
@@ -453,13 +449,13 @@ mapleri dosya tipine göre özelleştirebiliriz:
 
 ```
 autocmd filetype cpp nnoremap <f5> :w <bar> !clear && clang++-6.0 
-	\ -wshadow
-	\ -wnon-virtual-dtor
-	\ -wpedantic 
-	\ -wold-style-cast
-	\ -woverloaded-virtual 
-	\ -wconversion 
-	\ -std=c++1z -o2 %  && ./a.out <CR>
+        \ -wshadow
+        \ -wnon-virtual-dtor
+        \ -wpedantic 
+        \ -wold-style-cast
+        \ -woverloaded-virtual 
+        \ -wconversion 
+        \ -std=c++1z -o2 %  && ./a.out <CR>
 ```
  
 yukarıdaki örnekte f5 sağındaki tüm komutları çalıştırır, ve yalnızca `.cpp` uzantılı dosyalar için çalışacaktır.
@@ -493,11 +489,22 @@ bütün mapleri görmek için:
 :map
 ```
 
-## Vundle ile uzantı ekleme
+## Uzantı ekleme
+
+Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla paket yöneticisi mevcut:
+
+- [Pathogen](https://github.com/tpope/vim-pathogen)
+- [Vim8 paketler özelliği](http://vimhelp.appspot.com/repeat.txt.html#packages)
+- [NeoBundle](https://github.com/Shougo/neobundle.vim)
+- [vim-plug](https://github.com/junegunn/vim-plug)
+- [dein.vim](https://github.com/Shougo/dein.vim)
+- [Vundle](https://github.com/VundleVim/Vundle.vim)
+
+### Vundle ile uzantı ekleme
 
 Vundle (Vim bundle) Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
 
-### kurulum
+#### kurulum
 
 ```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
@@ -530,20 +537,20 @@ call vundle#end()
 satırları arasına, uzantıya göre;
 
 - github'taki bir uzantıyı eklemeniz için:
-```Plugin 'GithubKullanıcıAdı/RepoAdı' ``` Ör: ```Plugin 'tpope/vim-fugitive'```
+`Plugin 'GithubKullanıcıAdı/RepoAdı'`   Ör: `Plugin 'tpope/vim-fugitive'`
     
 - [vimscipt](http://vim-scripts.org/vim/scripts.html) şeklindeki Vim uzantılarını eklemek için:
-```Plugin 'uzantıAdı' ```		Ör: ```Plugin 'L9'```
+`Plugin 'uzantıAdı'`   Ör: `Plugin 'L9'`
 
 - Github'ta tutulmayan git repoları için:
-  Ör: ```Plugin 'git://git.wincent.com/command-t.git'```
+  Ör: `Plugin 'git://git.wincent.com/command-t.git'`
 
 - Bilgisayardaki bir git reposu için (mesela kendi uzantını geliştiriyorsundur):
-  Ör: ```Plugin 'file:///home/adem/path/to/plugin'```
+  Ör: `Plugin 'file:///home/theUser/path/to/plugin'`
 
 şekillerinde eklememiz gerekiyor.
 
-### uzantıyı yükleme
+#### uzantıyı yükleme
 
 Son adımda uzantıyı yüklemek için:
 ```
@@ -554,15 +561,24 @@ shell'de
 $vim +PluginInstall +qall
 ```
 
-### uzantılar hakkında bilgi
+#### uzantılar hakkında bilgi
 
 ```
-:PluginList			uzantıyıları listele
-:PluginInstall			uzantıları yükle
-:PluginInstall! 		uzantıları güncelle
-:PluginSearch <abc>		<abc> uzantısını ara
-:PluginClean 			kullanılmayan uzantıları kaldır
+:PluginL                    uzantıları listele
+:PluginInstal               uzantıları yükle
+:PluginUpdate               uzantıları güncelle
+:PluginSearch <abc>         <abc> uzantısını ara
+:PluginClean                kullanılmayan uzantıları kaldır
 ```
+### Bazı uzantılar
+
+* [NERDTree](https://github.com/scrooloose/nerdtree) dosya şistemi kaşifi
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) kod tamamlama motoru
+* [Surround](https://github.com/tpope/vim-surround) sözcükleri köşeli, süslü, normal parantezlere almak için
+* [Fugitive](https://github.com/tpope/vim-fugitive) Vim içerisinde hızlıca Git komutlarını uygulamak için
+* [vim-commentary](https://github.com/tpope/vim-commentary) şeyleri hızlıca yorum satırını dönüştürmek için 
+* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) Vim içeride hızlıca diğer dosyaları açmak için
+* [vim-airline](https://github.com/vim-airline/vim-airline)
 
 ## Linkler 
 
@@ -602,15 +618,6 @@ $vim +PluginInstall +qall
 * [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
 * [vimdoc.sourceforge.net](http://vimdoc.sourceforge.net/htmldoc/vimfaq.html) Vim Sık Sorulan Sorular
 * [vimgolf.com](https://vimgolf.com) Vim alıştırmaları
-
-### bazı Uzantılar
-
-* NERDTree
-* NERDCommenter
-* Ctrl-P
-* easytags
-* unimpard
-* YouCompleteMe
 
 <sup>1</sup> *Practical Vim: Edit Text at the Speed of Though* kitabından
 
