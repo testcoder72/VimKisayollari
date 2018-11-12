@@ -215,9 +215,16 @@ B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 ## Insert moda geçme ##
 
 ```
-/~~~~~~~~~~\<---Esc-----/~~~~~~~~~~\
-|normal mod|            |insert mod|
-\~~~~~~~~~~/--aAiIoO--->\~~~~~~~~~~/
+/~~~~~~~~~~\<---Esc------/~~~~~~~~~~\
+|normal mod|             |insert mod|
+\~~~~~~~~~~/--aAiIoOsS-->\~~~~~~~~~~/
+ |        | 
+ v vV     ^ Esc
+ |        | 
+/~~~~~~~~~~\
+|visual mod|
+\~~~~~~~~~~/
+
 ```
 
 ```
@@ -489,6 +496,10 @@ bütün mapleri görmek için:
 :map
 ```
 
+Daha fazla bilgi:
+```
+:help mapping
+```
 ## Uzantı ekleme
 
 Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla paket yöneticisi mevcut:
@@ -595,6 +606,7 @@ $vim +PluginInstall +qall
 * Modern Vim - Drew Neil
 * Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
 * The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
+* [A Byte of Vim](https://vim.swaroopch.com/) (Online Kitap)
 
 ### makaleler 
 
