@@ -215,6 +215,12 @@ B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 ## Insert moda geçme ##
 
 ```
+/~~~~~~~~~~~\
+|command mod|
+\~~~~~~~~~~~/
+|          |
+^ :        v Esc Esc
+|          |
 /~~~~~~~~~~\<---Esc------/~~~~~~~~~~\
 |normal mod|             |insert mod|
 \~~~~~~~~~~/--aAiIoOsS-->\~~~~~~~~~~/
