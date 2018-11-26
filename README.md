@@ -226,7 +226,11 @@ B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 \~~~~~~~~~~/
 
 ```
-
+```
+:h Normal-mod
+:h Insert-mod
+:h Visual-mod
+```
 ```
 i        imlecten öncesine text ekle
 i        satırın başına ekle
@@ -399,7 +403,7 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ### .vimrc dosyası
 
 .vimrc dosyası vim'in çalışma anında ayarlarını tanımlar. sistemin kullandığı bir .vimrc ve herbir kullanıcının
-home dizininde birer .vimrc vardır. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
+home dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
 eğer .vimrc home dizininde yoksa, `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 
 ### mapping 
@@ -408,25 +412,38 @@ mapping ile uzun komutları kısa komutlara dönüştürebiliriz.
 mapleri kalıcı olarak kullanamk için .vimrc dosyasına
 eklememiz gerekir.
 
- üç temel mod için 3 temel mapping çeşidi vardır;
+ üç temel mod için 3 temel mapping çeşidi bulunur:
 
 - normal modda çalışabilicek **nmap**
 - insert modda çalışabilicek **imap**
 - visual modda çalışabilecek **vmap**
 
 genel formül: 
-> map kısayol uzunKomutlar
-
+> map kısayol uzunKomutlarn
 ```
 nmap m <C-d>        "normal moddayken, m tuşuna ctrl-d komutlarını (yarım sayfa alta) atamış olduk
 imap jk <ESC>       "insert moddayken, jk basıldığında ESC basılmış gibi, normal moda geç
 ```
-daha fazla özel karakter ismi için:
+Bazı özel karakterler:
+
+| Karakter | Anlamı |
+|:---------|-------:|
+| `<Esc>` | Esc(ape) |
+| `<CR>`  | Enter |
+| `<Enter>` | Enter |
+| `<Tab>` | Tab |
+| `<S-Tab>` | Shift + Tab |
+| `<M-d>` | Alt + d |
+| `<A-d>` | Alt + d |
+| `<Space>` | Space |
+| `<BS>`  | Backspace |
+| `<Del>` | Delete
+| `<S-p>` | Shift + p |
+
 ```
 :h key-notation
 ```
-ama bu komutlar daha önce maplenmiş diğer komutları çakışabileceğinden,
- mümkün mertebe komutları no-recursive yapmak iyi bir uygulamadır. 
+ama bu komutlar daha önce maplenmiş diğer komutları çakışabileceğinden, komutları mümkün olduğunca no-recursive yapmak iyi bir uygulamadır. 
 
 Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadığını öğrenmek için:
 ```
