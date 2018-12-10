@@ -613,6 +613,9 @@ $vim +PluginInstall +qall
 * [vim-commentary](https://github.com/tpope/vim-commentary) şeyleri hızlıca yorum satırını dönüştürmek için 
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) Vim içeride hızlıca diğer dosyaları açmak için
 * [vim-airline](https://github.com/vim-airline/vim-airline)
+* [ALE](https://github.com/w0rp/ale)
+* [ultisnips](https://github.com/SirVer/ultisnips)
+* [vim-snippets](https://github.com/honza/vim-snippets)
 
 ## Linkler 
 
