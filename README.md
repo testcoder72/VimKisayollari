@@ -532,6 +532,8 @@ Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla
 - [NeoBundle](https://github.com/Shougo/neobundle.vim)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [dein.vim](https://github.com/Shougo/dein.vim)
+- [minpac](https://github.com/k-takata/minpac/)
+- [VAM](https://github.com/MarcWeber/vim-addon-manager)
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
 
 ### Vundle ile uzantı ekleme
