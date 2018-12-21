@@ -610,6 +610,7 @@ $vim +PluginInstall +qall
 
 * [NERDTree](https://github.com/scrooloose/nerdtree) dosya şistemi kaşifi
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) kod tamamlama motoru
+* [syntastic](https://github.com/vim-syntastic/syntastic)
 * [Surround](https://github.com/tpope/vim-surround) sözcükleri köşeli, süslü, normal parantezlere almak için
 * [Fugitive](https://github.com/tpope/vim-fugitive) Vim içerisinde hızlıca Git komutlarını uygulamak için
 * [vim-commentary](https://github.com/tpope/vim-commentary) şeyleri hızlıca yorum satırını dönüştürmek için 
@@ -618,6 +619,15 @@ $vim +PluginInstall +qall
 * [ALE](https://github.com/w0rp/ale)
 * [ultisnips](https://github.com/SirVer/ultisnips)
 * [vim-snippets](https://github.com/honza/vim-snippets)
+* [Snimate](https://github.com/garbas/vim-snipmate)
+* [vim-ctrlspace](https://github.com/vim-ctrlspace/vim-ctrlspace)
+* [neomake](https://github.com/neomake/neomake)
+* [vim-go](https://github.com/fatih/vim-go)
+* [NrrwRgn](https://github.com/chrisbra/NrrwRgn)
+* [vim-obsession](https://github.com/tpope/vim-obsession)
+* [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)
+* [promptline](https://github.com/edkolev/promptline.vim)
+
 
 ## Linkler 
 
