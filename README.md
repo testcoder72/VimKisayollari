@@ -1,9 +1,5 @@
 # Vim Kısayolları
 
-> Vim shortcuts in Turkish.
-
-<img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
-
 ## Vim nedir? 
 
 Vim etkili biçimde metin düzenlemek için çok iyi yapılandırılabilir bir metin editorüdür.
@@ -14,7 +10,7 @@ Vim etkili biçimde metin düzenlemek için çok iyi yapılandırılabilir bir m
 genelde sarılmış bir kağıda yazılır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlenmesi
  için anabilgisayara gönderilir ve her bir komutun çıktısı yazdırılırdı. O günlerde terminal ile anabilgisayar
  arasındaki bağlantı yavaştı, hatta o kadar ki hızlı yazan biri ağı, işlenecebilecekten daha fazla komut
-göndererek, doldurabilirdi. Bu bağlamda **ed**'in kısa komutlar sunması hayli önemliydi. Mesela *p* mevcut 
+göndererek doldurabilirdi. Bu bağlamda **ed**'in kısa komutlar sunması hayli önemliydi. Mesela *p* mevcut 
 satırı yazdırırken, *%p* tüm dosyayı yazdırır.
 
 
@@ -70,7 +66,6 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 $ vim <enter>
 $ vim dosyaAdı
 $ vim dizin/dosyaAdı 
-
 ```
 
 ## Vim modları
@@ -82,7 +77,6 @@ normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir.
 insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.
 görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.
 komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. her bir komuttan sonra <enter> basılmalıdır. ör. :h ctrl-r <enter>
-
 ```
 ## Genel
 
@@ -98,7 +92,6 @@ $ vimtutor          vim resmi öğretici metni
 :wqa                bütün tabları kaydet ve çık (write, quit all) bkz: [tabları kullanma](#tablari-kullanma)
 :x                  yaz ve çık, wq ile aynı
 :q!                 dosya değismişse ve değişiklik kaydedilmeyecekse kapatmaya zorla
-
 ```
 
 ```
@@ -109,7 +102,6 @@ U                satırdaki tüm değisikliği geri al
 s=seconds, m=minute, h=hour, d=day
 :earlier #m     dosyayı # dakika önceki haline döndür ör: :earlier 2m  veya :ea 3d
 :later #m       dosyayı # dakika sonraki haline döndür ör: :later 7s  veya  :lat 9h
-
 ```
 
 ```
@@ -121,14 +113,12 @@ c                seçili bolgeyi kes
 "<reg>p          registera yapistir (a-z den register) 
 P                yapıştır, satırın üstüne
 .                son komutu tekrarla
-
 ```
 
 ```
 :!<cmd>  vim'den ayrılmadan shell'den <cmd> komutunu calistir ör: `!g++ -wall -std=c++14 main.cpp`, `!ruby %`
 :sh      shell'e git, `exit` ile tekrar vim'e dön
 C-z      vim'i arka plana gonder (fg geri getirir)
-
 ```
 
 ## Hareketler
@@ -140,7 +130,6 @@ h        imlec sola             ^
 j        imlec alta        h <     > l
 l        imlec saga             v
 k        imlec yukarı           j
-
 ```
 
 ```
@@ -179,14 +168,13 @@ zz       z. ile aynı
 ```
 ```
 %        eşleşen paranteze zıpla
-(        önceki cümle
+(        önceki cümle, İngilizce Q dizilimli klavyelerde bu karakterler yanyana
 )        sonraki cümle
 {        önceki paragraf
 }        sonraki paragraf
 [{       mevcut kod blogunun basina zıpla 
 ]}       mevcut kod blogunun sonuna zıpla 
 gd       degisken deklerasyonuna zıpla 
-
 ```
 
 ```
@@ -200,7 +188,6 @@ g        dosyanin en altı
 +        sonraki satır başına
 -        önceki satır başına
 .        son komutu tekrarla
-
 ```
  
 ```                                                                                            v           v
@@ -209,7 +196,6 @@ W        kelimenin basina zıpla
 B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 #g       # numaralı satıra git ör: 38g
 #gg      #g ile aynı
-
 ```
 
 ## Insert moda geçme ##
@@ -249,7 +235,6 @@ s        tüm satiri sil
 cc       mevcut satiri sil ve insert moda geç
 cw       kelimeyi sil ve insert moda geç (change word)
 shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
-
 ```
 
 ## Birden fazla dosyayla çalışma 
@@ -281,7 +266,6 @@ $ vim -o3 f1.txt f2.txt f3.txt      dosyaları alt üst aynı pencerede aç (hor
 $ vim -o3 f1.txt f2.txt f3.txt      dosyaları yan yana aynı pencerede aç(vertically split)
 
 $ vim f1.txt f2.txt f3.txt          dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaadı ile yeni dosya ekle
-
 ```
 ### tabları kullanma ###
 
@@ -290,24 +274,20 @@ $ vim -p f1.txt f2.txt                 f1.txt ve f2.txt dosyalarını tab şekli
 
 :tabedit dosyaadı   belirtilen dosyayı yeni bir tabda düzenle
 :tabfind dosyaadı   dosyayı yeni bir tabda aç ve düzenle
-
 ```
 ```
 :tabn       sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-pgdn
 :tabp       önceki tab, normal modda gt, insert modda C-pgup
 :tabfirst   ilk taba git
 :tablast    son taba git
-
 ```
 ```
 :tabm {i}           mevcut tabı i+1 inci taba taşı. ör: :tabm 0 mevcut tabı ilk tab yap, :tabm  mevcut tabı son tab yap
-
 ```
 ```
 :tabclose i   i numaralı tabı kapat
 :tabclose     mevcut tabı kapat
 :tabonly      diğer tüm tabları kapat
-
 ```
 ```
 :tabs               tabları listele
@@ -335,7 +315,6 @@ c3w      veya 3cw, 3 kelime değiştir (cw cw cw)
 4j       jjjj 
 2w       w w,  iki sonraki kelimenin başına git
 2dd      2 satırı sil
-
 ```
 
 
@@ -351,7 +330,6 @@ d$       satir sonuna kadar sil
 D        satir sonuna kadar sil d$ ile ayni 
 dd       tüm satiri sil
 dib      parantez blogundaki icerigi sil (ör: fonksiyon argumanlari)
-
 ```
 
 ```
@@ -360,7 +338,6 @@ C-p      metinde daha önce geçmiş kelimeyi tamamla
  
 tab      anahtar kelime tamamlama (supertab uzantisi)
 r<c>     <c> karakterini degistir
-
 ```
 
 ```
@@ -368,11 +345,9 @@ r<c>     <c> karakterini degistir
 f<c>     mevcut imlec pozisyonundan <c> karakterini bul ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
 '.       son duzenlenen satira zıpla
 g;       son duzenlenen pozisyona geri zıpla 
-
 ```
 ```
 :ab slm selam         insert modda 'slm'<space> yazıldığında 'selam' ile değiştir.
-
 ```
 
 ```
@@ -505,7 +480,7 @@ _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
 ```
 let mapleader = "-"
 ```
-leader olarak '-' karakterini seçtim.
+_leader_ olarak '-' karakterini seçtim.
 
  
 ```
@@ -616,11 +591,14 @@ $vim +PluginInstall +qall
 * [vim-commentary](https://github.com/tpope/vim-commentary) şeyleri hızlıca yorum satırını dönüştürmek için 
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) Vim içeride hızlıca diğer dosyaları açmak için
 * [vim-airline](https://github.com/vim-airline/vim-airline)
+* [powerline](https://github.com/powerline/powerline)
 * [ALE](https://github.com/w0rp/ale)
 * [ultisnips](https://github.com/SirVer/ultisnips)
 * [vim-snippets](https://github.com/honza/vim-snippets)
 * [Snimate](https://github.com/garbas/vim-snipmate)
 * [vim-ctrlspace](https://github.com/vim-ctrlspace/vim-ctrlspace)
+* [vim-capslock](https://github.com/tpope/vim-capslock)
+* [vim-repeat](https://github.com/tpope/vim-repeat)
 * [neomake](https://github.com/neomake/neomake)
 * [vim-go](https://github.com/fatih/vim-go)
 * [NrrwRgn](https://github.com/chrisbra/NrrwRgn)
@@ -669,10 +647,10 @@ $vim +PluginInstall +qall
 * [vimdoc.sourceforge.net](http://vimdoc.sourceforge.net/htmldoc/vimfaq.html) Vim Sık Sorulan Sorular
 * [vimgolf.com](https://vimgolf.com) Vim alıştırmaları
 
-<sup>1</sup> *Practical Vim: Edit Text at the Speed of Though* kitabından
+<sup>1</sup> *Practical Vim: Edit Text at the Speed of Thought* kitabından
 
-### Licence
+## Licence 
 
- <a href="http://www.wtfpl.net/"><img
+<a href="http://www.wtfpl.net/"><img
        src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png"
        width="80" height="15" alt="WTFPL" /></a>
