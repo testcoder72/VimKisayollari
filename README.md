@@ -194,7 +194,7 @@ g        dosyanin en altı
 E        kelimenin sonuna zıpla (isaretlemelerin ayrı bir kelime olduğu varsayılmaz) Ör: e (abcd)   E (abcd)
 W        kelimenin basina zıpla 
 B        geriye dogru kelimenin basina zıpla (isaretleme yok)
-#g       # numaralı satıra git ör: 38g
+#G       # numaralı satıra git ör: 38G
 #gg      #g ile aynı
 ```
 
@@ -382,9 +382,11 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ## Yapılandırma
 
 ### .vimrc dosyası
-
+```
+:h vimrc-intro
+```
 .vimrc dosyası vim'in çalışma anında ayarlarını tanımlar. sistemin kullandığı bir .vimrc ve herbir kullanıcının
-home dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
+*home* dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
 eğer .vimrc home dizininde yoksa, `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 
 ### mapping 
