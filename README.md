@@ -53,10 +53,7 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
     * [vimrc dosyası](#vimrc-dosyası)
     * [Mapping](#mapping)
 * [Uzantı ekleme](#uzantı-ekleme) 
-    * [Vundle ile uzantı ekleme](#vundle-ile-uzantı-ekleme)
-    1. [Kurulum](#kurulum)
-    2. [Uzantıyı yükleme](#uzantıyı-yükleme)
-    3. [Uzantılar hakkında bilgi](#uzantılar-hakkında-bilgi)
+    * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
 * [Bazı Uzantılar](#bazı-uzantılar)
 * [Linkler](#linkler)
 
@@ -70,14 +67,13 @@ $ vim dizin/dosyaAdı
 
 ## Vim modları
 
-```
 Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 
-normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir.
-insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.
-görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.
-komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. her bir komuttan sonra <enter> basılmalıdır. ör. :h ctrl-r <enter>
-```
+* normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir. :h Normal-mod
+* insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.  :h Insert-mod
+* görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.  :h Visual-mod
+* komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra <enter> basılmalıdır. ör. :h ctrl-r <enter>
+
 ## Genel
 
 ```
@@ -93,7 +89,6 @@ $ vimtutor          vim resmi öğretici metni
 :x                  yaz ve çık, wq ile aynı
 :q!                 dosya değismişse ve değişiklik kaydedilmeyecekse kapatmaya zorla
 ```
-
 ```
 u                geri al, ör: 4u
 C-r              ileri al        (Ctrl'ye basılı tutarak r) 
@@ -124,7 +119,6 @@ C-z      vim'i arka plana gonder (fg geri getirir)
 ## Hareketler
 
 ```
-
                                 k
 h        imlec sola             ^
 j        imlec alta        h <     > l
@@ -218,14 +212,9 @@ B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 \~~~~~~~~~~/
 
 ```
-```
-:h Normal-mod
-:h Insert-mod
-:h Visual-mod
-```
-```
+``` 
 i        imlecten öncesine text ekle
-i        satırın başına ekle
+I        satırın başına ekle
 a        imlecten sonra textin sonuna ekle
 a        satirin sonuna ekle 
 o        imlecin altına yeni bir satir yap ve text ekle 
@@ -365,7 +354,6 @@ g;       son duzenlenen pozisyona geri zıpla
 :#,#s/old/new/g   # ve # satırları (dahil) arasındaki 'eski'leri 'yeni' ile değiştir
 :%s/eski/yeni/g   mevcut dosyadaki tüm 'eski'leri 'yeni' ile değiştir
 :%s/eski/yeni/gc  mevcut dosyadaki tüm 'eski'leri 'yeni' ile değiştir ama öncesinde onay iste
-
 ```
 
 ## Bazı sık kullanılanlar 
@@ -384,6 +372,7 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ### .vimrc dosyası
 ```
 :h vimrc-intro
+:options
 ```
 .vimrc dosyası vim'in çalışma anında ayarlarını tanımlar. sistemin kullandığı bir .vimrc ve herbir kullanıcının
 *home* dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
@@ -391,6 +380,9 @@ eğer .vimrc home dizininde yoksa, `vim .vimrc` ile oluşturabilirsiniz. bkz: [d
 
 ### mapping 
 
+```
+:help mapping
+```
 mapping ile uzun komutları kısa komutlara dönüştürebiliriz.
 mapleri kalıcı olarak kullanamk için .vimrc dosyasına
 eklememiz gerekir.
@@ -403,6 +395,7 @@ eklememiz gerekir.
 
 genel formül: 
 > map kısayol uzunKomutlarn
+
 ```
 nmap m <C-d>        "normal moddayken, m tuşuna ctrl-d komutlarını (yarım sayfa alta) atamış olduk
 imap jk <ESC>       "insert moddayken, jk basıldığında ESC basılmış gibi, normal moda geç
@@ -483,10 +476,9 @@ _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
 let mapleader = "-"
 ```
 _leader_ olarak '-' karakterini seçtim.
-
  
 ```
-nnoremap <leader>ve :vsplit $myvimrc<cr>
+nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 ```
 eğer .vimrc'yi düzenlemek istersem normal modda '-ve' karakterlerine basmam gerekecek
 
@@ -496,10 +488,6 @@ bütün mapleri görmek için:
 :map
 ```
 
-Daha fazla bilgi:
-```
-:help mapping
-```
 ## Uzantı ekleme
 
 Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla paket yöneticisi mevcut:
@@ -513,76 +501,38 @@ Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla
 - [VAM](https://github.com/MarcWeber/vim-addon-manager)
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
 
-### Vundle ile uzantı ekleme
+### vim-plug ile uzantı ekleme
 
 Vundle (Vim bundle) Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
 
-#### kurulum
-
+```bash
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
-```
-ve .vimrc dosyasının başına şunları ekleyin :
+komutunu çalıştırıın ve .vimrc dosyasına şunları ekleyin :
 
 ```vims
-set nocompatible         
-filetype off             
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" ----> Uzantılar Buraya <-----
-
-call vundle#end()        
-filetype plugin indent on  
+call plug#begin()
+Plug 'tpope/vim-sensible'
+call plug#end()
 ```
+`call plug#begin()` ve `call plug#end()` vim-plug komutları arasına uzantınızı ekleyin. Vim uzantılarının pek 
+çogu Github üzerınde tutuluyor ve maintain ediliyor. 
 
-Vundle ile uzantı eklemek içim .vimrc dosyasındaki:
+Mesela https://github.com/Shougo/deoplete.nvim linkinde tutulan uzantıyı
 
+```vims
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'Shougo/deoplete.nvim'
+call plug#end()
 ```
-call vundle#begin()
-```
-ve 
+şeklinde koyduktan sonra 
 
-```
-call vundle#end() 
-```
-satırları arasına, uzantıya göre;
+`:PlugInstall`
 
-- github'taki bir uzantıyı eklemeniz için:
-`Plugin 'GithubKullanıcıAdı/RepoAdı'`   Ör: `Plugin 'tpope/vim-fugitive'`
-    
-- [vimscipt](http://vim-scripts.org/vim/scripts.html) şeklindeki Vim uzantılarını eklemek için:
-`Plugin 'uzantıAdı'`   Ör: `Plugin 'L9'`
+komutuyla yükleyebilirsiniz.
 
-- Github'ta tutulmayan git repoları için:
-  Ör: `Plugin 'git://git.wincent.com/command-t.git'`
-
-- Bilgisayardaki bir git reposu için (mesela kendi uzantını geliştiriyorsundur):
-  Ör: `Plugin 'file:///home/theUser/path/to/plugin'`
-
-şekillerinde eklememiz gerekiyor.
-
-#### uzantıyı yükleme
-
-Son adımda uzantıyı yüklemek için:
-```
-Vim'de
-:PluginInstall
-
-shell'de
-$vim +PluginInstall +qall
-```
-
-#### uzantılar hakkında bilgi
-
-```
-:PluginList                 uzantıları listele
-:PluginInstall              uzantıları yükle
-:PluginUpdate               uzantıları güncelle
-:PluginSearch <abc>         <abc> uzantısını ara
-:PluginClean                kullanılmayan uzantıları kaldır
-```
 ### Bazı uzantılar
 
 * [NERDTree](https://github.com/scrooloose/nerdtree) dosya şistemi kaşifi
