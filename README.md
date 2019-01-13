@@ -533,31 +533,52 @@ call plug#end()
 
 komutuyla yükleyebilirsiniz.
 
-### Bazı uzantılar
+### Bazı uzantıların (eksik) listesi
 
-* [NERDTree](https://github.com/scrooloose/nerdtree) dosya şistemi kaşifi
+##### Yeni başlayanlar için
+[vim-sensible](https://github.com/tpope/vim-sensible)
+
+##### Kod tamamlama
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) kod tamamlama motoru
+* [deoplete.vim](https://github.com/Shougo/deoplete.nvim)
+* [Neocomplete](https://github.com/Shougo/neocomplete.vim)
+* [ncm2](https://github.com/ncm2/ncm2)
+* [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
+
+##### Lint ve sözdizimi kontrolü
 * [syntastic](https://github.com/vim-syntastic/syntastic)
-* [Surround](https://github.com/tpope/vim-surround) sözcükleri köşeli, süslü, normal parantezlere almak için
-* [Fugitive](https://github.com/tpope/vim-fugitive) Vim içerisinde hızlıca Git komutlarını uygulamak için
-* [vim-commentary](https://github.com/tpope/vim-commentary) şeyleri hızlıca yorum satırını dönüştürmek için 
-* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) Vim içeride hızlıca diğer dosyaları açmak için
-* [vim-airline](https://github.com/vim-airline/vim-airline)
-* [powerline](https://github.com/powerline/powerline)
 * [ALE](https://github.com/w0rp/ale)
+* [neomake](https://github.com/neomake/neomake)
+
+##### Snippet
+* [Snimate](https://github.com/garbas/vim-snipmate)
 * [ultisnips](https://github.com/SirVer/ultisnips)
 * [vim-snippets](https://github.com/honza/vim-snippets)
-* [Snimate](https://github.com/garbas/vim-snipmate)
+* [neosnippet.vim](https://github.com/Shougo/neosnippet.vim)
+
+##### Programlama Dili
+* [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+* [vim-go](https://github.com/fatih/vim-go)
+* [rust.vim](https://github.com/rust-lang/rust.vim)
+* [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
+
+##### GUI-like
+* [NERDTree](https://github.com/scrooloose/nerdtree)
+* [promptline](https://github.com/edkolev/promptline.vim)
+* [vim-airline](https://github.com/vim-airline/vim-airline)
+* [powerline](https://github.com/powerline/powerline)
+
+##### Kullanımı kolaylaştıran uzantılar
+* [Surround](https://github.com/tpope/vim-surround)
+* [Fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-commentary](https://github.com/tpope/vim-commentary)
+* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 * [vim-ctrlspace](https://github.com/vim-ctrlspace/vim-ctrlspace)
 * [vim-capslock](https://github.com/tpope/vim-capslock)
 * [vim-repeat](https://github.com/tpope/vim-repeat)
-* [neomake](https://github.com/neomake/neomake)
-* [vim-go](https://github.com/fatih/vim-go)
 * [NrrwRgn](https://github.com/chrisbra/NrrwRgn)
 * [vim-obsession](https://github.com/tpope/vim-obsession)
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)
-* [promptline](https://github.com/edkolev/promptline.vim)
-
 
 ## Linkler 
 
