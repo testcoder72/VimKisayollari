@@ -544,6 +544,7 @@ komutuyla yükleyebilirsiniz.
 * [Neocomplete](https://github.com/Shougo/neocomplete.vim)
 * [ncm2](https://github.com/ncm2/ncm2)
 * [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
+* [completor.vim](https://github.com/maralla/completor.vim)
 
 ##### Lint ve sözdizimi kontrolü
 * [syntastic](https://github.com/vim-syntastic/syntastic)
