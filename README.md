@@ -1,10 +1,10 @@
-# Vim Kısayolları
+<p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="Vim logo"></a></p>
 
-## Vim nedir? 
+### Vim nedir? 
 
-Vim etkili biçimde metin düzenlemek için çok iyi yapılandırılabilir bir metin editorüdür.
+Vim, etkili biçimde metin düzenlemek için, çok iyi yapılandırılabilir bir metin editorüdür.
 
-### Vim Tarihi <sup>1</sup>
+#### Vim Tarihi <sup>1</sup>
 
 **ed** Unix'in orijinal text editörüydü. Video ekranların yaygın olmadığı bir zamanda yazılmıştı. Kaynak kod
 genelde sarılmış bir kağıda yazılır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlenmesi
@@ -26,12 +26,16 @@ vi'de olmayan Vim özelliklerinin listesi için **vi-differences**'a bakınız. 
  çok önemlidir ama atalarına hala çok şey borçludur. Vim'in atalarının tasarımına rehberlik eden
  kısıtlar bize bugün hala değerli olan bir komut kümesi bıraktı.
 
-##  Vim ne değildir? 
+###  Vim ne değildir? 
 
 Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildir. Bir araçtır, kullanılması
  öğrenilmelidir. Vim kelime işlemci değildir.
+ 
+### Vim ve Neovim
 
-## [Vim'den Çıkış](https://stackoverflow.blog/wp-content/uploads/2017/05/country_stuck_vim-1-2-1024x1024.png)
+[Neovim](https://neovim.io/) bir Vim fork'udur ve kendini Vim'e katkıda bulunmak isteyenlere daha açık hale getirmek için oluşturulmuş bir Vim uzantısı olarak tanımlar. 
+
+### [Vim'den Çıkış](https://stackoverflow.blog/wp-content/uploads/2017/05/country_stuck_vim-1-2-1024x1024.png)
 
 ```
 <esc> :q! <enter> 
@@ -48,16 +52,16 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 * [Komutlari tekrar etme](#komutları-tekrar-etme)
 * [Düzenleme](#düzenleme)
     * [Bul ve Değiştir](#bul-ve-değiştir)
-* [Sık kullanılanlar](#sık-kullanılanlar)
+* [Bazı sık kullanılanlar](Bazı-sık-kullanılanlar) 
 * [Yapılandırma](#yapılandırma)
     * [vimrc dosyası](#vimrc-dosyası)
     * [Mapping](#mapping)
 * [Uzantı ekleme](#uzantı-ekleme) 
     * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
-* [Bazı Uzantılar](#bazı-uzantılar)
+* [Bazı uzantıların (eksik) listesi](Bazı-uzantıların-(eksik)-listesi)
 * [Linkler](#linkler)
 
-## Dosya oluşturma
+### Dosya oluşturma
 
 ```
 $ vim <enter>
@@ -65,16 +69,16 @@ $ vim dosyaAdı
 $ vim dizin/dosyaAdı 
 ```
 
-## Vim modları
+### Vim modları
 
 Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 
-* normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir. :h Normal-mod
-* insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.  :h Insert-mod
-* görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.  :h Visual-mod
+* normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir. `:h Normal-mod`
+* insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.  `:h Insert-mod`
+* görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.  `:h Visual-mod`
 * komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra <enter> basılmalıdır. ör. :h ctrl-r <enter>
 
-## Genel
+### Genel
 
 ```
 $ vimtutor          vim resmi öğretici metni
@@ -116,7 +120,7 @@ P                yapıştır, satırın üstüne
 C-z      vim'i arka plana gonder (fg geri getirir)
 ```
 
-## Hareketler
+### Hareketler
 
 ```
                                 k
@@ -192,7 +196,7 @@ B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 #gg      #g ile aynı
 ```
 
-## Insert moda geçme ##
+### Insert moda geçme ##
 
 ```
 /~~~~~~~~~~~\
@@ -226,7 +230,7 @@ cw       kelimeyi sil ve insert moda geç (change word)
 shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
 ```
 
-## Birden fazla dosyayla çalışma 
+### Birden fazla dosyayla çalışma 
 
 ```
 C-ws       mevcut pencereyi yatay olaral bol (alternatif :split)
@@ -256,7 +260,7 @@ $ vim -o3 f1.txt f2.txt f3.txt      dosyaları yan yana aynı pencerede aç(vert
 
 $ vim f1.txt f2.txt f3.txt          dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaadı ile yeni dosya ekle
 ```
-### tabları kullanma ###
+#### tabları kullanma
 
 ```
 $ vim -p f1.txt f2.txt                 f1.txt ve f2.txt dosyalarını tab şeklinde aç
@@ -282,7 +286,7 @@ $ vim -p f1.txt f2.txt                 f1.txt ve f2.txt dosyalarını tab şekli
 :tabs               tabları listele
 ```
 
-## Kaydetme
+### Kaydetme
 
 birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara sahip (a-z),
 1. q ile kaydetmeyi başlat ve kaydetmek istedigin bir register seç. örnek: qa
@@ -295,7 +299,7 @@ q[a-z]   kaydetmeye basla, hareketler dahil hersey kaydedilecek
 ```
 
 
-## Komutları tekrar etme
+### Komutları tekrar etme
 
 **operatör [sayı] hareket** veya **[sayı] operator hareket**
 
@@ -307,7 +311,7 @@ c3w      veya 3cw, 3 kelime değiştir (cw cw cw)
 ```
 
 
-## Düzenleme 
+### Düzenleme 
 
 ```
 x        imlecin altındaki karakteri sil
@@ -344,7 +348,7 @@ g;       son duzenlenen pozisyona geri zıpla
 :g/^$/d  tüm boş satırları sil
 ```
 
-### bul ve değiştir
+#### bul ve değiştir
 
 ```
 :s/eski/yeni      mevcut satırda ilk 'eski'nin görüldüğü yeri 'yeni' ile değiştir
@@ -356,7 +360,7 @@ g;       son duzenlenen pozisyona geri zıpla
 :%s/eski/yeni/gc  mevcut dosyadaki tüm 'eski'leri 'yeni' ile değiştir ama öncesinde onay iste
 ```
 
-## Bazı sık kullanılanlar 
+### Bazı sık kullanılanlar 
 
 ```
 yyp     alt satıra kopyala
@@ -367,9 +371,9 @@ xp      yanyana iki harfi yerdeğiştir         ör: microsotf ->  microsoft
 dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ```
 
-## Yapılandırma
+### Yapılandırma
 
-### .vimrc dosyası
+#### .vimrc dosyası
 ```
 :h vimrc-intro
 :options
@@ -378,7 +382,7 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 *home* dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
 eğer .vimrc home dizininde yoksa, `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 
-### mapping 
+#### mapping 
 
 ```
 :help mapping
@@ -448,7 +452,7 @@ nnoremap o 4o
 mapleri dosya tipine göre özelleştirebiliriz: 
 
 ```
-autocmd filetype cpp nnoremap <f5> :w <bar> !clear && clang++-6.0 
+autocmd filetype cpp nnoremap <f5> :w <bar> !clear && clang++ 
         \ -wshadow
         \ -wnon-virtual-dtor
         \ -wpedantic 
@@ -469,7 +473,7 @@ sırasıyla:
 5. komut uzun olduğundan, bir alt satırdan devam etmek için alttaki satırın başına `\` ekledik
 6. clang flagleriyle derlemeyi çalıştırıp `<CR>` yani enter tuşuna basmış olduk
 
-#### leader değişkeni
+##### leader değişkeni
 _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
 
 ```
@@ -488,7 +492,7 @@ bütün mapleri görmek için:
 :map
 ```
 
-## Uzantı ekleme
+### Uzantı ekleme
 
 Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla paket yöneticisi mevcut:
 
@@ -501,7 +505,7 @@ Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla
 - [VAM](https://github.com/MarcWeber/vim-addon-manager)
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
 
-### vim-plug ile uzantı ekleme
+#### vim-plug ile uzantı ekleme
 
 Vundle (Vim bundle) Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
 
@@ -533,12 +537,12 @@ call plug#end()
 
 komutuyla yükleyebilirsiniz.
 
-### Bazı uzantıların (eksik) listesi
+#### Bazı uzantıların (eksik) listesi
 
-##### Yeni başlayanlar için
+###### Yeni başlayanlar için
 [vim-sensible](https://github.com/tpope/vim-sensible)
 
-##### Kod tamamlama
+###### Kod tamamlama
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) kod tamamlama motoru
 * [deoplete.vim](https://github.com/Shougo/deoplete.nvim)
 * [Neocomplete](https://github.com/Shougo/neocomplete.vim)
@@ -546,30 +550,30 @@ komutuyla yükleyebilirsiniz.
 * [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
 * [completor.vim](https://github.com/maralla/completor.vim)
 
-##### Lint ve sözdizimi kontrolü
+###### Lint ve sözdizimi kontrolü
 * [syntastic](https://github.com/vim-syntastic/syntastic)
 * [ALE](https://github.com/w0rp/ale)
 * [neomake](https://github.com/neomake/neomake)
 
-##### Snippet
+###### Snippet
 * [Snimate](https://github.com/garbas/vim-snipmate)
 * [ultisnips](https://github.com/SirVer/ultisnips)
 * [vim-snippets](https://github.com/honza/vim-snippets)
 * [neosnippet.vim](https://github.com/Shougo/neosnippet.vim)
 
-##### Programlama Dili
+###### Programlama Dili
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 * [vim-go](https://github.com/fatih/vim-go)
 * [rust.vim](https://github.com/rust-lang/rust.vim)
 * [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 
-##### GUI-like
+###### GUI-like
 * [NERDTree](https://github.com/scrooloose/nerdtree)
 * [promptline](https://github.com/edkolev/promptline.vim)
 * [vim-airline](https://github.com/vim-airline/vim-airline)
 * [powerline](https://github.com/powerline/powerline)
 
-##### Kullanımı kolaylaştıran uzantılar
+###### Kullanımı kolaylaştıran uzantılar
 * [Surround](https://github.com/tpope/vim-surround)
 * [Fugitive](https://github.com/tpope/vim-fugitive)
 * [vim-commentary](https://github.com/tpope/vim-commentary)
@@ -581,9 +585,9 @@ komutuyla yükleyebilirsiniz.
 * [vim-obsession](https://github.com/tpope/vim-obsession)
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)
 
-## Linkler 
+### Linkler 
 
-### kopya kağıtları
+#### kopya kağıtları
 
 * http://www.worldtimzone.com/res/vi.html
 * http://www.fprintf.net/vimCheatSheet.html
@@ -591,21 +595,21 @@ komutuyla yükleyebilirsiniz.
 * http://www.fprintf.net/vimCheatSheet.html
 * https://devhints.io/vimscript
 
-### kitaplar
+#### kitaplar
 * Practical Vim: Edit Text at the Speed of Though - Drew Neil
 * Modern Vim - Drew Neil
 * Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
 * The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
 * [A Byte of Vim](https://vim.swaroopch.com/) (Online Kitap)
 
-### makaleler 
+#### makaleler 
 
 * Vim notları: https://www.emrah.com/notlar/vim_notlari.txt
 * 7 Etkili metin düzenleme alışkanlığı: http://www.moolenaar.net/habits.html
 * 11 yıl sonra Vim: http://statico.github.com/vim.html
 * Vim'e, eve dönüş: http://stevelosh.com/blog/2010/09/coming-home-to-vim 
 
-### tavsiye ve teknikler 
+#### tavsiye ve teknikler 
 
 * [vimcasts.org](http://vimcasts.org/) Video-casts on vim
 * [usevim.com](http://usevim.com/) Eklenti tanitimlari ve tavsiyeler
@@ -614,7 +618,7 @@ komutuyla yükleyebilirsiniz.
 * [r/vim](https://www.reddit.com/r/vim/) Vim subreddit
 * [vimrcfu](https://vimrcfu.com/) *.vimrc* ve mapping tavsiyeleri
 
-### siteler 
+#### siteler 
 
 * [Vim.org](https://www.vim.org) Vim - heryerde bulunan editor
 * [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
@@ -623,7 +627,7 @@ komutuyla yükleyebilirsiniz.
 
 <sup>1</sup> *Practical Vim: Edit Text at the Speed of Thought* kitabından
 
-## Licence 
+### Licence 
 
 <a href="http://www.wtfpl.net/"><img
        src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png"
