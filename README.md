@@ -1,4 +1,4 @@
-<p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="Vim logo"></a></p>
+<p align="center"><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="Vim logo"></p>
 
 ### Vim nedir? 
 
@@ -49,7 +49,7 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 * [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalışma)
     * [Tabları kullanma](#tabları-kullanma)
 * [Kaydetme](#kaydetme)
-* [Komutlari tekrar etme](#komutları-tekrar-etme)
+    * [Birden fazla komutu kaydederek tekrar etme](#birden-fazla-komutu-kaydederek-tekrar-etme)
 * [Düzenleme](#düzenleme)
     * [Bul ve Değiştir](#bul-ve-değiştir)
 * [Bazı sık kullanılanlar](Bazı-sık-kullanılanlar) 
@@ -82,7 +82,8 @@ Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 
 ```
 $ vimtutor          vim resmi öğretici metni
-:h konu             belirtilen konu hakkında detaylı yardım dosyasını aç, yardım dosyası içindeki hyperlinke tıklamak için imlec linkin altıdayken C-], geri C-[
+:h user-manuel
+:h konu             belirtilen konu hakkında detaylı yardım dosyasını aç, yardım dosyası içindeki hyperlinke tıklamak için imleç linkin altıdayken C-], geri C-[
 
 :q                  kapat
 :w                  kaydet/write
@@ -107,7 +108,7 @@ s=seconds, m=minute, h=hour, d=day
 y                seçili bölgeyi kopyala (yank)
 yy               bütün satırı kopyala
 p                yapıstır, satırın altına (paste)
-"<reg>y          seçili bolgeyi registera koplaya (a-z den register) 
+"<reg>y          seçili bolgeyi registera kopyala (a-z den register) 
 c                seçili bolgeyi kes
 "<reg>p          registera yapistir (a-z den register) 
 P                yapıştır, satırın üstüne
@@ -124,17 +125,15 @@ C-z      vim'i arka plana gonder (fg geri getirir)
 
 ```
                                 k
-h        imlec sola             ^
-j        imlec alta        h <     > l
-l        imlec saga             v
-k        imlec yukarı           j
+h        imleç sola             ^
+j        imleç alta        h <     > l
+l        imleç sağa             v
+k        imleç yukarı           j
 ```
 
 ```
 0        satır başına
 $        satır sonu
-<home>   satır başı
-<end>    satır sonu 
 ```
 
 ```
@@ -144,9 +143,9 @@ b        kelimenin başına zıpla
 ```
 
 ```
-h        ekranin başına zıpla (high)
-m        ekranin ortasina zıpla (middle)
-l        ekranin altına zıpla (low)
+H        ekranin başına zıpla (high)
+M        ekranin ortasina zıpla (middle)
+L        ekranin altına zıpla (low)
 ```
 
 ```
@@ -170,9 +169,9 @@ zz       z. ile aynı
 )        sonraki cümle
 {        önceki paragraf
 }        sonraki paragraf
-[{       mevcut kod blogunun basina zıpla 
+[{       mevcut kod blogunun başına zıpla 
 ]}       mevcut kod blogunun sonuna zıpla 
-gd       degisken deklerasyonuna zıpla 
+gd       değisken deklerasyonuna zıpla 
 ```
 
 ```
@@ -190,8 +189,8 @@ g        dosyanin en altı
  
 ```                                                                                            v           v
 E        kelimenin sonuna zıpla (isaretlemelerin ayrı bir kelime olduğu varsayılmaz) Ör: e (abcd)   E (abcd)
-W        kelimenin basina zıpla 
-B        geriye dogru kelimenin basina zıpla (isaretleme yok)
+W        kelimenin başına zıpla 
+B        geriye dogru kelimenin başına zıpla (isaretleme yok)
 #G       # numaralı satıra git ör: 38G
 #gg      #g ile aynı
 ```
@@ -203,7 +202,7 @@ B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 |command mod|
 \~~~~~~~~~~~/
 |          |
-^ :        v Esc Esc
+^ :/       v Esc Esc
 |          |
 /~~~~~~~~~~\<---Esc------/~~~~~~~~~~\
 |normal mod|             |insert mod|
@@ -217,9 +216,9 @@ B        geriye dogru kelimenin basina zıpla (isaretleme yok)
 
 ```
 ``` 
-i        imlecten öncesine text ekle
+i        imleçten öncesine text ekle
 I        satırın başına ekle
-a        imlecten sonra textin sonuna ekle
+a        imleçten sonra textin sonuna ekle
 a        satirin sonuna ekle 
 o        imlecin altına yeni bir satir yap ve text ekle 
 o        imlecin üstüne yeni bir satir yap ve text ekle
@@ -243,8 +242,8 @@ C-warrow   mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye
 C-wq       mevcut pencereyi kapat
 ```
 ```
-C-w#<      mevcut pencereyi sagdan # kadar yeniden boyutlandir (default 1) 
-C-w#>      mevcut pencereyi saga # kadar yeniden boyutlandir (default 1) 
+C-w#<      mevcut pencereyi sağdan # kadar yeniden boyutlandir (default 1) 
+C-w#>      mevcut pencereyi sağa # kadar yeniden boyutlandir (default 1) 
 :res #     yatay bölünmüş pencereyi # kadar yeniden boyutlandır
 ```
 ```
@@ -286,7 +285,17 @@ $ vim -p f1.txt f2.txt                 f1.txt ve f2.txt dosyalarını tab şekli
 :tabs               tabları listele
 ```
 
-### Kaydetme
+### Komutları tekrar etme
+
+**operatör [sayı] hareket** veya **[sayı] operator hareket**
+
+```
+c3w      veya 3cw, 3 kelime değiştir (cw cw cw)
+4j       jjjj 
+2w       w w,  iki sonraki kelimenin başına git
+2dd      2 satırı sil
+```
+#### Birden fazla komutu kaydederek tekrar etme
 
 birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara sahip (a-z),
 1. q ile kaydetmeyi başlat ve kaydetmek istedigin bir register seç. örnek: qa
@@ -299,30 +308,19 @@ q[a-z]   kaydetmeye basla, hareketler dahil hersey kaydedilecek
 ```
 
 
-### Komutları tekrar etme
-
-**operatör [sayı] hareket** veya **[sayı] operator hareket**
-
-```
-c3w      veya 3cw, 3 kelime değiştir (cw cw cw)
-4j       jjjj 
-2w       w w,  iki sonraki kelimenin başına git
-2dd      2 satırı sil
-```
-
 
 ### Düzenleme 
 
 ```
 x        imlecin altındaki karakteri sil
-X        imlecten önceki karakteri sil 
+X        imleçten önceki karakteri sil 
 dw       sonraki kelimeyi sil 
 dW       sonraki kelimeye kadar sil 
-d^       satir basina kadar sil
-d$       satir sonuna kadar sil 
-D        satir sonuna kadar sil d$ ile ayni 
-dd       tüm satiri sil
-dib      parantez blogundaki icerigi sil (ör: fonksiyon argumanlari)
+d^       satır başına kadar sil
+d$       satır sonuna kadar sil 
+D        satır sonuna kadar sil d$ ile ayni 
+dd       tüm satırı sil
+dib      parantez blogundaki içeriği sil (ör: fonksiyon argumanları)
 ```
 
 ```
@@ -335,7 +333,7 @@ r<c>     <c> karakterini degistir
 
 ```
 *        imlecin altındaki kelimeden sonraki kelimeleri ara
-f<c>     mevcut imlec pozisyonundan <c> karakterini bul ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
+f<c>     mevcut imleç pozisyonundan <c> karakterini bul ör: 3f<c> satırda <c> karakterinin 3. kez görüldüğü yere git
 '.       son duzenlenen satira zıpla
 g;       son duzenlenen pozisyona geri zıpla 
 ```
@@ -378,9 +376,9 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 :h vimrc-intro
 :options
 ```
-.vimrc dosyası vim'in çalışma anında ayarlarını tanımlar. sistemin kullandığı bir .vimrc ve herbir kullanıcının
+.vimrc dosyası vim'in çalışma anında ayarlarını tanımlar. Sistemin kullandığı bir .vimrc ve herbir kullanıcının
 *home* dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
-eğer .vimrc home dizininde yoksa, `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
+eğer .vimrc home dizininde yoksa `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 
 #### mapping 
 
@@ -484,7 +482,7 @@ _leader_ olarak '-' karakterini seçtim.
 ```
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 ```
-eğer .vimrc'yi düzenlemek istersem normal modda '-ve' karakterlerine basmam gerekecek
+eğer .vimrc'yi düzenlemek istersem normal modda '-ve' karakterlerine basmam gerekecek.
 
 
 bütün mapleri görmek için:
@@ -507,7 +505,7 @@ Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla
 
 #### vim-plug ile uzantı ekleme
 
-Vundle (Vim bundle) Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
+vim-plug, Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
 
 ```bash
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -549,6 +547,7 @@ komutuyla yükleyebilirsiniz.
 * [ncm2](https://github.com/ncm2/ncm2)
 * [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
 * [completor.vim](https://github.com/maralla/completor.vim)
+* [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 ###### Lint ve sözdizimi kontrolü
 * [syntastic](https://github.com/vim-syntastic/syntastic)
