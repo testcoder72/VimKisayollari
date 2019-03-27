@@ -52,13 +52,13 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
     * [Birden fazla komutu kaydederek tekrar etme](#birden-fazla-komutu-kaydederek-tekrar-etme)
 * [Düzenleme](#düzenleme)
     * [Bul ve Değiştir](#bul-ve-değiştir)
-* [Bazı sık kullanılanlar](Bazı-sık-kullanılanlar) 
+* [Bazı sık kullanılanlar](#Bazı-sık-kullanılanlar) 
 * [Yapılandırma](#yapılandırma)
     * [vimrc dosyası](#vimrc-dosyası)
     * [Mapping](#mapping)
 * [Uzantı ekleme](#uzantı-ekleme) 
     * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
-* [Bazı uzantıların (eksik) listesi](Bazı-uzantıların-(eksik)-listesi)
+* [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-(eksik)-listesi)
 * [Linkler](#linkler)
 
 ### Dosya oluşturma
@@ -124,6 +124,7 @@ C-z      vim'i arka plana gonder (fg geri getirir)
 ### Hareketler
 
 ```
+:h motion
                                 k
 h        imleç sola             ^
 j        imleç alta        h <     > l
@@ -519,7 +520,7 @@ Plug 'tpope/vim-sensible'
 call plug#end()
 ```
 `call plug#begin()` ve `call plug#end()` vim-plug komutları arasına uzantınızı ekleyin. Vim uzantılarının pek 
-çogu Github üzerınde tutuluyor ve maintain ediliyor. 
+çoğu Github üzerınde tutuluyor ve maintain ediliyor. 
 
 Mesela https://github.com/Shougo/deoplete.nvim linkinde tutulan uzantıyı
 
@@ -538,10 +539,10 @@ komutuyla yükleyebilirsiniz.
 #### Bazı uzantıların (eksik) listesi
 
 ###### Yeni başlayanlar için
-[vim-sensible](https://github.com/tpope/vim-sensible)
+* [vim-sensible](https://github.com/tpope/vim-sensible)
 
 ###### Kod tamamlama
-* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) kod tamamlama motoru
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 * [deoplete.vim](https://github.com/Shougo/deoplete.nvim)
 * [Neocomplete](https://github.com/Shougo/neocomplete.vim)
 * [ncm2](https://github.com/ncm2/ncm2)
@@ -572,6 +573,11 @@ komutuyla yükleyebilirsiniz.
 * [vim-airline](https://github.com/vim-airline/vim-airline)
 * [powerline](https://github.com/powerline/powerline)
 
+###### Tema ve Renkler
+* [vimcolors.com](https://vimcolors.com/)
+* [rainglow.io](https://rainglow.io)
+* [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
+
 ###### Kullanımı kolaylaştıran uzantılar
 * [Surround](https://github.com/tpope/vim-surround)
 * [Fugitive](https://github.com/tpope/vim-fugitive)
@@ -586,6 +592,22 @@ komutuyla yükleyebilirsiniz.
 
 ### Linkler 
 
+#### siteler 
+
+* [Vim.org](https://www.vim.org)
+* [Vim Repo](https://github.com/vim/vim)
+* [neovim.io](https://neovim.io/)
+* [neovim nightly builds](https://github.com/neovim/neovim/releases/tag/nightly)
+* [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
+
+#### kitaplar
+
+* Practical Vim: Edit Text at the Speed of Though - Drew Neil
+* Modern Vim - Drew Neil
+* Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
+* The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
+* [A Byte of Vim](https://vim.swaroopch.com/) (Online Kitap)
+
 #### kopya kağıtları
 
 * http://www.worldtimzone.com/res/vi.html
@@ -594,37 +616,9 @@ komutuyla yükleyebilirsiniz.
 * http://www.fprintf.net/vimCheatSheet.html
 * https://devhints.io/vimscript
 
-#### kitaplar
-* Practical Vim: Edit Text at the Speed of Though - Drew Neil
-* Modern Vim - Drew Neil
-* Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
-* The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
-* [A Byte of Vim](https://vim.swaroopch.com/) (Online Kitap)
+<sup>1</sup> *Practical Vim: Edit Text at the Speed of Thought* adlı kitaptan
 
-#### makaleler 
-
-* Vim notları: https://www.emrah.com/notlar/vim_notlari.txt
-* 7 Etkili metin düzenleme alışkanlığı: http://www.moolenaar.net/habits.html
-* 11 yıl sonra Vim: http://statico.github.com/vim.html
-* Vim'e, eve dönüş: http://stevelosh.com/blog/2010/09/coming-home-to-vim 
-
-#### tavsiye ve teknikler 
-
-* [vimcasts.org](http://vimcasts.org/) Video-casts on vim
-* [usevim.com](http://usevim.com/) Eklenti tanitimlari ve tavsiyeler
-* [vimregex.com](http://vimregex.com/) Vim'in regex motoru hakkinda bilgiler 
-* [Stackoverflow](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim) Kullanışlı vim kisayollari 
-* [r/vim](https://www.reddit.com/r/vim/) Vim subreddit
-* [vimrcfu](https://vimrcfu.com/) *.vimrc* ve mapping tavsiyeleri
-
-#### siteler 
-
-* [Vim.org](https://www.vim.org) Vim - heryerde bulunan editor
-* [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
-* [vimdoc.sourceforge.net](http://vimdoc.sourceforge.net/htmldoc/vimfaq.html) Vim Sık Sorulan Sorular
-* [vimgolf.com](https://vimgolf.com) Vim alıştırmaları
-
-<sup>1</sup> *Practical Vim: Edit Text at the Speed of Thought* kitabından
+Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
 
 ### Licence 
 
