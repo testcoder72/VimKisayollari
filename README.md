@@ -572,6 +572,7 @@ komutuyla yükleyebilirsiniz.
 * [promptline](https://github.com/edkolev/promptline.vim)
 * [vim-airline](https://github.com/vim-airline/vim-airline)
 * [powerline](https://github.com/powerline/powerline)
+* [lightline](https://github.com/itchyny/lightline.vim)
 
 ###### Tema ve Renkler
 * [vimcolors.com](https://vimcolors.com/)
