@@ -597,6 +597,7 @@ komutuyla yükleyebilirsiniz.
 
 * [Vim.org](https://www.vim.org)
 * [Vim Repo](https://github.com/vim/vim)
+* [gvim appimages](https://github.com/vim/vim-appimage/releases)
 * [neovim.io](https://neovim.io/)
 * [neovim nightly builds](https://github.com/neovim/neovim/releases/tag/nightly)
 * [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
