@@ -4,7 +4,7 @@
 
 Vim, etkili biçimde metin düzenlemek için, çok iyi yapılandırılabilir bir metin editorüdür.
 
-#### Vim Tarihi <sup>1</sup>
+#### Vim'in Tarihi <sup>1</sup>
 
 **ed** Unix'in orijinal text editörüydü. Video ekranların yaygın olmadığı bir zamanda yazılmıştı. Kaynak kod
 genelde sarılmış bir kağıda yazılır ve teletype terminalde düzenlenirdi. Terminala girilen komutlar işlenmesi
@@ -53,13 +53,14 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 * [Düzenleme](#düzenleme)
     * [Bul ve Değiştir](#bul-ve-değiştir)
 * [Bazı sık kullanılanlar](#Bazı-sık-kullanılanlar) 
-* [Yapılandırma](#yapılandırma)
-    * [vimrc dosyası](#vimrc-dosyası)
+* [Kişiselleştirme](#Kişiselleştirme)
+    * [Dotfiles ve .vimrc dosyası](#dotfiles-ve-.vimrc-dosyası)
     * [Mapping](#mapping)
 * [Uzantı ekleme](#uzantı-ekleme) 
     * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
 * [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-(eksik)-listesi)
 * [Linkler](#linkler)
+
 
 ### Dosya oluşturma
 
@@ -308,8 +309,6 @@ q[a-z]   kaydetmeye basla, hareketler dahil hersey kaydedilecek
 @[a-z]   kaydedilen hareketleri baslat
 ```
 
-
-
 ### Düzenleme 
 
 ```
@@ -370,14 +369,20 @@ xp      yanyana iki harfi yerdeğiştir         ör: microsotf ->  microsoft
 dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ```
 
-### Yapılandırma
+### Kişiselleştirme
 
-#### .vimrc dosyası
+#### dotfiles ve .vimrc dosyası
 ```
 :h vimrc-intro
 :options
 ```
-.vimrc dosyası vim'in çalışma anında ayarlarını tanımlar. Sistemin kullandığı bir .vimrc ve herbir kullanıcının
+Unix tabanlı işletim sistemlerinde sistem araçlarının büyük kısmı C programlarıdır ve bu programlar bazı parametrelerini dosyaya yazılmış komutlardan alır. Dotfile yani 
+nokta ile başlayan dosyalar bu komutları verir ve programların çalıma anında ayarlarını tanımlar. Bu dosyaların ilginç ortaya çıkış hikayesini [burdan](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp) okuyabilirsiniz.
+Noktalı dosyalar pratikte bir sistemden ötekine geçerken kullanışlıdır çünkü sistemi büyük ölçüde en baştan konfigure etmenizi önler. Noktalı dosyaları bir versiyon kontrol sisteminde tutmak iyi bir uygulamadır ve pek çok kullanıcı public şekilde bu repo'ları paylaşır.  
+
+ `.bashrc`, `.profile`, `.vimrc` noktalı dosyalara örnektir.
+
+.vimrc dosyası Vim'in çalışma anında ayarlarını tanımlar. Sistemin kullandığı bir .vimrc ve herbir kullanıcının
 *home* dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
 eğer .vimrc home dizininde yoksa `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
 
@@ -601,6 +606,7 @@ komutuyla yükleyebilirsiniz.
 * [neovim.io](https://neovim.io/)
 * [neovim nightly builds](https://github.com/neovim/neovim/releases/tag/nightly)
 * [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
+* [dotfiles.github.io](https://dotfiles.github.io)
 
 #### kitaplar
 
