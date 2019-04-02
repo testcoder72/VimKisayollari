@@ -362,7 +362,7 @@ g;       son duzenlenen pozisyona geri zıpla
 
 ```
 yyp     alt satıra kopyala
-yyp     üst satıra kopyala
+yyP     üst satıra kopyala
 ddp     alt satırla üst satırı yer değiştir
 ea      kelimenin sonuna ekle
 xp      yanyana iki harfi yerdeğiştir         ör: microsotf ->  microsoft 
@@ -377,7 +377,7 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 :options
 ```
 Unix tabanlı işletim sistemlerinde sistem araçlarının büyük kısmı C programlarıdır ve bu programlar bazı parametrelerini dosyaya yazılmış komutlardan alır. Dotfile yani 
-nokta ile başlayan dosyalar bu komutları verir ve programların çalıma anında ayarlarını tanımlar. Bu dosyaların ilginç ortaya çıkış hikayesini [burdan](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp) okuyabilirsiniz.
+nokta ile başlayan dosyalar bu komutları verir ve programların çalışma anında ayarlarını tanımlar. Bu dosyaların ilginç ortaya çıkış hikayesini [burdan](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp) okuyabilirsiniz.
 Noktalı dosyalar pratikte bir sistemden ötekine geçerken kullanışlıdır çünkü sistemi büyük ölçüde en baştan konfigure etmenizi önler. Noktalı dosyaları bir versiyon kontrol sisteminde tutmak iyi bir uygulamadır ve pek çok kullanıcı public şekilde bu repo'ları paylaşır.  
 
  `.bashrc`, `.profile`, `.vimrc` noktalı dosyalara örnektir.
@@ -402,7 +402,7 @@ eklememiz gerekir.
 - visual modda çalışabilecek **vmap**
 
 genel formül: 
-> map kısayol uzunKomutlarn
+> map kısayol uzunKomutlar
 
 ```
 nmap m <C-d>        "normal moddayken, m tuşuna ctrl-d komutlarını (yarım sayfa alta) atamış olduk
@@ -565,6 +565,7 @@ komutuyla yükleyebilirsiniz.
 * [ultisnips](https://github.com/SirVer/ultisnips)
 * [vim-snippets](https://github.com/honza/vim-snippets)
 * [neosnippet.vim](https://github.com/Shougo/neosnippet.vim)
+* [vim-minisnip](https://github.com/joereynolds/vim-minisnip)
 
 ###### Programlama Dili
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot)
