@@ -56,8 +56,8 @@ Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildi
 * [Kişiselleştirme](#Kişiselleştirme)
     * [Dotfiles ve .vimrc dosyası](#dotfiles-ve-.vimrc-dosyası)
     * [Mapping](#mapping)
-* [Uzantı ekleme](#uzantı-ekleme) 
-    * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
+    * [Uzantı ekleme](#uzantı-ekleme) 
+        * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
 * [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-(eksik)-listesi)
 * [Linkler](#linkler)
 
@@ -483,7 +483,7 @@ _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
 ```
 let mapleader = "-"
 ```
-_leader_ olarak '-' karakterini seçtim.
+_leader_ olarak `-` karakterini seçtim.
  
 ```
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
@@ -496,7 +496,7 @@ bütün mapleri görmek için:
 :map
 ```
 
-### Uzantı ekleme
+#### Uzantı ekleme
 
 Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla paket yöneticisi mevcut:
 
@@ -509,7 +509,7 @@ Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla
 - [VAM](https://github.com/MarcWeber/vim-addon-manager)
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
 
-#### vim-plug ile uzantı ekleme
+##### vim-plug ile uzantı ekleme
 
 vim-plug, Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
 
@@ -521,18 +521,24 @@ komutunu çalıştırıın ve .vimrc dosyasına şunları ekleyin :
 
 ```vims
 call plug#begin()
-Plug 'tpope/vim-sensible'
+" uzantilar
 call plug#end()
 ```
 `call plug#begin()` ve `call plug#end()` vim-plug komutları arasına uzantınızı ekleyin. Vim uzantılarının pek 
 çoğu Github üzerınde tutuluyor ve maintain ediliyor. 
 
-Mesela https://github.com/Shougo/deoplete.nvim linkinde tutulan uzantıyı
+Mesela https://github.com/tpope/vim-sensible linkinde tutulan uzantıyı
+
+```vims
+call plug#begin()
+Plug 'https://github.com/tpope/vim-sensible'
+call plug#end()
+```
+veya
 
 ```vims
 call plug#begin()
 Plug 'tpope/vim-sensible'
-Plug 'Shougo/deoplete.nvim'
 call plug#end()
 ```
 şeklinde koyduktan sonra 
