@@ -456,26 +456,10 @@ nnoremap o 4o
 mapleri dosya tipine göre özelleştirebiliriz: 
 
 ```
-autocmd filetype cpp nnoremap <f5> :w <bar> !clear && clang++ 
-        \ -wshadow
-        \ -wnon-virtual-dtor
-        \ -wpedantic 
-        \ -wold-style-cast
-        \ -woverloaded-virtual 
-        \ -wconversion 
-        \ -std=c++1z -o2 %  && ./a.out <CR>
+autocmd FileType cpp nnoremap <f5> :w <bar> !clang++ -stdlib=libc++ -fsyntax-only -std=c++1z % <cr>
+autocmd FileType d nnoremap <f8> :call DTest()<cr>
+autocmd FileType text nnoremap <C-s> :w <cr>
 ```
- 
-yukarıdaki örnekte f5 sağındaki tüm komutları çalıştırır, ve yalnızca `.cpp` uzantılı dosyalar için çalışacaktır.
-
-sırasıyla:
-
-1. autocmd komutu filetype event'ini çağırır ve dosya tipi cpp ise map çalıştırılabilir
-2. :w ile dosyayı kaydeder
-3. `<bar>` diğer komutları bağlamada kullanılır
-4. !clear bir bash komutu olan _clear_ çalıştırılır
-5. komut uzun olduğundan, bir alt satırdan devam etmek için alttaki satırın başına `\` ekledik
-6. clang flagleriyle derlemeyi çalıştırıp `<CR>` yani enter tuşuna basmış olduk
 
 ##### leader değişkeni
 _leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
