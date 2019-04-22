@@ -1,8 +1,41 @@
 <p align="center"><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="Vim logo"></p>
 
+* [Vim'den Çıkış](vim'den-çıkış)
+* [Vim Nedir?](#vim-nedir?)
+    * [Vim'in Tarihi](#vim'in-tarihi)
+    * [Vim Forkları ve Neovim](#vim-forkları-ve-neovim)
+* [Dosya oluşturma](#dosya-oluşturma)
+* [Vim modları](#vim-modları)
+* [Genel](#genel)
+* [Hareketler](#hareketler)
+* [Insert moda geçme](#insert-moda-geçme)
+* [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalışma)
+    * [Tabları kullanma](#tabları-kullanma)
+* [Kaydetme](#kaydetme)
+    * [Birden fazla komutu kaydederek tekrar etme](#birden-fazla-komutu-kaydederek-tekrar-etme)
+* [Düzenleme](#düzenleme)
+    * [Bul ve Değiştir](#bul-ve-değiştir)
+* [Bazı sık kullanılanlar](#Bazı-sık-kullanılanlar) 
+* [Kişiselleştirme](#Kişiselleştirme)
+    * [Dotfiles ve .vimrc dosyası](#dotfiles-ve-.vimrc-dosyası)
+    * [Mapping](#mapping)
+    * [Uzantı ekleme](#uzantı-ekleme) 
+        * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
+* [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-(eksik)-listesi)
+* [Linkler](#linkler)
+
+### [Vim'den Çıkış](https://stackoverflow.blog/wp-content/uploads/2017/05/country_stuck_vim-1-2-1024x1024.png)
+
+```
+<esc> :q! <enter> 
+```
+
 ### Vim nedir? 
 
 Vim, etkili biçimde metin düzenlemek için, çok iyi yapılandırılabilir bir metin editorüdür.
+
+Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildir. Bir araçtır, kullanılması
+ öğrenilmelidir. Vim kelime işlemci değildir.
 
 #### Vim'in Tarihi <sup>1</sup>
 
@@ -26,40 +59,9 @@ vi'de olmayan Vim özelliklerinin listesi için **vi-differences**'a bakınız. 
  çok önemlidir ama atalarına hala çok şey borçludur. Vim'in atalarının tasarımına rehberlik eden
  kısıtlar bize bugün hala değerli olan bir komut kümesi bıraktı.
 
-###  Vim ne değildir? 
-
-Vim kullanıcılarının elinden tutmak için tasarlanmış bir editör değildir. Bir araçtır, kullanılması
- öğrenilmelidir. Vim kelime işlemci değildir.
- 
-### Vim ve Neovim
+#### Vim Forkları ve Neovim
 
 [Neovim](https://neovim.io/) bir Vim fork'udur ve kendini Vim'e katkıda bulunmak isteyenlere daha açık hale getirmek için oluşturulmuş bir Vim uzantısı olarak tanımlar. 
-
-### [Vim'den Çıkış](https://stackoverflow.blog/wp-content/uploads/2017/05/country_stuck_vim-1-2-1024x1024.png)
-
-```
-<esc> :q! <enter> 
-```
-
-* [Dosya oluşturma](#dosya-oluşturma)
-* [Vim modları](#vim-modları)
-* [Genel](#genel)
-* [Hareketler](#hareketler)
-* [Insert moda geçme](#insert-moda-geçme)
-* [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalışma)
-    * [Tabları kullanma](#tabları-kullanma)
-* [Kaydetme](#kaydetme)
-    * [Birden fazla komutu kaydederek tekrar etme](#birden-fazla-komutu-kaydederek-tekrar-etme)
-* [Düzenleme](#düzenleme)
-    * [Bul ve Değiştir](#bul-ve-değiştir)
-* [Bazı sık kullanılanlar](#Bazı-sık-kullanılanlar) 
-* [Kişiselleştirme](#Kişiselleştirme)
-    * [Dotfiles ve .vimrc dosyası](#dotfiles-ve-.vimrc-dosyası)
-    * [Mapping](#mapping)
-    * [Uzantı ekleme](#uzantı-ekleme) 
-        * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
-* [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-(eksik)-listesi)
-* [Linkler](#linkler)
 
 
 ### Dosya oluşturma
