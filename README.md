@@ -23,6 +23,7 @@
         * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
 * [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-(eksik)-listesi)
 * [Linkler](#linkler)
+* [Vim'i kaynak koddan build etme](#Vim'i-kaynak-koddan-build-etme)
 
 ### [Vim'den Çıkış](https://stackoverflow.blog/wp-content/uploads/2017/05/country_stuck_vim-1-2-1024x1024.png)
 
@@ -620,6 +621,81 @@ komutuyla yükleyebilirsiniz.
 <sup>1</sup> *Practical Vim: Edit Text at the Speed of Thought* adlı kitaptan
 
 Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
+
+### Vim'i kaynak koddan build etme
+
+Eğer Unix tabanlı bir işletim sistemi kullanıyorsanız Vim veya Vi büyük ihtimalle kuruludur ama Vim bazı uzantıları
+kullanmak için default olarak etkinleştirilmemiş özelliklerine ihtiyaç duyar. Bunun için Vim'i kaynak kodundan build
+etmek gerekir. 
+
+Hangi özelliklerin etkinleştirildiği dağıtıma göre değişiyor, kontrol etmek için:
+
+```
+:versiyon
+```
+
+Git ile repo'yu indirin:
+
+```
+git clone --depth=1 https://github.com/vim/vim.git
+```
+```
+cd vim
+```
+build'e başlamadan önce configure adımını gerçekleştirmemiz gerekiyor, etkinleştireceğiniz özelliklere göre
+ihtiyaç duyduğunuz kütüphaneler değişiklik gösterecektir.
+
+```
+./configure --help
+```
+Benim bu adım için kullandığım parametreler:
+```
+sudo ./configure --enable-fail-if-missing \
+--disable-darwin \
+--disable-smack \
+--disable-selinux \
+--enable-luainterp=yes \
+--with-python3-command=python3interp \
+--enable-python3interp=yes \
+--with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
+--enable-cscope \
+--disable-netbeans \
+--enable-terminal \
+--enable-autoservername \
+--enable-multibyte \
+--disable-rightleft \
+--disable-arabic \
+--disable-farsi \
+--enable-fontset \
+--enable-gui=no \
+--enable-gtk2-check=no \
+--enable-gtk3-check=no \
+--enable-athena-check=no \
+--enable-nextaw-check=no \
+--enable-carbon-check=no \
+--disable-gtktest \
+--with-compiledby=p1v0t
+```
+ihtiyaçlarınıza göre sizinkiler farklı olabilir. Bu adımın sonunda build için gerekli dosyalar üretiliyor.
+GNU make build aracıyla:
+```
+sudo make -j 8
+```
+`-j` parametresi build için kaç tane core adayacımızı söylüyor, daha yüksek kullanırsanız build daha hızlı olacak
+tır ama bu süre boyuncu bilgisayarınız diğer işler için yavaşlayabilir. Bu adımın sonunda çalıştırılabilir dosyalar 
+(executable) üretilecektir. Bunları root'un erişebileceği yerlere kopyalamak için:
+```
+sudo make install
+```
+Vim'in nereye yükleneceğini *configure* adımında  `prefix` parametresiyle belirleyebilirsiniz. Varsayılan olarak 
+`/usr/local` olacaktır. Vim'in nerde olduğunu
+```
+which vim
+``` 
+ile kontrol edebilirsiniz.
+
+Repo'yu silmeyin, son ozellikleri deneyimlemek icin pull yapip yukaridaki komutlari baştan uygulayın,
+*make* yalnizca degisen dosyalari derleyeceginden build fazla zaman almaycaktir.
 
 ### Licence 
 
