@@ -87,12 +87,12 @@ Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 ```
 $ vimtutor          vim resmi öğretici metni
 :h user-manuel
-:h konu             belirtilen konu hakkında detaylı yardım dosyasını aç, yardım dosyası içindeki hyperlinke tıklamak için imleç linkin altıdayken C-], geri C-[
+:h konu             konu hakkında yardım. Ör: `:h python` Ctrl-] linke tıkla, Ctrl-T geri gel
 
-:q                  kapat
+:q                  kapat (quit)
 :w                  kaydet/write
 :saveas dosyaadı    farklı kaydet
-:wa[!]              yaz/kaydet butun pencereler [zorla]
+:wa[!]              yaz/kaydet bütün pencereler (write all) [zorla]
 :wq                 kaydet ve çık
 :wqa                bütün tabları kaydet ve çık (write, quit all) bkz: [tabları kullanma](#tablari-kullanma)
 :x                  yaz ve çık, wq ile aynı
@@ -235,16 +235,30 @@ shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
 ```
 
 ### Birden fazla dosyayla çalışma 
+```
+:h usr_08.txt
+```
 
 ```
 C-ws       mevcut pencereyi yatay olaral bol (alternatif :split)
+C-ws a.txt a.txt dosyasını oluştur ve düzenlemeye başla
  
 C-wv       mevcut pencereyi dikey olarak bol (alternatif :vsplit)
 C-ww       sonraki pencereye zıpla 
 ```
+
 ```
-C-warrow   mevcut pencereden sol/sag/yukari/asagi (ok tuslari) yondeki pencereye zıpla
+C-w h      mevcut pancereden sola geç
+C-w j      mevcut pencereden aşağı geç
+C-w k      mevcut penceden yukarı geç
+C-w l      mevcut pencereden sağa geç
+C-w t      en yukarıdaki pencereye geç
+C-w b      en aşağıdaki pencereye geç
+```
+```
 C-wq       mevcut pencereyi kapat
+:close     yukarıdakiyle aynı
+:only      mevcut bölme hariç diğerlerini kapat
 ```
 ```
 C-w#<      mevcut pencereyi sağdan # kadar yeniden boyutlandir (default 1) 
@@ -252,10 +266,10 @@ C-w#>      mevcut pencereyi sağa # kadar yeniden boyutlandir (default 1)
 :res #     yatay bölünmüş pencereyi # kadar yeniden boyutlandır
 ```
 ```
-C-         mevcut pencereyi en sola taşı 
-C-wj       mevcut pencereyi en alta taşı         
-C-wk       mevcut pencereyi en üste taşı         
-C-wl       mevcut pencereyi en sağa taşı
+C-wH       mevcut pencereyi en sola taşı 
+C-wJ       mevcut pencereyi en alta taşı         
+C-wK       mevcut pencereyi en üste taşı         
+C-wL       mevcut pencereyi en sağa taşı
 ```
 
 ```
