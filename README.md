@@ -80,7 +80,7 @@ Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 * normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir. `:h Normal-mod`
 * insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.  `:h Insert-mod`
 * görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.  `:h Visual-mod`
-* komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra <enter> basılmalıdır. ör. :h ctrl-r <enter>
+* komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra `<enter>` basılmalıdır. ör. `:h ctrl-r <enter>`
 
 ### Genel
 
@@ -274,7 +274,7 @@ C-wL       mevcut pencereyi en sağa taşı
 
 ```
 $ vim -o3 f1.txt f2.txt f3.txt      dosyaları alt üst aynı pencerede aç (horizontally split)
-$ vim -o3 f1.txt f2.txt f3.txt      dosyaları yan yana aynı pencerede aç(vertically split)
+$ vim -O3 f1.txt f2.txt f3.txt      dosyaları yan yana aynı pencerede aç(vertically split)
 
 $ vim f1.txt f2.txt f3.txt          dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaadı ile yeni dosya ekle
 ```
@@ -393,7 +393,7 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 :h vimrc-intro
 :options
 ```
-Unix tabanlı işletim sistemlerinde sistem araçlarının büyük kısmı C programlarıdır ve bu programlar bazı parametrelerini dosyaya yazılmış komutlardan alır. Dotfile yani 
+Unix tabanlı işletim sistemlerinde, sistem araçlarının büyük kısmı C programıdır ve bu programlar bazı parametrelerini dosyaya yazılmış komutlardan alır. Dotfile yani 
 nokta ile başlayan dosyalar bu komutları verir ve programların çalışma anında ayarlarını tanımlar. Bu dosyaların ilginç ortaya çıkış hikayesini [burdan](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp) okuyabilirsiniz.
 Noktalı dosyalar pratikte bir sistemden ötekine geçerken kullanışlıdır çünkü sistemi büyük ölçüde en baştan konfigure etmenizi önler. Noktalı dosyaları bir versiyon kontrol sisteminde tutmak iyi bir uygulamadır ve pek çok kullanıcı public şekilde bu repo'ları paylaşır.  
 
@@ -548,6 +548,65 @@ call plug#end()
 
 komutuyla yükleyebilirsiniz.
 
+### Kendi uzantınızı yazma
+`:h plugin`
+
+Kendi uzantınızı yazabilirsiniz! Bir Vim uzantısı vimscript dilinde yazılmış bir programdır. Genel olarak aşa
+ğıdaki bölümlerden oluşur.
+
+```
+MyAwesomePlugin/
+.
+├── autoload   autoload fonkiyonları ??Detay??
+├── doc        Dökümantasyon dosyası
+├── ftdetect   Dosya tipinin algılanması
+├── ftplugin   Belli bir dosya tipi için yazılmış uzantı
+├── plugin     Uzantı dosyası
+└── syntax     Sözdizimini renklendirme dosyası
+```
+
+İhtiyaçlara göre `after`, `indent` gibi klasörler eklenebilir. Basit bir genel amaçlı fonksiyon için `plugin`
+klasörü yeterlidir. ??Neden ekle!??
+
+#### Hello World uzantısı
+Uzantıyı içeren klasörü `runtimepath`'e ekleyin:
+
+```
+set runtimepath+=/path/to/helloworld
+```
+```
+helloworld/
+├── autoload
+│   └── greet.vim
+├── doc
+├── ftdetect
+├── ftplugin
+├── plugin
+│   └── greet.vim
+└── syntax
+```
+
+```VimScript
+" plugin/greet.vim
+if exists('g:loaded_greet')
+	finish
+endif
+let g:loaded_greet = 1
+
+command! Greet call greet#hello_world()
+```
+```VimScript
+" autoload/greet.vim
+function! greet#hello_world() abort
+	echo "Hello World!!"
+endfunction
+```
+
+Ve bitti:)) Komut modunda `:Greet` ile deneyebilirsiniz.
+
+??Kaynak kodu paylas??
+??Komutlari acikla??
+
 #### Bazı uzantıların (eksik) listesi
 
 ###### Yeni başlayanlar için
@@ -645,16 +704,16 @@ etmek gerekir.
 Hangi özelliklerin etkinleştirildiği dağıtıma göre değişiyor, kontrol etmek için:
 
 ```
-:versiyon
+:version
 ```
 
 Git ile repo'yu indirin:
 
 ```
-git clone --depth=1 https://github.com/vim/vim.git
+$ git clone --depth=1 https://github.com/vim/vim.git
 ```
 ```
-cd vim
+$ cd vim
 ```
 build'e başlamadan önce configure adımını gerçekleştirmemiz gerekiyor, etkinleştireceğiniz özelliklere göre
 ihtiyaç duyduğunuz kütüphaneler değişiklik gösterecektir.
@@ -664,7 +723,7 @@ ihtiyaç duyduğunuz kütüphaneler değişiklik gösterecektir.
 ```
 Benim bu adım için kullandığım parametreler:
 ```
-sudo ./configure --enable-fail-if-missing \
+$ sudo ./configure --enable-fail-if-missing \
 --disable-darwin \
 --disable-smack \
 --disable-selinux \
@@ -693,23 +752,23 @@ sudo ./configure --enable-fail-if-missing \
 ihtiyaçlarınıza göre sizinkiler farklı olabilir. Bu adımın sonunda build için gerekli dosyalar üretiliyor.
 GNU make build aracıyla:
 ```
-sudo make -j 8
+$ sudo make -j 8
 ```
 `-j` parametresi build için kaç tane core adayacımızı söylüyor, daha yüksek kullanırsanız build daha hızlı olacak
 tır ama bu süre boyuncu bilgisayarınız diğer işler için yavaşlayabilir. Bu adımın sonunda çalıştırılabilir dosyalar 
 (executable) üretilecektir. Bunları root'un erişebileceği yerlere kopyalamak için:
 ```
-sudo make install
+$ sudo make install
 ```
 Vim'in nereye yükleneceğini *configure* adımında  `prefix` parametresiyle belirleyebilirsiniz. Varsayılan olarak 
 `/usr/local` olacaktır. Vim'in nerde olduğunu
 ```
-which vim
+$ which vim
 ``` 
 ile kontrol edebilirsiniz.
 
 Repo'yu silmeyin, son ozellikleri deneyimlemek icin pull yapip yukaridaki komutlari baştan uygulayın,
-*make* yalnizca degisen dosyalari derleyeceginden build fazla zaman almaycaktir.
+*make* yalnizca degisen dosyalari derleyeceginden build fazla zaman almayacaktir.
 
 ### Licence 
 
