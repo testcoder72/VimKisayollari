@@ -200,6 +200,23 @@ B        geriye dogru kelimenin başına zıpla (isaretleme yok)
 #gg      #g ile aynı
 ```
 
+Daha genel olarak<sup>2<sup>:
+```
+                gg
+                 ?
+                C-b
+                 H
+                 {
+                 k
+^ F T ( b ge h       l w e ) t f $
+                 j
+                 }
+                 L
+                C-f
+                 /
+                 G
+```
+
 ### Insert moda geçme ##
 
 ```
@@ -557,16 +574,17 @@ Kendi uzantınızı yazabilirsiniz! Bir Vim uzantısı vimscript dilinde yazılm
 ```
 MyAwesomePlugin/
 .
-├── autoload   autoload fonkiyonları ??Detay??
+├── autoload   Dosya tipine göre otomatik yüklenen fonksiyonlar
 ├── doc        Dökümantasyon dosyası
 ├── ftdetect   Dosya tipinin algılanması
 ├── ftplugin   Belli bir dosya tipi için yazılmış uzantı
 ├── plugin     Uzantı dosyası
-└── syntax     Sözdizimini renklendirme dosyası
-```
+├── syntax     Sözdizimini renklendirme dosyası
+└── after     
+└── indent    
+└── compiler   
 
-İhtiyaçlara göre `after`, `indent` gibi klasörler eklenebilir. Basit bir genel amaçlı fonksiyon için `plugin`
-klasörü yeterlidir. ??Neden ekle!??
+```
 
 #### Hello World uzantısı
 Uzantıyı içeren klasörü `runtimepath`'e ekleyin:
@@ -576,14 +594,11 @@ set runtimepath+=/path/to/helloworld
 ```
 ```
 helloworld/
+.
 ├── autoload
 │   └── greet.vim
-├── doc
-├── ftdetect
-├── ftplugin
 ├── plugin
-│   └── greet.vim
-└── syntax
+    └── greet.vim
 ```
 
 ```VimScript
@@ -677,10 +692,11 @@ Ve bitti:)) Komut modunda `:Greet` ile deneyebilirsiniz.
 
 #### kitaplar
 
-* Practical Vim: Edit Text at the Speed of Though - Drew Neil
+* Practical Vim: Edit Text at the Speed of Though<sup>1</sup> - Drew Neil
 * Modern Vim - Drew Neil
 * Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
 * The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
+* Mastering Vim: Build a software development environment with Vim and Neovim<sup>1</sup> - Ruslan Osipov
 * [A Byte of Vim](https://vim.swaroopch.com/) (Online Kitap)
 
 #### kopya kağıtları
@@ -691,9 +707,6 @@ Ve bitti:)) Komut modunda `:Greet` ile deneyebilirsiniz.
 * http://www.fprintf.net/vimCheatSheet.html
 * https://devhints.io/vimscript
 
-<sup>1</sup> *Practical Vim: Edit Text at the Speed of Thought* adlı kitaptan
-
-Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
 
 ### Vim'i kaynak koddan build etme
 
@@ -769,6 +782,9 @@ ile kontrol edebilirsiniz.
 
 Repo'yu silmeyin, son ozellikleri deneyimlemek icin pull yapip yukaridaki komutlari baştan uygulayın,
 *make* yalnizca degisen dosyalari derleyeceginden build fazla zaman almayacaktir.
+
+-----
+Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
 
 ### Licence 
 
