@@ -786,7 +786,7 @@ Repo'yu silmeyin, son ozellikleri deneyimlemek icin pull yapip yukaridaki komutl
 -----
 Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
 
-### Licence 
+### Lisans 
 
 <a href="http://www.wtfpl.net/"><img
        src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png"
