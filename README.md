@@ -617,17 +617,14 @@ function! greet#hello_world() abort
 endfunction
 ```
 
-Ve bitti:)) Komut modunda `:Greet` ile deneyebilirsiniz.
-
-??Kaynak kodu paylas??
-??Komutlari acikla??
+Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 
 #### Bazı uzantıların (eksik) listesi
 
 ###### Yeni başlayanlar için
 * [vim-sensible](https://github.com/tpope/vim-sensible)
 
-###### Kod tamamlama
+###### Kod tamamlama ve Dil istemcisi
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 * [deoplete.vim](https://github.com/Shougo/deoplete.nvim)
 * [Neocomplete](https://github.com/Shougo/neocomplete.vim)
@@ -635,6 +632,9 @@ Ve bitti:)) Komut modunda `:Greet` ile deneyebilirsiniz.
 * [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
 * [completor.vim](https://github.com/maralla/completor.vim)
 * [coc.nvim](https://github.com/neoclide/coc.nvim)
+
+###### Dil sunucuları listesi
+* [Language Servers](https://langserver.org/)
 
 ###### Lint ve sözdizimi kontrolü
 * [syntastic](https://github.com/vim-syntastic/syntastic)
