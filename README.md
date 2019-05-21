@@ -120,6 +120,7 @@ P                yapıştır, satırın üstüne
 ```
 
 ```
+:term    vim'den ayrilmadan terminali baslat  `:h terminal`
 :!<cmd>  vim'den ayrılmadan shell'den <cmd> komutunu calistir ör: `!g++ -wall -std=c++14 main.cpp`, `!ruby %`
 :sh      shell'e git, `exit` ile tekrar vim'e dön
 C-z      vim'i arka plana gonder (fg geri getirir)
