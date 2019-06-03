@@ -632,6 +632,8 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [ncm2](https://github.com/ncm2/ncm2)
 * [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
 * [completor.vim](https://github.com/maralla/completor.vim)
+* [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
+* [vim-lsc](https://github.com/natebosch/vim-lsc)
 * [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 ###### Dil sunucuları listesi
