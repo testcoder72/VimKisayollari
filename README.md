@@ -668,6 +668,8 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [vimcolors.com](https://vimcolors.com/)
 * [rainglow.io](https://rainglow.io)
 * [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
+* [vim-devicons](https://github.com/ryanoasis/vim-devicons)
+* [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
 ###### Kullanımı kolaylaştıran uzantılar
 * [Surround](https://github.com/tpope/vim-surround)
