@@ -79,7 +79,7 @@ Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 
 * normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir. `:h Normal-mod`
 * insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.  `:h Insert-mod`
-* görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, v ile satır bazında, C-v ile block bazında görsel moda geçilir.  `:h Visual-mod`
+* görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, V ile satır bazında, C-v ile block bazında görsel moda geçilir.  `:h Visual-mod`
 * komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra `<enter>` basılmalıdır. ör. `:h ctrl-r <enter>`
 
 ### Genel
@@ -187,7 +187,7 @@ ge       önceki kelimenin sonuna zıpla
 b        kelimenin başına zıpla
 ^        boşluk olmayan ilk karakter
 gg       dosyanin en üstü
-g        dosyanin en altı
+G        dosyanin en altı
 +        sonraki satır başına
 -        önceki satır başına
 .        son komutu tekrarla
@@ -198,7 +198,7 @@ E        kelimenin sonuna zıpla (isaretlemelerin ayrı bir kelime olduğu varsa
 W        kelimenin başına zıpla 
 B        geriye dogru kelimenin başına zıpla (isaretleme yok)
 #G       # numaralı satıra git ör: 38G
-#gg      #g ile aynı
+#gg      #G ile aynı
 ```
 
 Daha genel olarak<sup>2<sup>:
@@ -242,11 +242,11 @@ Daha genel olarak<sup>2<sup>:
 i        imleçten öncesine text ekle
 I        satırın başına ekle
 a        imleçten sonra textin sonuna ekle
-a        satirin sonuna ekle 
+A        satirin sonuna ekle 
 o        imlecin altına yeni bir satir yap ve text ekle 
-o        imlecin üstüne yeni bir satir yap ve text ekle
+O        imlecin üstüne yeni bir satir yap ve text ekle
 s        imlecin altındaki harfi sil 
-s        tüm satiri sil
+S        tüm satiri sil
 cc       mevcut satiri sil ve insert moda geç
 cw       kelimeyi sil ve insert moda geç (change word)
 shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
@@ -284,10 +284,10 @@ C-w#>      mevcut pencereyi sağa # kadar yeniden boyutlandir (default 1)
 :res #     yatay bölünmüş pencereyi # kadar yeniden boyutlandır
 ```
 ```
-C-wH       mevcut pencereyi en sola taşı 
+C-wH       mevcut pencereyi en sağa taşı 
 C-wJ       mevcut pencereyi en alta taşı         
 C-wK       mevcut pencereyi en üste taşı         
-C-wL       mevcut pencereyi en sağa taşı
+C-wL       mevcut pencereyi en sola taşı
 ```
 
 ```
@@ -340,8 +340,8 @@ birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara s
 3. kaydedilen değişikliği @<reg> şeklinde uygula. örnek: @a<enter>
         
 ```
-q[a-z]   kaydetmeye basla, hareketler dahil hersey kaydedilecek
-@[a-z]   kaydedilen hareketleri baslat
+q[a-z]   kaydetmeye başla, hareketler dahil herşey kaydedilecek
+@[a-z]   kaydedilen hareketleri başlat
 ```
 
 ### Düzenleme 
@@ -353,7 +353,7 @@ dw       sonraki kelimeyi sil
 dW       sonraki kelimeye kadar sil 
 d^       satır başına kadar sil
 d$       satır sonuna kadar sil 
-D        satır sonuna kadar sil d$ ile ayni 
+D        satır sonuna kadar sil d$ ile aynı
 dd       tüm satırı sil
 dib      parantez blogundaki içeriği sil (ör: fonksiyon argumanları)
 ```
@@ -427,7 +427,7 @@ eğer .vimrc home dizininde yoksa `vim .vimrc` ile oluşturabilirsiniz. bkz: [de
 :help mapping
 ```
 mapping ile uzun komutları kısa komutlara dönüştürebiliriz.
-mapleri kalıcı olarak kullanamk için .vimrc dosyasına
+mapleri kalıcı olarak kullanamak için .vimrc dosyasına
 eklememiz gerekir.
 
  üç temel mod için 3 temel mapping çeşidi bulunur:
@@ -462,7 +462,7 @@ Bazı özel karakterler:
 ```
 :h key-notation
 ```
-ama bu komutlar daha önce maplenmiş diğer komutları çakışabileceğinden, komutları mümkün olduğunca no-recursive yapmak iyi bir uygulamadır. 
+Oluşturduğumux kısayollar daha önce maplenmiş diğer komutları çakışabileceğinden, komutları mümkün olduğunca no-recursive yapmak iyi bir uygulamadır. 
 
 Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadığını öğrenmek için:
 ```
@@ -470,12 +470,12 @@ Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadı�
 ```
 
 aşağıda _o_ yani alt satıra in ve insert moda geç, komutunu 4 kere tekrarlayacığını umduğumuz bu komut
-sonsuz döngü neden olur. _o_ _4o_'yu, _4o_ diğer bir _4o_'yu çağırmaya çalışacaktır.
+sonsuz döngüye neden olur. _o_ _4o_'yu, _4o_ diğer bir _4o_'yu çağırmaya çalışacaktır.
 
 ```
 nmap o 4o 
 ```
-mapleri no-recursive  için de komutun başına *nore* getirilir.
+mapleri no-recursive için komutun başına *nore* getirilir.
 
 - normal mod için **nnoremap**
 - insert mod için **inoremap**
@@ -569,8 +569,7 @@ komutuyla yükleyebilirsiniz.
 ### Kendi uzantınızı yazma
 `:h plugin`
 
-Kendi uzantınızı yazabilirsiniz! Bir Vim uzantısı vimscript dilinde yazılmış bir programdır. Genel olarak aşa
-ğıdaki bölümlerden oluşur.
+Kendi uzantınızı yazabilirsiniz! Bir Vim uzantısı vimscript dilinde yazılmış bir programdır. Genel olarak aşağıdaki bölümlerden oluşur.
 
 ```
 MyAwesomePlugin/
@@ -772,8 +771,8 @@ GNU make build aracıyla:
 ```
 $ sudo make -j 8
 ```
-`-j` parametresi build için kaç tane core adayacımızı söylüyor, daha yüksek kullanırsanız build daha hızlı olacak
-tır ama bu süre boyuncu bilgisayarınız diğer işler için yavaşlayabilir. Bu adımın sonunda çalıştırılabilir dosyalar 
+`-j` parametresi build için kaç tane core adayacımızı söylüyor, daha yüksek kullanırsanız build daha hızlı olacaktır 
+ama bu süre boyuncu bilgisayarınız diğer işler için yavaşlayabilir. Bu adımın sonunda çalıştırılabilir dosyalar 
 (executable) üretilecektir. Bunları root'un erişebileceği yerlere kopyalamak için:
 ```
 $ sudo make install
@@ -786,7 +785,7 @@ $ which vim
 ile kontrol edebilirsiniz.
 
 Repo'yu silmeyin, son ozellikleri deneyimlemek icin pull yapip yukaridaki komutlari baştan uygulayın,
-*make* yalnizca degisen dosyalari derleyeceginden build fazla zaman almayacaktir.
+*make* yalnizca değişen dosyaları derleyeceğinden build fazla zaman almayacaktır.
 
 -----
 Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
