@@ -693,6 +693,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [neovim nightly builds](https://github.com/neovim/neovim/releases/tag/nightly)
 * [vimawesome.com](https://www.vimawesome.com) Vim uzantıları
 * [dotfiles.github.io](https://dotfiles.github.io)
+* [yet another dotfile manager](https://yadm.io)
 
 #### kitaplar
 
