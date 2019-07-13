@@ -112,8 +112,8 @@ s=seconds, m=minute, h=hour, d=day
 y                seçili bölgeyi kopyala (yank)
 yy               bütün satırı kopyala
 p                yapıstır, satırın altına (paste)
-"<reg>y          seçili bolgeyi registera kopyala (a-z den register) 
-c                seçili bolgeyi kes
+"<reg>y          seçili bölgeyi registera kopyala (a-z den register) 
+c                seçili bölgeyi kes
 "<reg>p          registera yapistir (a-z den register) 
 P                yapıştır, satırın üstüne
 .                son komutu tekrarla
@@ -258,10 +258,10 @@ shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
 ```
 
 ```
-C-ws       mevcut pencereyi yatay olaral bol (alternatif :split)
+C-ws       mevcut pencereyi yatay olaral böl (alternatif :split)
 C-ws a.txt a.txt dosyasını oluştur ve düzenlemeye başla
  
-C-wv       mevcut pencereyi dikey olarak bol (alternatif :vsplit)
+C-wv       mevcut pencereyi dikey olarak böl (alternatif :vsplit)
 C-ww       sonraki pencereye zıpla 
 ```
 
@@ -334,7 +334,7 @@ c3w      veya 3cw, 3 kelime değiştir (cw cw cw)
 ```
 #### Birden fazla komutu kaydederek tekrar etme
 
-birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara sahip (a-z),
+birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara sahip (a-z), 26 farklı clipboard gibi!
 1. q ile kaydetmeyi başlat ve kaydetmek istedigin bir register seç. örnek: qa
 2. kaydetme modundan esc ile cik.
 3. kaydedilen değişikliği @<reg> şeklinde uygula. örnek: @a<enter>
@@ -462,7 +462,7 @@ Bazı özel karakterler:
 ```
 :h key-notation
 ```
-Oluşturduğumux kısayollar daha önce maplenmiş diğer komutları çakışabileceğinden, komutları mümkün olduğunca no-recursive yapmak iyi bir uygulamadır. 
+Oluşturduğumuz kısayollar daha önce maplenmiş diğer komutları çakışabileceğinden, komutları mümkün olduğunca no-recursive yapmak iyi bir uygulamadır. 
 
 Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadığını öğrenmek için:
 ```
@@ -625,6 +625,9 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [vim-sensible](https://github.com/tpope/vim-sensible)
 
 ###### Kod tamamlama ve Dil istemcisi
+* [coc.nvim](https://github.com/neoclide/coc.nvim)
+* [LanguageCliient-neovim](https://github.com/autozimu/LanguageClient-neovim)
+* [vim-lsc](https://github.com/natebosch/vim-lsc)
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 * [deoplete.vim](https://github.com/Shougo/deoplete.nvim)
 * [Neocomplete](https://github.com/Shougo/neocomplete.vim)
@@ -632,8 +635,6 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
 * [completor.vim](https://github.com/maralla/completor.vim)
 * [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
-* [vim-lsc](https://github.com/natebosch/vim-lsc)
-* [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 ###### Dil sunucuları listesi
 * [Language Servers](https://langserver.org/)
@@ -701,7 +702,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * Modern Vim - Drew Neil
 * Learning Vi and Vim Editors - Arnold Robbins, Elbert Hannah
 * The VimL Primer: Edit Like a Pro with Vim Plugins and Scripts - Benjamin Klein
-* Mastering Vim: Build a software development environment with Vim and Neovim<sup>1</sup> - Ruslan Osipov
+* Mastering Vim: Build a software development environment with Vim and Neovim<sup>2</sup> - Ruslan Osipov
 * [A Byte of Vim](https://vim.swaroopch.com/) (Online Kitap)
 
 #### kopya kağıtları
