@@ -1,5 +1,7 @@
 <p align="center"><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="Vim logo"></p>
 
+ <p align="center"> Vim metin editörü için bir alternatif öğrenim kılavuzu </p>
+
 * [Vim'den Çıkış](vim'den-çıkış)
 * [Vim Nedir?](#vim-nedir?)
     * [Vim'in Tarihi](#vim'in-tarihi)
@@ -77,16 +79,19 @@ $ vim dizin/dosyaAdı
 
 Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 
-* normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir. `:h Normal-mod`
-* insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.  `:h Insert-mod`
-* görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, V ile satır bazında, C-v ile block bazında görsel moda geçilir.  `:h Visual-mod`
-* komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra `<enter>` basılmalıdır. ör. `:h ctrl-r <enter>`
+* normal mod: vim normal olarak bu modda başlar. esc ile bu moda geçilir. `:h Normal-mode`:tropical_fish:
+* insert mod: editöre text bu modla eklenir. [insert komutları](insert-moda-geçme)nın biriyle bu moda geçilir.  `:h Insert-mode`:tropical_fish:
+* replace mod: text'leri olduğu yerde değiştirmek için kullanılır ve normal moddan `R` ile geçilir. :h  Replace-mode`:tropical_fish:
+* görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, V ile satır bazında, C-v ile block bazında görsel moda geçilir.  `:h Visual-mode`:tropical_fish:
+* komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra `<enter>` basılmalıdır. `:h Cmdline-mode`:tropical_fish: ör. `:h ctrl-r <enter>`
 
 ### Genel
 
 ```
 $ vimtutor          vim resmi öğretici metni
-:h user-manuel
+
+:h user-manual
+:h help-summary     Dökümantasyonun kullanımı hakkında
 :h konu             konu hakkında yardım. Ör: `:h python` Ctrl-] linke tıkla, Ctrl-T geri gel
 
 :q                  kapat (quit)
@@ -95,7 +100,7 @@ $ vimtutor          vim resmi öğretici metni
 :wa[!]              yaz/kaydet bütün pencereler (write all) [zorla]
 :wq                 kaydet ve çık
 :wqa                bütün tabları kaydet ve çık (write, quit all) bkz: [tabları kullanma](#tablari-kullanma)
-:x                  yaz ve çık, wq ile aynı
+:x                  güncelle ve çık
 :q!                 dosya değismişse ve değişiklik kaydedilmeyecekse kapatmaya zorla
 ```
 ```
@@ -120,16 +125,16 @@ P                yapıştır, satırın üstüne
 ```
 
 ```
-:term    vim'den ayrilmadan terminali baslat  `:h terminal`
-:!<cmd>  vim'den ayrılmadan shell'den <cmd> komutunu calistir ör: `!g++ -wall -std=c++14 main.cpp`, `!ruby %`
-:sh      shell'e git, `exit` ile tekrar vim'e dön
-C-z      vim'i arka plana gonder (fg geri getirir)
+:term    Vim'den ayrilmadan terminali baslat  `:h terminal`
+:!<cmd>  Vim'den ayrılmadan shell'den <cmd> komutunu çalıştır ör: `!g++ -Wall -std=c++14 main.cpp`, `!ruby %`
+:sh      shell'e git, `exit` ile tekrar Vim'e dön
+$C-z      Vim'i arka plana gonder ($fg geri getirir)
 ```
 
 ### Hareketler
 
+`:h motion`:tropical_fish: 
 ```
-:h motion
                                 k
 h        imleç sola             ^
 j        imleç alta        h <     > l
@@ -161,23 +166,16 @@ C-d      yarım ekran aşağı
 C-u      yarım ekran yukarı
 ```
 
+`:h scroll-cursor`:tropical_fish:  
 ```
-zt       imlecin bulunduğu yeri ekranın üstüne getir
-z<enter> zt ile aynı
-zb       imlecin bulunduğu yeri ekranın altına getir
-z-       zb ile aynı
-z.       imlecin bulunduğu yeri ekranın ortasına getir
-zz       z. ile aynı
-```
-```
-%        eşleşen paranteze zıpla
-(        önceki cümle, İngilizce Q dizilimli klavyelerde bu karakterler yanyana
-)        sonraki cümle
-{        önceki paragraf
-}        sonraki paragraf
-[{       mevcut kod blogunun başına zıpla 
-]}       mevcut kod blogunun sonuna zıpla 
-gd       değisken deklerasyonuna zıpla 
+z<enter> imlecin bulunduğu yeri ekranın en üstüne taşı ve imleci ilk karakterin altına koy
+zt       yukarıdakine benzer ama imleci olduğu yerde bırak
+
+z-       imlecin bulunduğu yeri ekranın en altına taşı ve imleci ilk karakterin altına koy
+zb       yukarıdakine benzer ama imleci olduğu yerde bırak
+
+z.       imlecin bulunduğu yeri ekranın ortasına taşı ve imleci ilk karakterin altına koy
+zz       yukarıdakine benzer ama imleci olduğu yerde bırak
 ```
 
 ```
@@ -194,7 +192,7 @@ G        dosyanin en altı
 ```
  
 ```                                                                                            v           v
-E        kelimenin sonuna zıpla (isaretlemelerin ayrı bir kelime olduğu varsayılmaz) Ör: e (abcd)   E (abcd)
+E        kelimenin sonuna zıpla (işaretlemelerin ayrı bir kelime olduğu varsayılmaz) Ör: e (abcd)   E (abcd)
 W        kelimenin başına zıpla 
 B        geriye dogru kelimenin başına zıpla (isaretleme yok)
 #G       # numaralı satıra git ör: 38G
@@ -221,27 +219,27 @@ Daha genel olarak<sup>2<sup>:
 ### Insert moda geçme ##
 
 ```
-/~~~~~~~~~~~\
-|command mod|
-\~~~~~~~~~~~/
-|          |
-^ :/       v Esc Esc
-|          |
-/~~~~~~~~~~\<---Esc------/~~~~~~~~~~\
-|normal mod|             |insert mod|
-\~~~~~~~~~~/--aAiIoOsS-->\~~~~~~~~~~/
- |        | 
- v vV     ^ Esc
- |        | 
-/~~~~~~~~~~\
-|visual mod|
-\~~~~~~~~~~/
+                           /~~~~~~~~~~~~\
+                           |command mode|
+                           \~~~~~~~~~~~~/
+                           |           |
+                           ^ :/        v Esc Esc
+                           |           |
+ /~~~~~~~~~~~~\----Esc---->/~~~~~~~~~~~\<---Esc------/~~~~~~~~~~~\
+ |replace mode|            |normal mode|             |insert mode|
+ \~~~~~~~~~~~~/<----R------\~~~~~~~~~~~/--aAiIoOsS-->\~~~~~~~~~~~/
+                           |           |
+                           v vV        ^ Esc
+                           |           |
+                           /~~~~~~~~~~~\
+                           |visual mode|
+                           \~~~~~~~~~~~/
 
 ```
 ``` 
 i        imleçten öncesine text ekle
 I        satırın başına ekle
-a        imleçten sonra textin sonuna ekle
+a        imleçten sonra text ekle
 A        satirin sonuna ekle 
 o        imlecin altına yeni bir satir yap ve text ekle 
 O        imlecin üstüne yeni bir satir yap ve text ekle
@@ -249,29 +247,27 @@ s        imlecin altındaki harfi sil
 S        tüm satiri sil
 cc       mevcut satiri sil ve insert moda geç
 cw       kelimeyi sil ve insert moda geç (change word)
-shift-r  kelimeyi olduğu yerde değiştir. (windows'taki insert)
+
+S-r      select mod'a gir, metni olduğu yerde değiştir
 ```
 
 ### Birden fazla dosyayla çalışma 
-```
-:h usr_08.txt
-```
+
+`:h usr_08.txt`:tropical_fish:  
 
 ```
 C-ws       mevcut pencereyi yatay olaral böl (alternatif :split)
-C-ws a.txt a.txt dosyasını oluştur ve düzenlemeye başla
- 
 C-wv       mevcut pencereyi dikey olarak böl (alternatif :vsplit)
 C-ww       sonraki pencereye zıpla 
 ```
 
 ```
-C-w h      mevcut pancereden sola geç
+C-w h      mevcut pancereden sağa geç
 C-w j      mevcut pencereden aşağı geç
 C-w k      mevcut penceden yukarı geç
-C-w l      mevcut pencereden sağa geç
-C-w t      en yukarıdaki pencereye geç
-C-w b      en aşağıdaki pencereye geç
+C-w l      mevcut pencereden sola geç
+C-w t      en üst soldaki pencereye geç
+C-w b      en aşağı sağdaki pencereye geç
 ```
 ```
 C-wq       mevcut pencereyi kapat
@@ -283,35 +279,40 @@ C-w#<      mevcut pencereyi sağdan # kadar yeniden boyutlandir (default 1)
 C-w#>      mevcut pencereyi sağa # kadar yeniden boyutlandir (default 1) 
 :res #     yatay bölünmüş pencereyi # kadar yeniden boyutlandır
 ```
+`:h window-moving`:tropical_fish:
 ```
-C-wH       mevcut pencereyi en sağa taşı 
+C-wH       mevcut pencereyi en sola taşı 
 C-wJ       mevcut pencereyi en alta taşı         
 C-wK       mevcut pencereyi en üste taşı         
-C-wL       mevcut pencereyi en sola taşı
+C-wL       mevcut pencereyi en sağa taşı
 ```
 
 ```
-$ vim -o3 f1.txt f2.txt f3.txt      dosyaları alt üst aynı pencerede aç (horizontally split)
-$ vim -O3 f1.txt f2.txt f3.txt      dosyaları yan yana aynı pencerede aç(vertically split)
+$vim --help               Vim parametrelerini listele `h vim-arguments`:tropical_fish:
 
-$ vim f1.txt f2.txt f3.txt          dosyaların her birini aç ama aynı anda sadece birini gör, birbirleri arasında :next ve :prev ile geçiş yap, :n dosyaadı ile yeni dosya ekle
+$ vim -O2 f1.txt f2.txt   Vim'i `-O[N]` parametresiyle aç, dikey bölünmüş f1.txt ve f2.txt dosyaları
+$ vim -o2 f1.txt f2.txt   yukarıdaki gibi ama yatay bölünmüş
+$ vim -P2 f1.txt f2.txt   yukarıdaki gibi ama tab sayfalarıyla
+
+$ vim f1.txt f2.txt       dosyları aç ama yalnızca birini göster (:next ve :prev ile geçiş yap)
 ```
+
 #### tabları kullanma
 
-```
-$ vim -p f1.txt f2.txt                 f1.txt ve f2.txt dosyalarını tab şeklinde aç
+`:h tabpage`:tropical_fish:
 
+```
 :tabedit dosyaadı   belirtilen dosyayı yeni bir tabda düzenle
 :tabfind dosyaadı   dosyayı yeni bir tabda aç ve düzenle
 ```
 ```
-:tabn       sonraki tab, normal modda gt, 3gt üçüncü tab, insert modda C-pgdn
-:tabp       önceki tab, normal modda gt, insert modda C-pgup
+:tabn       sonraki tab
+:tabp       önceki tab
 :tabfirst   ilk taba git
 :tablast    son taba git
 ```
 ```
-:tabm {i}           mevcut tabı i+1 inci taba taşı. ör: :tabm 0 mevcut tabı ilk tab yap, :tabm  mevcut tabı son tab yap
+:tabm {i}           mevcut tabı i+1 inci taba taşı
 ```
 ```
 :tabclose i   i numaralı tabı kapat
@@ -334,7 +335,9 @@ c3w      veya 3cw, 3 kelime değiştir (cw cw cw)
 ```
 #### Birden fazla komutu kaydederek tekrar etme
 
-birden fazla hareketi kaydetmek için oldukça kullanışlı. vim 26 registara sahip (a-z), 26 farklı clipboard gibi!
+`:h recording`:tropical_fish:  
+
+Birden fazla hareketi kaydetmek için oldukça kullanışlı. Vim 26 registara sahip (a-z), 26 farklı clipboard gibi!
 1. q ile kaydetmeyi başlat ve kaydetmek istedigin bir register seç. örnek: qa
 2. kaydetme modundan esc ile cik.
 3. kaydedilen değişikliği @<reg> şeklinde uygula. örnek: @a<enter>
@@ -383,6 +386,7 @@ g;       son duzenlenen pozisyona geri zıpla
 
 #### bul ve değiştir
 
+`:h substitute`:tropical_fish:  
 ```
 :s/eski/yeni      mevcut satırda ilk 'eski'nin görüldüğü yeri 'yeni' ile değiştir
 :s/eski/yeni/g    mevcut satırdaki tüm 'eski'leri 'yeni' ile değiştir
@@ -407,10 +411,10 @@ dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ### Kişiselleştirme
 
 #### dotfiles ve .vimrc dosyası
-```
-:h vimrc-intro
-:options
-```
+
+`:h vimrc-intro`:tropical_fish:  
+`:options`:tropical_fish:  
+
 Unix tabanlı işletim sistemlerinde, sistem araçlarının büyük kısmı C programıdır ve bu programlar bazı parametrelerini dosyaya yazılmış komutlardan alır. Dotfile yani 
 nokta ile başlayan dosyalar bu komutları verir ve programların çalışma anında ayarlarını tanımlar. Bu dosyaların ilginç ortaya çıkış hikayesini [burdan](https://plus.google.com/101960720994009339267/posts/R58WgWwN9jp) okuyabilirsiniz.
 Noktalı dosyalar pratikte bir sistemden ötekine geçerken kullanışlıdır çünkü sistemi büyük ölçüde en baştan konfigure etmenizi önler. Noktalı dosyaları bir versiyon kontrol sisteminde tutmak iyi bir uygulamadır ve pek çok kullanıcı public şekilde bu repo'ları paylaşır.  
@@ -423,9 +427,8 @@ eğer .vimrc home dizininde yoksa `vim .vimrc` ile oluşturabilirsiniz. bkz: [de
 
 #### mapping 
 
-```
-:help mapping
-```
+`:h mapping`:tropical_fish:  
+
 mapping ile uzun komutları kısa komutlara dönüştürebiliriz.
 mapleri kalıcı olarak kullanamak için .vimrc dosyasına
 eklememiz gerekir.
@@ -434,7 +437,7 @@ eklememiz gerekir.
 
 - normal modda çalışabilicek **nmap**
 - insert modda çalışabilicek **imap**
-- visual modda çalışabilecek **vmap**
+- visual modda çalışabilecek **xmap**
 
 genel formül: 
 > map kısayol uzunKomutlar
@@ -444,6 +447,8 @@ nmap m <C-d>        "normal moddayken, m tuşuna ctrl-d komutlarını (yarım sa
 imap jk <ESC>       "insert moddayken, jk basıldığında ESC basılmış gibi, normal moda geç
 ```
 Bazı özel karakterler:
+
+`:h key-notation`:tropical_fish:   
 
 | Karakter | Anlamı |
 |:---------|-------:|
@@ -459,9 +464,7 @@ Bazı özel karakterler:
 | `<Del>` | Delete
 | `<S-p>` | Shift + p |
 
-```
-:h key-notation
-```
+
 Oluşturduğumuz kısayollar daha önce maplenmiş diğer komutları çakışabileceğinden, komutları mümkün olduğunca no-recursive yapmak iyi bir uygulamadır. 
 
 Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadığını öğrenmek için:
@@ -472,14 +475,13 @@ Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadı�
 aşağıda _o_ yani alt satıra in ve insert moda geç, komutunu 4 kere tekrarlayacığını umduğumuz bu komut
 sonsuz döngüye neden olur. _o_ _4o_'yu, _4o_ diğer bir _4o_'yu çağırmaya çalışacaktır.
 
-```
-nmap o 4o 
-```
+'nmap o 4o`
+
 mapleri no-recursive için komutun başına *nore* getirilir.
 
 - normal mod için **nnoremap**
 - insert mod için **inoremap**
-- visual mod için **vnoremap**
+- visual mod için **xnoremap**
 
 bu komut beklediğimiz gibi çalışır, normal moddayken _o_'ya bastığımızda 4 satır alta inip insert 
 moda geçer.
@@ -497,23 +499,15 @@ autocmd FileType text nnoremap <C-s> :w <cr>
 ```
 
 ##### leader değişkeni
-_leader_ seçtiğimiz bir tuşu maplerde kullanabiliriz.
 
-```
-let mapleader = "-"
-```
-_leader_ olarak `-` karakterini seçtim.
+`:h leader`:tropical_fish:
+
+Bir _leader_ karakteri seçim, map'lerde önek olarak kullanabiliriz.
+`let mapleader ="-"` `-` karakterini _leader_ olarak seçtim.
+`nnoremap <leader>ve :vsplit $MYVIMRC<cr>` şeklinde bir map tanımından sonra, .vimrc dosyamı düzenlemek
+istediğimde, normal modda, `-ve` karakterilerine basmam gerekecek.  
  
-```
-nnoremap <leader>ve :vsplit $MYVIMRC<cr>
-```
-eğer .vimrc'yi düzenlemek istersem normal modda '-ve' karakterlerine basmam gerekecek.
-
-
-bütün mapleri görmek için:
-```
-:map
-```
+bütün mapleri görmek için, `:map`
 
 #### Uzantı ekleme
 
@@ -567,7 +561,8 @@ call plug#end()
 komutuyla yükleyebilirsiniz.
 
 ### Kendi uzantınızı yazma
-`:h plugin`
+`:h write-plugin`:tropical_fish:   
+`:h plugin`:tropical_fish:   
 
 Kendi uzantınızı yazabilirsiniz! Bir Vim uzantısı vimscript dilinde yazılmış bir programdır. Genel olarak aşağıdaki bölümlerden oluşur.
 
@@ -637,7 +632,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
 
 ###### Dil sunucuları listesi
-* [Language Servers](https://langserver.org/)
+* [Language Servers](https://langserver.org/):fire:
 
 ###### Lint ve sözdizimi kontrolü
 * [syntastic](https://github.com/vim-syntastic/syntastic)
@@ -721,27 +716,19 @@ kullanmak için default olarak etkinleştirilmemiş özelliklerine ihtiyaç duya
 etmek gerekir. 
 
 Hangi özelliklerin etkinleştirildiği dağıtıma göre değişiyor, kontrol etmek için:
-
-```
-:version
-```
+`:version`
 
 Git ile repo'yu indirin:
 
-```
-$ git clone --depth=1 https://github.com/vim/vim.git
-```
-```
-$ cd vim
-```
+`$ git clone --depth=1 https://github.com/vim/vim.git && cd vim`
+
 build'e başlamadan önce configure adımını gerçekleştirmemiz gerekiyor, etkinleştireceğiniz özelliklere göre
 ihtiyaç duyduğunuz kütüphaneler değişiklik gösterecektir.
 
-```
-./configure --help
-```
+`./configure --help`
+
 Benim bu adım için kullandığım parametreler:
-```
+```shell
 $ sudo ./configure --enable-fail-if-missing \
 --disable-darwin \
 --disable-smack \
@@ -770,27 +757,26 @@ $ sudo ./configure --enable-fail-if-missing \
 ```
 ihtiyaçlarınıza göre sizinkiler farklı olabilir. Bu adımın sonunda build için gerekli dosyalar üretiliyor.
 GNU make build aracıyla:
-```
-$ sudo make -j 8
-```
+
+`$ sudo make -j 8`
+
 `-j` parametresi build için kaç tane core adayacımızı söylüyor, daha yüksek kullanırsanız build daha hızlı olacaktır 
 ama bu süre boyuncu bilgisayarınız diğer işler için yavaşlayabilir. Bu adımın sonunda çalıştırılabilir dosyalar 
 (executable) üretilecektir. Bunları root'un erişebileceği yerlere kopyalamak için:
-```
-$ sudo make install
-```
+
+`$ sudo make install`
+
 Vim'in nereye yükleneceğini *configure* adımında  `prefix` parametresiyle belirleyebilirsiniz. Varsayılan olarak 
 `/usr/local` olacaktır. Vim'in nerde olduğunu
-```
-$ which vim
-``` 
+`$ which vim`
+
 ile kontrol edebilirsiniz.
 
-Repo'yu silmeyin, son ozellikleri deneyimlemek icin pull yapip yukaridaki komutlari baştan uygulayın,
+Repo'yu silmeyin, son özellikleri deneyimlemek için pull yapıp yukaridaki komutları baştan uygulayın,
 *make* yalnizca değişen dosyaları derleyeceğinden build fazla zaman almayacaktır.
 
 -----
-Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
+Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve Twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
 
 ### Lisans 
 
