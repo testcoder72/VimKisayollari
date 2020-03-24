@@ -2,29 +2,38 @@
 
  <p align="center"> Vim metin editörü için bir alternatif öğrenim kılavuzu </p>
 
-* [Vim'den Çıkış](vim'den-çıkış)
-* [Vim Nedir?](#vim-nedir?)
+<div id="contents"></div>
+
+- [Vim'den Çıkış](vim'den-çıkış)
+- [Vim Nedir?](#vim-nedir?)
     * [Vim'in Tarihi](#vim'in-tarihi)
     * [Vim Forkları ve Neovim](#vim-forkları-ve-neovim)
-* [Dosya oluşturma](#dosya-oluşturma)
-* [Vim modları](#vim-modları)
-* [Genel](#genel)
-* [Hareketler](#hareketler)
-* [Insert moda geçme](#insert-moda-geçme)
-* [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalışma)
+- [Dosya oluşturma](#dosya-oluşturma)
+- [Vim modları](#vim-modları)
+- [Genel](#genel)
+- [Hareketler](#hareketler)
+- [Insert moda geçme](#insert-moda-geçme)
+- [Birden Fazla Dosyayla Çalışma](#birden-fazla-dosyayla-çalışma)
     * [Tabları kullanma](#tabları-kullanma)
-* [Kaydetme](#kaydetme)
+- [Kaydetme](#kaydetme)
     * [Birden fazla komutu kaydederek tekrar etme](#birden-fazla-komutu-kaydederek-tekrar-etme)
-* [Düzenleme](#düzenleme)
+- [Düzenleme](#düzenleme)
     * [Bul ve Değiştir](#bul-ve-değiştir)
-* [Bazı sık kullanılanlar](#Bazı-sık-kullanılanlar) 
-* [Kişiselleştirme](#Kişiselleştirme)
+- [Bazı sık kullanılanlar](#Bazı-sık-kullanılanlar) 
+- [Kişiselleştirme](#Kişiselleştirme)
     * [Dotfiles ve .vimrc dosyası](#dotfiles-ve-.vimrc-dosyası)
     * [Mapping](#mapping)
     * [Uzantı ekleme](#uzantı-ekleme) 
         * [vim-plug ile uzantı ekleme](#vim-plug-ile-uzantı-ekleme)
-* [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-(eksik)-listesi)
-* [Linkler](#linkler)
+- [Kendi uzantınızı yazma](#Kendi-uzantınızı-yazma)
+    * [Hello World uzantısı](#Hello-World-uzantısı)
+    - [Programcılar için Vim](#Programcılar-için-Vim)
+- [Bazı uzantıların (eksik) listesi](#Bazı-uzantıların-eksik-listesi)
+- [Linkler](#linkler)
+    * [siteler](#siteler)
+    * [kitaplar](#kitaplar)
+    * [kopya kağıtları](#kopya-kağıtları)
+    * [video serileri](#video-serileri)
 * [Vim'i kaynak koddan build etme](#Vim'i-kaynak-koddan-build-etme)
 
 ### [Vim'den Çıkış](https://stackoverflow.blog/wp-content/uploads/2017/05/country_stuck_vim-1-2-1024x1024.png)
@@ -74,6 +83,7 @@ $ vim <enter>
 $ vim dosyaAdı
 $ vim dizin/dosyaAdı 
 ```
+<sub>[⇧ yukarı](#contents)</sub>
 
 ### Vim modları
 
@@ -84,6 +94,8 @@ Vim, kullanıcının içeriğe odaklanması için farklı modlar sunar.
 * replace mod: text'leri olduğu yerde değiştirmek için kullanılır ve normal moddan `R` ile geçilir. :h  Replace-mode`:tropical_fish:
 * görsel mod: text üzerinde belli alanları seçmek için kullanılır. v ile karakter bazında, V ile satır bazında, C-v ile block bazında görsel moda geçilir.  `:h Visual-mode`:tropical_fish:
 * komut modu: normal moda geçtikten sonra : ile geçilir. komut girilmesini sağlar. Her bir komuttan sonra `<enter>` basılmalıdır. `:h Cmdline-mode`:tropical_fish: ör. `:h ctrl-r <enter>`
+
+<sub>[⇧ yukarı](#contents)</sub>
 
 ### Genel
 
@@ -131,6 +143,7 @@ P                yapıştır, satırın üstüne
 $C-z      Vim'i arka plana gonder ($fg geri getirir)
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
 ### Hareketler
 
 `:h motion`:tropical_fish: 
@@ -167,6 +180,7 @@ C-u      yarım ekran yukarı
 ```
 
 `:h scroll-cursor`:tropical_fish:  
+<sub>[⇧ yukarı](#contents)</sub>
 ```
 z<enter> imlecin bulunduğu yeri ekranın en üstüne taşı ve imleci ilk karakterin altına koy
 zt       yukarıdakine benzer ama imleci olduğu yerde bırak
@@ -216,6 +230,7 @@ Daha genel olarak<sup>2<sup>:
                  G
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
 ### Insert moda geçme ##
 
 ```
@@ -251,6 +266,8 @@ cw       kelimeyi sil ve insert moda geç (change word)
 S-r      select mod'a gir, metni olduğu yerde değiştir
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
+
 ### Birden fazla dosyayla çalışma 
 
 `:h usr_08.txt`:tropical_fish:  
@@ -279,6 +296,8 @@ C-w#<      mevcut pencereyi sağdan # kadar yeniden boyutlandir (default 1)
 C-w#>      mevcut pencereyi sağa # kadar yeniden boyutlandir (default 1) 
 :res #     yatay bölünmüş pencereyi # kadar yeniden boyutlandır
 ```
+<sub>[⇧ yukarı](#contents)</sub>
+
 `:h window-moving`:tropical_fish:
 ```
 C-wH       mevcut pencereyi en sola taşı 
@@ -297,6 +316,7 @@ $ vim -P2 f1.txt f2.txt   yukarıdaki gibi ama tab sayfalarıyla
 $ vim f1.txt f2.txt       dosyları aç ama yalnızca birini göster (:next ve :prev ile geçiş yap)
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
 #### tabları kullanma
 
 `:h tabpage`:tropical_fish:
@@ -322,6 +342,7 @@ $ vim f1.txt f2.txt       dosyları aç ama yalnızca birini göster (:next ve :
 ```
 :tabs               tabları listele
 ```
+<sub>[⇧ yukarı](#contents)</sub>
 
 ### Komutları tekrar etme
 
@@ -347,6 +368,7 @@ q[a-z]   kaydetmeye başla, hareketler dahil herşey kaydedilecek
 @[a-z]   kaydedilen hareketleri başlat
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
 ### Düzenleme 
 
 ```
@@ -384,6 +406,7 @@ g;       son duzenlenen pozisyona geri zıpla
 :g/^$/d  tüm boş satırları sil
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
 #### bul ve değiştir
 
 `:h substitute`:tropical_fish:  
@@ -397,6 +420,7 @@ g;       son duzenlenen pozisyona geri zıpla
 :%s/eski/yeni/gc  mevcut dosyadaki tüm 'eski'leri 'yeni' ile değiştir ama öncesinde onay iste
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
 ### Bazı sık kullanılanlar 
 
 ```
@@ -407,6 +431,7 @@ ea      kelimenin sonuna ekle
 xp      yanyana iki harfi yerdeğiştir         ör: microsotf ->  microsoft 
 dgg     imleçin bulunduğu yerden dosyanın başına kadar sil
 ```
+<sub>[⇧ yukarı](#contents)</sub>
 
 ### Kişiselleştirme
 
@@ -423,8 +448,9 @@ Noktalı dosyalar pratikte bir sistemden ötekine geçerken kullanışlıdır ç
 
 .vimrc dosyası Vim'in çalışma anında ayarlarını tanımlar. Sistemin kullandığı bir .vimrc ve herbir kullanıcının
 *home* dizininde birer .vimrc bulunur. home dizinindeki .vimrc, sistem .vimrc'yi override eder. 
-eğer .vimrc home dizininde yoksa `vim .vimrc` ile oluşturabilirsiniz. bkz: [default .vimrc içeriği](https://gist.github.com/anonymous/c966c0757f62b451bffa)
+eğer .vimrc home dizininde yoksa  [burdan](https://raw.githubusercontent.com/vim/vim/master/runtime/defaults.vim) indirebilir ve `~/.vimrc` veya `~/.vim/vimrc` dizinine kaydedebilirsiniz.
 
+<sub>[⇧ yukarı](#contents)</sub>
 #### mapping 
 
 `:h mapping`:tropical_fish:  
@@ -472,23 +498,11 @@ Seçeceğimiz kısayolun bir başka map tarafından kullanılıp kullanılmadı�
 :verbose map kısayol 
 ```
 
-aşağıda _o_ yani alt satıra in ve insert moda geç, komutunu 4 kere tekrarlayacığını umduğumuz bu komut
-sonsuz döngüye neden olur. _o_ _4o_'yu, _4o_ diğer bir _4o_'yu çağırmaya çalışacaktır.
-
-'nmap o 4o`
-
 mapleri no-recursive için komutun başına *nore* getirilir.
 
 - normal mod için **nnoremap**
 - insert mod için **inoremap**
 - visual mod için **xnoremap**
-
-bu komut beklediğimiz gibi çalışır, normal moddayken _o_'ya bastığımızda 4 satır alta inip insert 
-moda geçer.
-
-```
-nnoremap o 4o
-```
 
 mapleri dosya tipine göre özelleştirebiliriz: 
 
@@ -497,6 +511,7 @@ autocmd FileType cpp nnoremap <f5> :w <bar> !clang++ -stdlib=libc++ -fsyntax-onl
 autocmd FileType d nnoremap <f8> :call DTest()<cr>
 autocmd FileType text nnoremap <C-s> :w <cr>
 ```
+<sub>[⇧ yukarı](#contents)</sub>
 
 ##### leader değişkeni
 
@@ -508,7 +523,7 @@ Bir _leader_ karakteri seçim, map'lerde önek olarak kullanabiliriz.
 istediğimde, normal modda, `-ve` karakterilerine basmam gerekecek.  
  
 bütün mapleri görmek için, `:map`
-
+<sub>[⇧ yukarı](#contents)</sub>
 #### Uzantı ekleme
 
 Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla paket yöneticisi mevcut:
@@ -522,6 +537,7 @@ Vim'e uzantı eklemenin en kolay yolu bir paket yöneticisi kurmak. Birden fazla
 - [VAM](https://github.com/MarcWeber/vim-addon-manager)
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ##### vim-plug ile uzantı ekleme
 
 vim-plug, Vim için tasarlanmış bir eklenti yöneticisidir. Eklenti yüklemenize, güncellemenize, kullanılmayan eklentileri kaldırmanıza izin verir.
@@ -560,6 +576,7 @@ call plug#end()
 
 komutuyla yükleyebilirsiniz.
 
+<sub>[⇧ yukarı](#contents)</sub>
 ### Kendi uzantınızı yazma
 `:h write-plugin`:tropical_fish:   
 `:h plugin`:tropical_fish:   
@@ -581,6 +598,7 @@ MyAwesomePlugin/
 
 ```
 
+<sub>[⇧ yukarı](#contents)</sub>
 #### Hello World uzantısı
 Uzantıyı içeren klasörü `runtimepath`'e ekleyin:
 
@@ -614,6 +632,24 @@ endfunction
 
 Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 
+<sub>[⇧ yukarı](#contents)</sub>
+#### Programcılar için Vim
+
+Vim programcılar için muhteşem bir araçtır. Pek çok kod formatlama-tamamlama, refaktör etme, lint uzantısını kolayca bulabilirsiniz.
+Böylesi uzantıları oluşturmak, bakımını yapmak zahmetli bir iş ve oluşturulan uzantıları bir başka metin editörüne port etmek neredeyse imkansız.
+Araç geliştiriciler şimdiye kadar değişik yöntemleri kullandı ve bazıları oldukça başarılı oldu. 2016 yılında Microsoft 
+bu çabayı kolaylaştırmak için [Language Server Protocol](https://en.wikipedia.org/wiki/Language_Server_Protocol)'ünü geliştirdi. Çok iyi bir nedeniniz
+yoksa, Vim'e IDE benzeri yetenekler kazanmak için  *LSP* kullanmak en hızlı ve başarılı yöntem.
+
+Programladığınız dil için sisteminize bir LSP implementasyonu yükledikten sonra, Vim'e bir dil istemcisi yüklemeniz gerekiyor.
+See the list of language servers and clients lists from [here](https://langserver.org).
+
+Ben kendi konfigurasyonumda, C++ ile programlamak için [clangd](https://clang.llvm.org/extra/clangd/Installation.html) dil sunucusunu ve 
+[coc.nvim](https://github.com/neoclide/coc.nvim) dil istemcisini kullanıyorum.
+
+Dil sunucularının ve istemcilerinin listesine [buradan](https://langserver.org) ulaşabilirsiniz.
+
+<sub>[⇧ yukarı](#contents)</sub>
 #### Bazı uzantıların (eksik) listesi
 
 ###### Yeni başlayanlar için
@@ -631,6 +667,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [completor.vim](https://github.com/maralla/completor.vim)
 * [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ###### Dil sunucuları listesi
 * [Language Servers](https://langserver.org/):fire:
 
@@ -639,6 +676,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [ALE](https://github.com/w0rp/ale)
 * [neomake](https://github.com/neomake/neomake)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ###### Snippet
 * [Snimate](https://github.com/garbas/vim-snipmate)
 * [ultisnips](https://github.com/SirVer/ultisnips)
@@ -646,12 +684,14 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [neosnippet.vim](https://github.com/Shougo/neosnippet.vim)
 * [vim-minisnip](https://github.com/joereynolds/vim-minisnip)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ###### Programlama Dili
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 * [vim-go](https://github.com/fatih/vim-go)
 * [rust.vim](https://github.com/rust-lang/rust.vim)
 * [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ###### GUI-like
 * [NERDTree](https://github.com/scrooloose/nerdtree)
 * [promptline](https://github.com/edkolev/promptline.vim)
@@ -659,6 +699,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [powerline](https://github.com/powerline/powerline)
 * [lightline](https://github.com/itchyny/lightline.vim)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ###### Tema ve Renkler
 * [vimcolors.com](https://vimcolors.com/)
 * [rainglow.io](https://rainglow.io)
@@ -666,6 +707,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [vim-devicons](https://github.com/ryanoasis/vim-devicons)
 * [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ###### Kullanımı kolaylaştıran uzantılar
 * [Surround](https://github.com/tpope/vim-surround)
 * [Fugitive](https://github.com/tpope/vim-fugitive)
@@ -678,6 +720,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [vim-obsession](https://github.com/tpope/vim-obsession)
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)
 
+<sub>[⇧ yukarı](#contents)</sub>
 ### Linkler 
 
 #### siteler 
@@ -691,6 +734,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * [dotfiles.github.io](https://dotfiles.github.io)
 * [yet another dotfile manager](https://yadm.io)
 
+<sub>[⇧ yukarı](#contents)</sub>
 #### kitaplar
 
 * Practical Vim: Edit Text at the Speed of Though<sup>1</sup> - Drew Neil
@@ -700,6 +744,7 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * Mastering Vim: Build a software development environment with Vim and Neovim<sup>2</sup> - Ruslan Osipov
 * [A Byte of Vim](https://vim.swaroopch.com/) (Online Kitap)
 
+<sub>[⇧ yukarı](#contents)</sub>
 #### kopya kağıtları
 
 * http://www.worldtimzone.com/res/vi.html
@@ -708,6 +753,11 @@ Ve bitti, komut modunda `:Greet` ile deneyebilirsiniz.
 * http://www.fprintf.net/vimCheatSheet.html
 * https://devhints.io/vimscript
 
+<sub>[⇧ yukarı](#contents)</sub>
+#### video serileri
+* [Vim Tutorials, Derek Wyatt](https://vimeo.com/6999927)
+* [Vim ScreenCasts, Greg Hurrell](https://www.youtube.com/channel/UCXPHFM88IlFn68OmLwtPmZA/featured)
+* [Vimcast](http://vimcasts.org/)
 
 ### Vim'i kaynak koddan build etme
 
@@ -758,7 +808,7 @@ $ sudo ./configure --enable-fail-if-missing \
 ihtiyaçlarınıza göre sizinkiler farklı olabilir. Bu adımın sonunda build için gerekli dosyalar üretiliyor.
 GNU make build aracıyla:
 
-`$ sudo make -j 8`
+`$ make -j 8`
 
 `-j` parametresi build için kaç tane core adayacımızı söylüyor, daha yüksek kullanırsanız build daha hızlı olacaktır 
 ama bu süre boyuncu bilgisayarınız diğer işler için yavaşlayabilir. Bu adımın sonunda çalıştırılabilir dosyalar 
@@ -778,6 +828,7 @@ Repo'yu silmeyin, son özellikleri deneyimlemek için pull yapıp yukaridaki kom
 -----
 Eğer bu belgenin faydalı olduğunu düşünüyorsan star bırakabilirsin ve Twitter'da beni (twitter beni bir bot olarak işaretlemeden önce) takip edebilirsin! [@adembubudak](https://twitter.com/adembudak_)
 
+<sub>[⇧  Yukarı](#contents)</sub>
 ### Lisans 
 
 <a href="http://www.wtfpl.net/"><img
